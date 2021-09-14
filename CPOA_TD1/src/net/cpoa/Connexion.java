@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class Connexion {
 
-	public Connection creeConnexion() {
+	public static Connection creeConnexion() {
 		String url = 
 		"jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/dipaolo6u_cpoatdun";
 		url += "?serverTimezone=Europe/Paris";
@@ -71,7 +71,7 @@ public class Connexion {
 	public static void main(String[] args) {
 		
 		Connexion laConnexion=new Connexion();
-		laConnexion.creeConnexion();
+		Connexion.creeConnexion();
 		laConnexion.uneRequete();
 		//laConnexion.insertPeriodicite("1", "TestTechnique");
 		//laConnexion.insertPeriodicite("2", "Javanais");
