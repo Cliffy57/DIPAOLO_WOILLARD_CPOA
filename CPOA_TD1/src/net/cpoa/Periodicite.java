@@ -12,7 +12,7 @@ public class Periodicite {
 			
 			public static void insertPeriodicite(int ID,String libelle) {
 				try {
-					Connection laConnexion = Connexion.creerConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Periodicite` (`id_periodicite`, `libelle`) VALUES (?, ?);");
 					requete.setInt(1, ID);
 					requete.setString(2, libelle);
@@ -29,7 +29,7 @@ public class Periodicite {
 			
 			public static void deletePeriodicite(int ID) {
 				try {
-					Connection laConnexion = Connexion.creerConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("delete from Periodicite where id_periodicite=" + ID);
 					int res = requete.executeUpdate();
 					
@@ -43,7 +43,7 @@ public class Periodicite {
 			
 			public static void modifiePeriodicite(int IDnew,String libelle,int IDold) {
 				try {
-					Connection laConnexion = Connexion.creerConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Periodicite` SET `id_periodicite` = ?, `libelle` = ? WHERE `Periodicite`.`id_periodicite` = ?;");
 					requete.setInt(1,IDnew);
 					requete.setString(2, libelle);

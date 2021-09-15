@@ -10,7 +10,7 @@ public class Client {
 		
 		public void InsertClient(Integer id,String nom,String prenom,Integer no_rue,String voie,Integer code_postal,String ville,String pays) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Client` (`id_client`, `nom`, `prenom`, `no_rue`, `voie`, `code_postal`, `ville`, `pays`) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
 					requete.setInt(1, id);
 					requete.setString(2,nom);
@@ -33,7 +33,7 @@ public class Client {
 			
 			public void modifieClient(int IDnew,String nom,String prenom,Integer no_rue,String voie,Integer code_postal,String ville,String pays,int IDold) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Client` SET `id_client` = ?, `libelle` = ? WHERE `Client`.`id_client` = ?;");
 					requete.setInt(1,IDnew);
 					requete.setString(2,nom);
@@ -54,7 +54,7 @@ public class Client {
 			
 			public void deleteClient(Integer id) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("delete from Client where id_client=" + id);
 					int res = requete.executeUpdate();
 					

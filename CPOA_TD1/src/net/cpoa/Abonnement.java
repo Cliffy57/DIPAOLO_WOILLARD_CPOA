@@ -10,7 +10,7 @@ public class Abonnement {
 		
 			public void insertAbonnement(int id,Date date_debut,Date date_fin,int id_client,int id_revue) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Revue` (`id_abonnement`, `date_debut`, `date_fin`, `id_client`, `id_revue`) VALUES (?, ?, ?, ?, ? , ?);");
 					requete.setInt(1, id);
 					requete.setDate(2,date_debut);
@@ -31,7 +31,7 @@ public class Abonnement {
 			
 			public void modifieAbonnement(int IDnew,date date_debut,date date_fin,int id_client,int id_revue,int IDold) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Abonnement` SET `id_revue` = ?, `id_client` = ? WHERE `Abonnement`.`id_revue` = ?;");
 					requete.setInt(1,IDnew);
 					requete.setDate(2,date_debut);
@@ -51,7 +51,7 @@ public class Abonnement {
 
 			public void deleteAbonnement(int id) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("delete from Abonnement where id_abonnement=" + id);
 					int res = requete.executeUpdate();
 					

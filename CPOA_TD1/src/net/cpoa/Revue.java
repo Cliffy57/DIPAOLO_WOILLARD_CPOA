@@ -11,7 +11,7 @@ public class Revue {
 			
 			public void insertRevue(int id,String titre,String description,int tarif_numero,String visuel,int id_periodicite) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Revue` (`id_revue`, `titre`, `description`, `tarif_numero`, `visuel`, `id_periodicite`) VALUES (?, ?, ?, ?, ? , ?);");
 					requete.setInt(1, id);
 					requete.setString(2,titre);
@@ -32,7 +32,7 @@ public class Revue {
 			
 			public void modifieRevue(int IDnew,String nom_revue,String description,Integer tarif_numero,String visuel,int id_periodicite,int IDold) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
 					requete.setInt(1,IDnew);
 					requete.setString(2,nom_revue);
@@ -53,7 +53,7 @@ public class Revue {
 			
 			public void deleteRevue(int id) {
 				try {
-					Connection laConnexion = creeConnexion();
+					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("delete from Revue where id_revue=" + id);
 					int res = requete.executeUpdate();
 					
