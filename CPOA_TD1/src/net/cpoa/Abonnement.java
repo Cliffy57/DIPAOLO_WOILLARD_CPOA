@@ -6,9 +6,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class Abonnement {
-		public class AjouterAbonnement {
 		
-			public void insertAbonnement(int id,Date date_debut,Date date_fin,int id_client,int id_revue) {
+			public static void insertAbonnement(int id,Date date_debut,Date date_fin,int id_client,int id_revue) {
 				try {
 					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Revue` (`id_abonnement`, `date_debut`, `date_fin`, `id_client`, `id_revue`) VALUES (?, ?, ?, ?, ? , ?);");
@@ -26,10 +25,8 @@ public class Abonnement {
 				}
 			
 			}
-	}
-		public class ModifierAbonnement {
 			
-			public void modifieAbonnement(int IDnew,date date_debut,date date_fin,int id_client,int id_revue,int IDold) {
+			public static void modifieAbonnement(int IDnew,date date_debut,date date_fin,int id_client,int id_revue,int IDold) {
 				try {
 					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Abonnement` SET `id_revue` = ?, `id_client` = ? WHERE `Abonnement`.`id_revue` = ?;");
@@ -46,10 +43,7 @@ public class Abonnement {
 				}
 			}
 
-		}
-		public class SupprimerAbonnement {
-
-			public void deleteAbonnement(int id) {
+			public static void deleteAbonnement(int id) {
 				try {
 					Connection laConnexion = Connexion.creeConnexion();
 					PreparedStatement requete = laConnexion.prepareStatement("delete from Abonnement where id_abonnement=" + id);
