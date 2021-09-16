@@ -1,6 +1,6 @@
 package net.cpoa.metier;
 
-public class Revue {
+public class RevueMetier {
 	
 	private int id;
 	private String titre;
@@ -44,7 +44,7 @@ public class Revue {
 	public void setId_periodicite(int id_periodicite) {
 		this.id_periodicite = id_periodicite;
 	}
-	public Revue(int id , String description, String titre , int tarif_numero,String visuel,int id_periodicite) {
+	public RevueMetier(int id , String description, String titre , int tarif_numero,String visuel,int id_periodicite) {
 		this.id=id;
 		this.description=description;
 		this.titre=titre;

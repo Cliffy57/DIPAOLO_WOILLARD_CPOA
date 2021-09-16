@@ -2,7 +2,7 @@ package net.cpoa.metier;
 
 import java.time.LocalDate;
 
-public class Abonnement {
+public class AbonnementMetier {
 
 	private int id;
 	private LocalDate dateDebut;
@@ -10,7 +10,7 @@ public class Abonnement {
 	private int IDClient;
 	private int IDRevue;
 	
-	public Abonnement(int id, LocalDate dateDebut, LocalDate dateFin, int IDClient,int IDRevue) {
+	public AbonnementMetier(int id, LocalDate dateDebut, LocalDate dateFin, int IDClient,int IDRevue) {
 		this.id = id;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;

@@ -1,11 +1,11 @@
 package net.cpoa.metier;
 
-public class Periodicite 
+public class PeriodiciteMetier 
 {
     private int ID;
     private String libelle;
 
-    public Periodicite(int id, String libelle)
+    public PeriodiciteMetier(int id, String libelle)
     {
         this.setID(id);
         this.setLibelle(libelle);

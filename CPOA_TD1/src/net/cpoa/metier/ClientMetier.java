@@ -1,6 +1,6 @@
 package net.cpoa.metier;
 
-public class Client {
+public class ClientMetier {
 	private int id;
 	private String nom;
 	private String prenom;
@@ -58,7 +58,7 @@ public class Client {
 	public void setPays(String pays) {
 		this.pays = pays;
 	}
-	public Client(int id, String nom, String prenom, int no_rue, String voie, int codepost, String ville, String pays) {
+	public ClientMetier(int id, String nom, String prenom, int no_rue, String voie, int codepost, String ville, String pays) {
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
