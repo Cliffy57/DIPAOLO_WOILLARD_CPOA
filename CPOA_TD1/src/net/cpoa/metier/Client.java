@@ -73,4 +73,10 @@ public class Client {
 		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", no_rue=" + no_rue + ", voie=" + voie
 				+ ", codepost=" + codepost + ", ville=" + ville + ", pays=" + pays + "]";
 	}
+	
+	
+	
+	
+	
+	
 }
