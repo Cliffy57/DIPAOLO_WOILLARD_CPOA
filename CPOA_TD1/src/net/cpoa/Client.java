@@ -13,7 +13,7 @@ public class Client {
 	public static void insertClient(int id,String nom,String prenom,int no_rue,String voie,int codepost,String ville,String pays) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `woillard2u_CPOA1`.`Client` (`id_client`, `nom`, `prenom`, `no_rue`, `voie`, `code_postal`, `ville`, `pays`) VALUES (?,?,?,?,?,?,?,?);");
+			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Client` (`id_client`, `nom`, `prenom`, `no_rue`, `voie`, `code_postal`, `ville`, `pays`) VALUES (?,?,?,?,?,?,?,?);");
 			requete.setInt(1, id);
 			requete.setString(2,nom);
 			requete.setString(3, prenom);
@@ -33,7 +33,7 @@ public class Client {
 	public static void modifieClient(int IDnew,String nom,String prenom,int no_rue,String voie,int codepost,String ville,String pays,int IDold) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `woillard2u_CPOA1`.`Client` SET `id_client` = ?, `nom` = ?, `prenom` = ?, `no_rue` = ?, `voie` = ?, `code_postal` = ?, `ville` = ?, `pays` = ? WHERE `Client`.`id_client` = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Client` SET `id_client` = ?, `nom` = ?, `prenom` = ?, `no_rue` = ?, `voie` = ?, `code_postal` = ?, `ville` = ?, `pays` = ? WHERE `Client`.`id_client` = ?;");
 			requete.setInt(1,IDnew);
 			requete.setString(2,nom);
 			requete.setString(3, prenom);

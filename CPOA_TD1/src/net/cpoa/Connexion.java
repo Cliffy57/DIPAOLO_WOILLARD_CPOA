@@ -31,44 +31,6 @@ public class Connexion {
 		  } 
 		}
 	
-	public void insertPeriodicite(String I,String string) {
-		try {
-			Connection laConnexion = creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Periodicite` (`id_periodicite`, `libelle`) VALUES (?, ?);");
-			requete.setString(1, I);
-			requete.setString(2, string);
-			int res = requete.executeUpdate();
-			
-		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
-		}
-	}
-	
-	public void deletePeriodicite(String I) {
-		try {
-			Connection laConnexion = creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("delete from Periodicite where id_periodicite=" + I);
-			int res = requete.executeUpdate();
-			
-		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
-		}
-	}
-	
-	public void modifiePeriodicite(int IDnew,String libelle,int IDold) {
-		try {
-			Connection laConnexion = creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Periodicite` SET `id_periodicite` = ?, `libelle` = ? WHERE `Periodicite`.`id_periodicite` = ?;");
-			requete.setInt(1,IDnew);
-			requete.setString(2, libelle);
-			requete.setInt(3, IDold);
-			int res = requete.executeUpdate();
-			
-		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
-		}
-	}
-	
 	public static void main(String[] args) {
 		
 		Connexion laConnexion=new Connexion();

@@ -13,7 +13,7 @@ public class Abonnement {
 	public static void insertAbonnement(int ID,LocalDate dateDebut,LocalDate dateFin,int IDclient,int IDrevue) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `woillard2u_CPOA1`.`Abonnement` (`id_abonnement`, `date_debut`, `date_fin`, `id_client`, `id_revue`) "
+			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Abonnement` (`id_abonnement`, `date_debut`, `date_fin`, `id_client`, `id_revue`) "
 					+ "													VALUES (?, ?, ?, ?, ?);");
 			requete.setInt(1, ID);
 			requete.setDate(2, java.sql.Date.valueOf(dateDebut));
@@ -31,7 +31,7 @@ public class Abonnement {
 	public static void modifierAbonnement(int IDnew, int IDold, int IDclient, int IDrevue ,LocalDate date_debut, LocalDate date_fin) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `woillard2u_CPOA1`.`Abonnement` SET `id_abonnement` = ?, `date_debut` = ?, `date_fin` = ?, `id_client` = ?, `id_revue` = ? WHERE `Abonnement`.`id_abonnement` = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Abonnement` SET `id_abonnement` = ?, `date_debut` = ?, `date_fin` = ?, `id_client` = ?, `id_revue` = ? WHERE `Abonnement`.`id_abonnement` = ?;");
 			requete.setInt(1,IDnew);
 			requete.setDate(2, java.sql.Date.valueOf(date_debut));
 			requete.setDate(3, java.sql.Date.valueOf(date_fin));

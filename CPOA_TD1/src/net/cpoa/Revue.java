@@ -14,7 +14,7 @@ public class Revue {
 			public static void insertRevue(int id, String titre, String description, float tarif_numero, String visuel, int id_periodicite) {
 				try {
 					Connection laConnexion = Connexion.creeConnexion();
-					PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `woillard2u_CPOA1`.`Revue` (`id_revue`, `titre`, `description`, `tarif_numero`, `visuel`, `id_periodicite`) VALUES (?, ?, ?, ?, ? , ? , ?);");
+					PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Revue` (`id_revue`, `titre`, `description`, `tarif_numero`, `visuel`, `id_periodicite`) VALUES (?, ?, ?, ?, ? , ?);");
 					requete.setInt(1, id);
 					requete.setString(2,titre);
 					requete.setString(3, description);
@@ -34,7 +34,7 @@ public class Revue {
 			public static void modifieRevue(int IDnew, String titre, String description, float tarif_numero, String visuel, int id_periodicite,int IDold) {
 				try {
 					Connection laConnexion = Connexion.creeConnexion();
-					PreparedStatement requete = laConnexion.prepareStatement("UPDATE `woillard2u_CPOA1`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
+					PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
 					requete.setInt(1,IDnew);
 					requete.setString(2,titre);
 					requete.setString(3, description);
