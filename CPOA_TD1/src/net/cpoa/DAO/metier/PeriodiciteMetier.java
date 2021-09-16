@@ -1,4 +1,4 @@
-package net.cpoa.metier;
+package net.cpoa.DAO.metier;
 
 public class PeriodiciteMetier 
 {
