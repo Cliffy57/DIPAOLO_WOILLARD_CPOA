@@ -52,7 +52,7 @@ public class Revue {
 		this.tarif_numero=tarif_numero;
 		this.id_periodicite=id_periodicite;
 	}
-	@Override 
+	@Override
 	public String toString() {
 		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero=" + tarif_numero + ", visuel=" + visuel
 				+ ", id_periodicite=" + id_periodicite +"]";
