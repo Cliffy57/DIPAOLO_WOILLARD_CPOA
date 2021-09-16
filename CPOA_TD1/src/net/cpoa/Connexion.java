@@ -10,7 +10,7 @@ public class Connexion {
 		"jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/dipaolo6u_cpoatdun";
 		url += "?serverTimezone=Europe/Paris";
 		String login = "dipaolo6u_appli";
-		String pwd = "Ldip2006"; 
+		String pwd = ""; 
 		Connection maConnexion = null;
 		try { 
 		maConnexion = DriverManager.getConnection(url, login, pwd);
