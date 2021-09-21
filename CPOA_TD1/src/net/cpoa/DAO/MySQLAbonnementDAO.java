@@ -7,16 +7,16 @@ import java.sql.SQLException;
 
 
 import net.cpoa.Connexion;
-import net.cpoa.DAO.metier.PeriodiciteMetier;
+import net.cpoa.DAO.metier.AbonnementMetier;
 
-public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
+public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
 
 	@Override
-	public PeriodiciteMetier getById(int id) {
-		PeriodiciteMetier periodicite =null;
+	public AbonnementMetier getById(int id) {
+		AbonnementMetier periodicite =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite where id_periodicite=?");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement where id_abonnement=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
 			if (res != null)
@@ -33,13 +33,13 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 	}
 
 	@Override
-	public boolean create(PeriodiciteMetier objet) {
+	public boolean create(AbonnementMetier objet) {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Periodicite` (`id_periodicite`, `libelle`) VALUES (?, ?);");
-			requete.setInt(1, objet.getID());
-			requete.setString(2, objet.getLibelle());
+			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Abonnement` (`id_abonnement`, `voie`) VALUES (?, ?);");
+			requete.setInt(1, objet.getId());
+			requete.setInt(2, objet.getIDClient());
 			nbLignes = requete.executeUpdate();
 			
 			
@@ -50,13 +50,13 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 	 }
 
 	@Override
-	public boolean update(PeriodiciteMetier objet) {
+	public boolean update(AbonnementMetier objet) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Periodicite` SET `id_periodicite` = ?, `libelle` = ? WHERE `Periodicite`.`id_periodicite` = ?;");
-			requete.setInt(1,objet.getID());
-			requete.setString(2, objet.getLibelle());
-			requete.setInt(3, objet.getID());
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Abonnement` SET `id_abonnement` = ?, `voie` = ? WHERE `Abonnement`.`id_abonnement` = ?;");
+			requete.setInt(1,objet.getId());
+			requete.setInt(2, objet.getIDClient());
+			requete.setInt(3, objet.getId());
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
@@ -65,10 +65,10 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 	}
 
 	@Override
-	public boolean delete(PeriodiciteMetier objet) {
+	public boolean delete(AbonnementMetier objet) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("delete from Periodicite where id_periodicite=" + objet.getID());
+			PreparedStatement requete = laConnexion.prepareStatement("delete from Abonnement where id_abonnement=" + objet.getId());
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
