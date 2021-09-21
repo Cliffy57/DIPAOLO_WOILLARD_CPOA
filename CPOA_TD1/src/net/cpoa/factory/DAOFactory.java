@@ -12,7 +12,7 @@ public abstract class DAOFactory {
 		daoF = new ListeMemoireDAOFactory();
 		break;
 		}
-		return daoF ;
+		return daoF;
 
 
 }
