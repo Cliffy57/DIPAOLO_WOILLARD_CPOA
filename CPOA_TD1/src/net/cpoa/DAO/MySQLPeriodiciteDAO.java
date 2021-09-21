@@ -2,6 +2,7 @@ package net.cpoa.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -12,8 +13,23 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 
 	@Override
 	public PeriodiciteMetier getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		PeriodiciteMetier periodicite =null;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite where id_periodicite=?");
+			requete.setInt(1, id);
+			ResultSet res = requete.executeQuery();
+			if (res != null)
+				res.close();
+			if (requete != null)
+				requete.close();
+			if(laConnexion != null)
+				laConnexion.close();
+			} catch (SQLException sqle) {
+				System.out.println("Pb dans select " + sqle.getMessage());
+			}
+		
+		return periodicite;
 	}
 
 	@Override
@@ -50,7 +66,15 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 
 	@Override
 	public boolean delete(PeriodiciteMetier objet) {
-		// TODO Auto-generated method stub
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("delete from Periodicite where id_periodicite=" + objet.getID());
+			int res = requete.executeUpdate();
+			
+		} catch (SQLException sqle) {
+			System.out.println("Pb select" + sqle.getMessage());
+		}
+	
 		return false;
 	}
 
