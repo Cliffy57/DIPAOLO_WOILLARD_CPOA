@@ -1,5 +1,8 @@
 package net.cpoa.factory;
 
+import net.cpoa.DAO.ClientDAO;
+import net.cpoa.DAO.Persistance;
+
 public abstract class DAOFactory {
 	
 	public static DAOFactory getDAOFactory(Persistance cible) {
@@ -8,11 +11,16 @@ public abstract class DAOFactory {
 		case MYSQL:
 		daoF = new MySQLDAOFactory();
 		break;
-		case ListeMemoire:
+		case LISTE_MEMOIRE:
 		daoF = new ListeMemoireDAOFactory();
 		break;
 		}
 		return daoF;
+		
+		}
+	public abstract ClientDAO getClientDAO();
+	}
+		
 
 
-}
+
