@@ -11,6 +11,18 @@ import net.cpoa.DAO.metier.RevueMetier;
 
 public class MySQLRevueDAO implements DAO<RevueMetier> {
 
+	private static MySQLRevueDAO instance;
+	
+	private MySQLRevueDAO() {}
+	
+	public static MySQLRevueDAO getInstance() {
+		if (instance==null) {
+		instance = new MySQLRevueDAO();
+		}
+		return instance;
+		}
+	
+	
 	@Override
 	public RevueMetier getById(int id) {
 		RevueMetier periodicite =null;

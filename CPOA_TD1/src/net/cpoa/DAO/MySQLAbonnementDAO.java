@@ -11,6 +11,18 @@ import net.cpoa.DAO.metier.AbonnementMetier;
 
 public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
 
+	private static MySQLAbonnementDAO instance;
+	
+	private MySQLAbonnementDAO() {}
+	
+	public static MySQLAbonnementDAO getInstance() {
+		if (instance==null) {
+		instance = new MySQLAbonnementDAO();
+		}
+		return instance;
+		}
+	
+	
 	@Override
 	public AbonnementMetier getById(int id) {
 		AbonnementMetier periodicite =null;

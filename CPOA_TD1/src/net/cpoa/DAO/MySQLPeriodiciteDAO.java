@@ -11,6 +11,17 @@ import net.cpoa.DAO.metier.PeriodiciteMetier;
 
 public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 
+	private static MySQLPeriodiciteDAO instance;
+	
+	private MySQLPeriodiciteDAO() {}
+	
+	public static MySQLPeriodiciteDAO getInstance() {
+		if (instance==null) {
+		instance = new MySQLPeriodiciteDAO();
+		}
+		return instance;
+		}
+	
 	@Override
 	public PeriodiciteMetier getById(int id) {
 		PeriodiciteMetier periodicite =null;

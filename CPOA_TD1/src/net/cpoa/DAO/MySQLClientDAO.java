@@ -11,6 +11,17 @@ import net.cpoa.DAO.metier.ClientMetier;
 
 public class MySQLClientDAO implements DAO<ClientMetier> {
 
+	private static MySQLClientDAO instance;
+	
+	private MySQLClientDAO() {}
+	
+	public static MySQLClientDAO getInstance() {
+		if (instance==null) {
+		instance = new MySQLClientDAO();
+		}
+		return instance;
+		}
+	
 	@Override
 	public ClientMetier getById(int id) {
 		ClientMetier periodicite =null;
