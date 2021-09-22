@@ -49,14 +49,20 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Client` (`id_client`, `voie`) VALUES (?, ?);");
+			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Client` (`id_client`, `nom`, `prenom`, `no_rue`, `voie`, `code_postal`, `ville`, `pays`) VALUES (?,?,?,?,?,?,?,?);");
 			requete.setInt(1, objet.getId());
-			requete.setString(2, objet.getVoie());
-			nbLignes = requete.executeUpdate();
+			requete.setString(2,objet.getNom());
+			requete.setString(3, objet.getPrenom());
+			requete.setInt(4, objet.getNo_rue());
+			requete.setString(5, objet.getVoie());
+			requete.setInt(6, objet.getCodepost());
+			requete.setString(7, objet.getVille());
+			requete.setString(8, objet.getPays());
 			
+			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
+			System.out.println("Pb create" + sqle.getMessage());
 		}
 		return nbLignes ==1;
 	 }
@@ -65,14 +71,20 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 	public boolean update(ClientMetier objet) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Client` SET `id_client` = ?, `voie` = ? WHERE `Client`.`id_client` = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Client` SET `id_client` = ?, `nom` = ?, `prenom` = ?, `no_rue` = ?, `voie` = ?, `code_postal` = ?, `ville` = ?, `pays` = ? WHERE `Client`.`id_client` = ?;");
 			requete.setInt(1,objet.getId());
-			requete.setString(2, objet.getVoie());
-			requete.setInt(3, objet.getId());
+			requete.setString(2,objet.getNom());
+			requete.setString(3, objet.getPrenom());
+			requete.setInt(4, objet.getNo_rue());
+			requete.setString(5, objet.getVoie());
+			requete.setInt(6, objet.getCodepost());
+			requete.setString(7, objet.getVille());
+			requete.setString(8, objet.getPays());
+			requete.setInt(9, objet.getId());
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
+			System.out.println("Pb update" + sqle.getMessage());
 		}		return false;
 	}
 
@@ -84,7 +96,7 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
+			System.out.println("Pb delete" + sqle.getMessage());
 		}
 	
 		return false;

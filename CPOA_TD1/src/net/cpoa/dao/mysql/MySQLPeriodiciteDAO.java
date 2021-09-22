@@ -52,11 +52,11 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Periodicite` (`id_periodicite`, `libelle`) VALUES (?, ?);");
 			requete.setInt(1, objet.getID());
 			requete.setString(2, objet.getLibelle());
-			nbLignes = requete.executeUpdate();
+			int res = requete.executeUpdate();
 			
 			
 		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
+			System.out.println("Pb create" + sqle.getMessage());
 		}
 		return nbLignes ==1;
 	 }
@@ -72,7 +72,7 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
+			System.out.println("Pb update" + sqle.getMessage());
 		}		return false;
 	}
 
@@ -84,7 +84,7 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
-			System.out.println("Pb select" + sqle.getMessage());
+			System.out.println("Pb delete" + sqle.getMessage());
 		}
 	
 		return false;

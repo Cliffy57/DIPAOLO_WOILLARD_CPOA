@@ -50,11 +50,14 @@ public class MySQLRevueDAO implements DAO<RevueMetier> {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Revue` (`id_revue`, `titre`) VALUES (?, ?);");
+			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Revue` (`id_revue`, `titre`, `description`, `tarif_numero`, `visuel`, `id_periodicite`) VALUES (?, ?, ?, ?, ? , ?);");
 			requete.setInt(1, objet.getId());
-			requete.setString(2, objet.getTitre());
-			nbLignes = requete.executeUpdate();
-			
+			requete.setString(2,objet.getTitre());
+			requete.setString(3, objet.getDescription());
+			requete.setFloat(4, objet.getTarif_numero());
+			requete.setString(5, objet.getVisuel());
+			requete.setInt(6, objet.getId_periodicite());
+			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb select" + sqle.getMessage());
@@ -67,9 +70,13 @@ public class MySQLRevueDAO implements DAO<RevueMetier> {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
-			requete.setInt(1,objet.getId());
-			requete.setString(2, objet.getTitre());
-			requete.setInt(3, objet.getId());
+			requete.setInt(1, objet.getId());
+			requete.setString(2,objet.getTitre());
+			requete.setString(3, objet.getDescription());
+			requete.setFloat(4, objet.getTarif_numero());
+			requete.setString(5, objet.getVisuel());
+			requete.setInt(6, objet.getId_periodicite());
+			requete.setInt(7, objet.getId());
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
