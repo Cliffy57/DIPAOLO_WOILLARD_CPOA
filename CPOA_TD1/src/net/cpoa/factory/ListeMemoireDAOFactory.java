@@ -1,6 +1,8 @@
 package net.cpoa.factory;
 
-import net.cpoa.DAO.ClientDAO;
+import net.cpoa.dao.PeriodiciteDAO;
+import net.cpoa.dao.listememoire.ListeMemoirePeriodiciteDAO;
+import net.cpoa.dao.ClientDAO;
 
 public class ListeMemoireDAOFactory extends
 DAOFactory {
@@ -9,7 +11,7 @@ public ClientDAO getClientDAO() {
 return ListeMemoireClientDAO.getInstance();
 }
 @Override
-public PromoDAO getPromoDAO() {
-return ListeMemoirePromoDAO.getInstance();
+public PeriodiciteDAO getPeriodiciteDAO() {
+return ListeMemoirePeriodiciteDAO.getInstance();
 }
 }

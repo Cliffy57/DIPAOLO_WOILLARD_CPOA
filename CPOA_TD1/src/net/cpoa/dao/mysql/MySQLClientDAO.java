@@ -1,4 +1,4 @@
-package net.cpoa.DAO;
+package net.cpoa.dao.mysql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,28 +7,28 @@ import java.sql.SQLException;
 
 
 import net.cpoa.Connexion;
-import net.cpoa.DAO.metier.RevueMetier;
+import net.cpoa.dao.DAO;
+import net.cpoa.dao.metier.ClientMetier;
 
-public class MySQLRevueDAO implements DAO<RevueMetier> {
+public class MySQLClientDAO implements DAO<ClientMetier> {
 
-	private static MySQLRevueDAO instance;
+	private static MySQLClientDAO instance;
 	
-	private MySQLRevueDAO() {}
+	private MySQLClientDAO() {}
 	
-	public static MySQLRevueDAO getInstance() {
+	public static MySQLClientDAO getInstance() {
 		if (instance==null) {
-		instance = new MySQLRevueDAO();
+		instance = new MySQLClientDAO();
 		}
 		return instance;
 		}
 	
-	
 	@Override
-	public RevueMetier getById(int id) {
-		RevueMetier periodicite =null;
+	public ClientMetier getById(int id) {
+		ClientMetier periodicite =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Revue where id_revue=?");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Client where id_client=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
 			if (res != null)
@@ -45,13 +45,13 @@ public class MySQLRevueDAO implements DAO<RevueMetier> {
 	}
 
 	@Override
-	public boolean create(RevueMetier objet) {
+	public boolean create(ClientMetier objet) {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Revue` (`id_revue`, `titre`) VALUES (?, ?);");
+			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Client` (`id_client`, `voie`) VALUES (?, ?);");
 			requete.setInt(1, objet.getId());
-			requete.setString(2, objet.getTitre());
+			requete.setString(2, objet.getVoie());
 			nbLignes = requete.executeUpdate();
 			
 			
@@ -62,12 +62,12 @@ public class MySQLRevueDAO implements DAO<RevueMetier> {
 	 }
 
 	@Override
-	public boolean update(RevueMetier objet) {
+	public boolean update(ClientMetier objet) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Client` SET `id_client` = ?, `voie` = ? WHERE `Client`.`id_client` = ?;");
 			requete.setInt(1,objet.getId());
-			requete.setString(2, objet.getTitre());
+			requete.setString(2, objet.getVoie());
 			requete.setInt(3, objet.getId());
 			int res = requete.executeUpdate();
 			
@@ -77,10 +77,10 @@ public class MySQLRevueDAO implements DAO<RevueMetier> {
 	}
 
 	@Override
-	public boolean delete(RevueMetier objet) {
+	public boolean delete(ClientMetier objet) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("delete from Revue where id_revue=" + objet.getId());
+			PreparedStatement requete = laConnexion.prepareStatement("delete from Client where id_client=" + objet.getId());
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {

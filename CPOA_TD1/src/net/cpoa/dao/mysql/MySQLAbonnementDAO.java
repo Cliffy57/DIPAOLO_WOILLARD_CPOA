@@ -1,4 +1,4 @@
-package net.cpoa.DAO;
+package net.cpoa.dao.mysql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,27 +7,29 @@ import java.sql.SQLException;
 
 
 import net.cpoa.Connexion;
-import net.cpoa.DAO.metier.ClientMetier;
+import net.cpoa.dao.DAO;
+import net.cpoa.dao.metier.AbonnementMetier;
 
-public class MySQLClientDAO implements DAO<ClientMetier> {
+public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
 
-	private static MySQLClientDAO instance;
+	private static MySQLAbonnementDAO instance;
 	
-	private MySQLClientDAO() {}
+	private MySQLAbonnementDAO() {}
 	
-	public static MySQLClientDAO getInstance() {
+	public static MySQLAbonnementDAO getInstance() {
 		if (instance==null) {
-		instance = new MySQLClientDAO();
+		instance = new MySQLAbonnementDAO();
 		}
 		return instance;
 		}
 	
+	
 	@Override
-	public ClientMetier getById(int id) {
-		ClientMetier periodicite =null;
+	public AbonnementMetier getById(int id) {
+		AbonnementMetier periodicite =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Client where id_client=?");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement where id_abonnement=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
 			if (res != null)
@@ -44,13 +46,13 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 	}
 
 	@Override
-	public boolean create(ClientMetier objet) {
+	public boolean create(AbonnementMetier objet) {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Client` (`id_client`, `voie`) VALUES (?, ?);");
+			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Abonnement` (`id_abonnement`, `voie`) VALUES (?, ?);");
 			requete.setInt(1, objet.getId());
-			requete.setString(2, objet.getVoie());
+			requete.setInt(2, objet.getIDClient());
 			nbLignes = requete.executeUpdate();
 			
 			
@@ -61,12 +63,12 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 	 }
 
 	@Override
-	public boolean update(ClientMetier objet) {
+	public boolean update(AbonnementMetier objet) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Client` SET `id_client` = ?, `voie` = ? WHERE `Client`.`id_client` = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Abonnement` SET `id_abonnement` = ?, `voie` = ? WHERE `Abonnement`.`id_abonnement` = ?;");
 			requete.setInt(1,objet.getId());
-			requete.setString(2, objet.getVoie());
+			requete.setInt(2, objet.getIDClient());
 			requete.setInt(3, objet.getId());
 			int res = requete.executeUpdate();
 			
@@ -76,10 +78,10 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 	}
 
 	@Override
-	public boolean delete(ClientMetier objet) {
+	public boolean delete(AbonnementMetier objet) {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("delete from Client where id_client=" + objet.getId());
+			PreparedStatement requete = laConnexion.prepareStatement("delete from Abonnement where id_abonnement=" + objet.getId());
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {

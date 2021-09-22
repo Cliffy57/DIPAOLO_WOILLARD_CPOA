@@ -1,4 +1,4 @@
-package net.cpoa.DAO.metier;
+package net.cpoa.dao.metier;
 
 public class RevueMetier {
 	

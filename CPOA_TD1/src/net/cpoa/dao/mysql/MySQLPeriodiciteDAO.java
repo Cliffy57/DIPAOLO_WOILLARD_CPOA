@@ -1,4 +1,4 @@
-package net.cpoa.DAO;
+package net.cpoa.dao.mysql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,8 @@ import java.sql.SQLException;
 
 
 import net.cpoa.Connexion;
-import net.cpoa.DAO.metier.PeriodiciteMetier;
+import net.cpoa.dao.DAO;
+import net.cpoa.dao.metier.PeriodiciteMetier;
 
 public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 

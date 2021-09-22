@@ -1,4 +1,4 @@
-package net.cpoa.DAO;
+package net.cpoa.dao;
 
 public interface DAO<T> {
 

@@ -1,7 +1,7 @@
 package net.cpoa.factory;
 
-import net.cpoa.DAO.ClientDAO;
-import net.cpoa.DAO.Persistance;
+import net.cpoa.dao.ClientDAO;
+import net.cpoa.dao.Persistance;
 
 public abstract class DAOFactory {
 	
