@@ -1,4 +1,4 @@
-package net.cpoa.dao.metier;
+package dao.metier;
 
 import java.time.LocalDate;
 

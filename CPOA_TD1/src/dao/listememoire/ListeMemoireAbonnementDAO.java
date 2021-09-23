@@ -1,4 +1,4 @@
-package net.cpoa.dao.listememoire;
+package dao.listememoire;
 
 public class ListeMemoireAbonnementDAO {
 

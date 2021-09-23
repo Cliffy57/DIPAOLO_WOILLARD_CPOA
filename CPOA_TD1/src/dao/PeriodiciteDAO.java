@@ -1,4 +1,4 @@
-package net.cpoa.dao;
+package dao;
 
 public interface PeriodiciteDAO {
 

@@ -1,7 +1,7 @@
-package net.cpoa.factory;
+package dao.factory;
 
-import net.cpoa.dao.ClientDAO;
-import net.cpoa.dao.mysql.MySQLClientDAO;
+import dao.ClientDAO;
+import dao.mysql.MySQLClientDAO;
 
 public class MySQLDAOFactory extends DAOFactory {
 	

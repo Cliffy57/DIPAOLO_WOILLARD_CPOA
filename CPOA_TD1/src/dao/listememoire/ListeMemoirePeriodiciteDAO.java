@@ -1,9 +1,9 @@
-package net.cpoa.dao.listememoire;
+package dao.listememoire;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import net.cpoa.dao.PeriodiciteDAO;
+import dao.PeriodiciteDAO;
 import modele.Periodicite;
 
 public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {

@@ -1,13 +1,13 @@
-package net.cpoa.dao.mysql;
+package dao.mysql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import dao.DAO;
+import dao.metier.AbonnementMetier;
 import net.cpoa.Connexion;
-import net.cpoa.dao.DAO;
-import net.cpoa.dao.metier.AbonnementMetier;
 
 public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
 

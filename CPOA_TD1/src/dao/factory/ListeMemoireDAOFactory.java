@@ -1,8 +1,8 @@
-package net.cpoa.factory;
+package dao.factory;
 
-import net.cpoa.dao.PeriodiciteDAO;
-import net.cpoa.dao.listememoire.ListeMemoirePeriodiciteDAO;
-import net.cpoa.dao.ClientDAO;
+import dao.ClientDAO;
+import dao.PeriodiciteDAO;
+import dao.listememoire.ListeMemoirePeriodiciteDAO;
 
 public class ListeMemoireDAOFactory extends
 DAOFactory {
