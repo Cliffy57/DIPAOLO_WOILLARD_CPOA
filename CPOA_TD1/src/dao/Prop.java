@@ -13,7 +13,7 @@ public class Prop {
 	{
 	try {
 	FileInputStream source = new FileInputStream(fBdd);
-	accesBdd.loadFromXML(source);
+	accesBdd.loadFromXML(source); 
 	} catch (IOException ioe) {
 	ioe.printStackTrace();
 	}
