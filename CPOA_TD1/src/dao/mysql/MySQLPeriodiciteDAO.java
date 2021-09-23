@@ -6,10 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dao.DAO;
+import dao.PeriodiciteDAO;
 import dao.metier.PeriodiciteMetier;
 import net.cpoa.Connexion;
 
-public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
+public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 
 	private static MySQLPeriodiciteDAO instance;
 	

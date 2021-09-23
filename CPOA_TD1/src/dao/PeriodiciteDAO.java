@@ -1,5 +1,7 @@
 package dao;
 
-public interface PeriodiciteDAO {
+import dao.metier.PeriodiciteMetier;
+
+public interface PeriodiciteDAO extends DAO<PeriodiciteMetier>{
 
 }

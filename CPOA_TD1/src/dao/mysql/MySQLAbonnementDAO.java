@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import dao.AbonnementDAO;
 import dao.DAO;
 import dao.metier.AbonnementMetier;
 import net.cpoa.Connexion;
 
-public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
+public class MySQLAbonnementDAO implements AbonnementDAO {
 
 	private static MySQLAbonnementDAO instance;
 

@@ -1,6 +1,8 @@
 package dao;
 
-public interface ClientDAO {
+import dao.metier.AbonnementMetier;
+import dao.metier.ClientMetier;
 
-	public int getId();
+public interface ClientDAO extends DAO<ClientMetier> {
+
 }

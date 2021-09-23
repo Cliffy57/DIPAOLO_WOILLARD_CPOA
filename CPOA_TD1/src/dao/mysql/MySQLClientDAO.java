@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import dao.ClientDAO;
 import dao.DAO;
 import dao.metier.ClientMetier;
 import net.cpoa.Connexion;
 
-public class MySQLClientDAO implements DAO<ClientMetier> {
+public class MySQLClientDAO implements ClientDAO {
 
 	private static MySQLClientDAO instance;
 	
