@@ -57,7 +57,7 @@ public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
 			requete.setDate(3, java.sql.Date.valueOf(objet.getDateFin()));
 			requete.setInt(4, objet.getIDClient());
 			requete.setInt(5, objet.getIDRevue());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 
 		} catch (SQLException sqle) {
 			System.out.println("Pb create " + sqle.getMessage());
@@ -67,6 +67,7 @@ public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
 
 	@Override
 	public boolean update(AbonnementMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement(
@@ -77,27 +78,28 @@ public class MySQLAbonnementDAO implements DAO<AbonnementMetier> {
 			requete.setInt(4, objet.getIDClient());
 			requete.setInt(5, objet.getIDRevue());
 			requete.setInt(6, objet.getId());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 
 		} catch (SQLException sqle) {
 			System.out.println("Pb update " + sqle.getMessage());
 		}
-		return false;
+		return nbLignes == 1;
 	}
 
 	@Override
 	public boolean delete(AbonnementMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion
 					.prepareStatement("delete from Abonnement where id_abonnement=" + objet.getId());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 
 		} catch (SQLException sqle) {
 			System.out.println("Pb delete " + sqle.getMessage());
 		}
 
-		return false;
+		return nbLignes == 1;
 	}
 
 }

@@ -51,7 +51,7 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Periodicite` (`id_periodicite`, `libelle`) VALUES (?, ?);");
 			requete.setInt(1, objet.getID());
 			requete.setString(2, objet.getLibelle());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 			
 		} catch (SQLException sqle) {
@@ -62,31 +62,33 @@ public class MySQLPeriodiciteDAO implements DAO<PeriodiciteMetier> {
 
 	@Override
 	public boolean update(PeriodiciteMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Periodicite` SET `id_periodicite` = ?, `libelle` = ? WHERE `Periodicite`.`id_periodicite` = ?;");
 			requete.setInt(1,objet.getID());
 			requete.setString(2, objet.getLibelle());
 			requete.setInt(3, objet.getID());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb update" + sqle.getMessage());
-		}		return false;
+		}		return nbLignes == 1;
 	}
 
 	@Override
 	public boolean delete(PeriodiciteMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("delete from Periodicite where id_periodicite=" + objet.getID());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb delete" + sqle.getMessage());
 		}
 	
-		return false;
+		return nbLignes == 1;
 	}
 
 	

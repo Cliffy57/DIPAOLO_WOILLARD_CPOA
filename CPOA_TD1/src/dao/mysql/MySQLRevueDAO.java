@@ -66,6 +66,7 @@ public class MySQLRevueDAO implements DAO<RevueMetier> {
 
 	@Override
 	public boolean update(RevueMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
@@ -76,25 +77,26 @@ public class MySQLRevueDAO implements DAO<RevueMetier> {
 			requete.setString(5, objet.getVisuel());
 			requete.setInt(6, objet.getId_periodicite());
 			requete.setInt(7, objet.getId());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb select" + sqle.getMessage());
-		}		return false;
+		}		return nbLignes ==1;
 	}
 
 	@Override
 	public boolean delete(RevueMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("delete from Revue where id_revue=" + objet.getId());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb select" + sqle.getMessage());
 		}
 	
-		return false;
+		return nbLignes ==1;
 	}
 
 	

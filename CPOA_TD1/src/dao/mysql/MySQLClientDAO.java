@@ -58,7 +58,7 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 			requete.setString(7, objet.getVille());
 			requete.setString(8, objet.getPays());
 			
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb create" + sqle.getMessage());
@@ -68,6 +68,7 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 
 	@Override
 	public boolean update(ClientMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Client` SET `id_client` = ?, `nom` = ?, `prenom` = ?, `no_rue` = ?, `voie` = ?, `code_postal` = ?, `ville` = ?, `pays` = ? WHERE `Client`.`id_client` = ?;");
@@ -80,25 +81,27 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 			requete.setString(7, objet.getVille());
 			requete.setString(8, objet.getPays());
 			requete.setInt(9, objet.getId());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb update" + sqle.getMessage());
-		}		return false;
+		}		
+		return nbLignes == 1;
 	}
 
 	@Override
 	public boolean delete(ClientMetier objet) {
+		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("delete from Client where id_client=" + objet.getId());
-			int res = requete.executeUpdate();
+			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
 			System.out.println("Pb delete" + sqle.getMessage());
 		}
 	
-		return false;
+		return nbLignes == 1;
 	}
 
 	
