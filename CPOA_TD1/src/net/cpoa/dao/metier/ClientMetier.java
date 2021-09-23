@@ -68,6 +68,7 @@ public class ClientMetier {
 		this.ville = ville;
 		this.pays = pays;
 	}
+	
 	@Override
 	public String toString() {
 		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", no_rue=" + no_rue + ", voie=" + voie

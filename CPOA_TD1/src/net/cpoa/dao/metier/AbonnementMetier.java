@@ -58,4 +58,10 @@ public class AbonnementMetier {
 		IDRevue = iDRevue;
 	}
 
+	@Override
+	public String toString() {
+		return "AbonnementMetier [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", IDClient="
+				+ IDClient + ", IDRevue=" + IDRevue + "]";
+	}
+
 }

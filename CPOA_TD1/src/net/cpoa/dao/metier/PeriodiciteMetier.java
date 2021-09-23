@@ -5,12 +5,6 @@ public class PeriodiciteMetier
     private int ID;
     private String libelle;
 
-    public PeriodiciteMetier(int id, String libelle)
-    {
-        this.setID(id);
-        this.setLibelle(libelle);
-    }
-
     public int getID() {
         return ID;
     }
@@ -24,6 +18,12 @@ public class PeriodiciteMetier
         this.libelle = libelle;
     }
 
+    public PeriodiciteMetier(int id, String libelle)
+    {
+        this.setID(id);
+        this.setLibelle(libelle);
+    }
+    
     @Override
     public String toString() {
         return "Periodicite [ID=" + ID + ", libelle=" + libelle + "]";

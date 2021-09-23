@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CPOA_TD1/src"/>
+	<classpathentry kind="src" path="PRJTD2_DIPAOLO_WOILLARD/DIPAOLO_WOILLARD_CPOA-main/CPOA_TD1/src"/>
+	<classpathentry kind="src" path="PRJTD2_DIPAOLO_WOILLARD/src"/>
+	<classpathentry kind="output" path="CPOA_TD1/bin"/>
+</classpath>
