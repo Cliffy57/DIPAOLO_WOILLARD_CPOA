@@ -69,6 +69,10 @@ public class ClientMetier {
 		this.pays = pays;
 	}
 	
+	 public ClientMetier() {
+		this.id = -1;
+	}
+	
 	@Override
 	public String toString() {
 		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", no_rue=" + no_rue + ", voie=" + voie
