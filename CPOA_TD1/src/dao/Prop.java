@@ -11,7 +11,7 @@ public class Prop {
 	Properties accesBdd = new Properties();
 	File fBdd = new File("config/bdd.properties");
 	{
-	try {
+	try { 
 	FileInputStream source = new FileInputStream(fBdd);
 	accesBdd.loadFromXML(source); 
 	} catch (IOException ioe) {
