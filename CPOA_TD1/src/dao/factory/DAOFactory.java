@@ -1,6 +1,6 @@
 package dao.factory;
 
-import dao.ClientDAO;
+import dao.*;
 import dao.Persistance;
 
 public abstract class DAOFactory {
@@ -19,5 +19,8 @@ public abstract class DAOFactory {
 
 	}
 
+	public abstract AbonnementDAO getAbonnementDAO();
 	public abstract ClientDAO getClientDAO();
+	public abstract PeriodiciteDAO getPeriodiciteDAO();
+	public abstract RevueDAO getRevueDAO();
 }

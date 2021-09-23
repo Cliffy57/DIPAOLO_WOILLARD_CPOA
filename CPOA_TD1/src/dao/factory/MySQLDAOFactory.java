@@ -1,17 +1,32 @@
 package dao.factory;
 
-import dao.ClientDAO;
-import dao.mysql.MySQLClientDAO;
+import dao.*;
+import dao.mysql.*;
 
 public class MySQLDAOFactory extends DAOFactory {
-	
+
+	@Override
+	public AbonnementDAO getAbonnementDAO() {
+		
+		return MySQLAbonnementDAO.getInstance();
+	}
+
 	@Override
 	public ClientDAO getClientDAO() {
+		
 		return MySQLClientDAO.getInstance();
 	}
-	
+
 	@Override
-	public PromoDAO getPromoDAO() {
-		return MySQLPromoDAO.getInstance();
+	public PeriodiciteDAO getPeriodiciteDAO() {
+		
+		return MySQLPeriodiciteDAO.getInstance();
 	}
+
+	@Override
+	public RevueDAO getRevueDAO() {
+		
+		return MySQLRevueDAO.getInstance();
+	}
+	
 }
