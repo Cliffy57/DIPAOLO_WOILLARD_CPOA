@@ -1,5 +1,10 @@
 package dao.metier;
 
+import java.util.Scanner;
+
+import dao.Persistance;
+import dao.factory.DAOFactory;
+
 public class ClientMetier {
 	private int id;
 	private String nom;
@@ -78,4 +83,6 @@ public class ClientMetier {
 		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", no_rue=" + no_rue + ", voie=" + voie
 				+ ", codepost=" + codepost + ", ville=" + ville + ", pays=" + pays + "]";
 	}
+	
+
 }
