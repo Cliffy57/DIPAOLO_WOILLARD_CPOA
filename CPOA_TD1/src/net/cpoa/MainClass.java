@@ -24,7 +24,7 @@ public class MainClass {
 				Abonnement.launch();
 				break;
 			case 2:
-				Clientlaunch();
+				ClientMetier.clientLaunchSQL();
 				break;
 			case 3:
 				Periodicite.launch();

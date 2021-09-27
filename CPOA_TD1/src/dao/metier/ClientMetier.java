@@ -84,7 +84,7 @@ public class ClientMetier {
 				+ ", codepost=" + codePost + ", ville=" + ville + ", pays=" + pays + "]";
 	}
 	
-	public static void ClientlaunchSQL() {
+	public static void clientLaunchSQL() {
 		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.MYSQL);
 		System.out.println("Voulez-vous :\n"
 				+ "(1) Ajouter\n"
@@ -95,7 +95,7 @@ public class ClientMetier {
 		switch (res) {
 		case 1:
 				System.out.println("Saisissez la valeur de l'ID\n");
-				int ID = scanner.nextInt();
+				int id = scanner.nextInt();
 				System.out.println("Saisissez la valeur du nom\n");
 				String nom  = scanner.next().trim();
 				System.out.println("Saisissez la valeur du prenom\n");
@@ -110,7 +110,7 @@ public class ClientMetier {
 				String ville  = scanner.next().trim();
 				System.out.println("Saisissez la valeur du pays\n");
 				String pays  = scanner.next().trim();
-				factory.getClientDAO().create(new ClientMetier(ID, nom, prenom, no_rue, voie, codepost, ville, pays));
+				factory.getClientDAO().create(new ClientMetier(id, nom, prenom, no_rue, voie, codepost, ville, pays));
 			break;
 		case 2:
 			

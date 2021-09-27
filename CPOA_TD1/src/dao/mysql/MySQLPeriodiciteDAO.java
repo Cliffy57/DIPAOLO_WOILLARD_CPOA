@@ -4,11 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import dao.DAO;
 import dao.PeriodiciteDAO;
+import dao.Persistance;
+import dao.factory.DAOFactory;
 import dao.metier.PeriodiciteMetier;
 import net.cpoa.Connexion;
+import net.cpoa.Periodicite.AjouterPeriodicite;
+import net.cpoa.Periodicite.ModifierPeriodicite;
+import net.cpoa.Periodicite.SupprimerPeriodicite;
 
 public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 
