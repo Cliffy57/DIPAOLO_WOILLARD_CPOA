@@ -1,12 +1,8 @@
 package dao.mysql;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 import dao.ClientDAO;
-import dao.DAO;
 import dao.metier.ClientMetier;
 import net.cpoa.Connexion;
 
@@ -38,9 +34,9 @@ public class MySQLClientDAO implements ClientDAO {
 				client.setId(res.getInt("id_client"));
 				client.setNom(res.getString("nom"));
 				client.setPrenom(res.getString("prenom"));
-				client.setNo_rue(res.getInt("no_rue"));
+				client.setNoRue(res.getInt("no_rue"));
 				client.setVoie(res.getString("voie"));
-				client.setCodepost(res.getInt("code_postal"));
+				client.setCodePost(res.getInt("code_postal"));
 				client.setVille(res.getString("ville"));
 				client.setPays(res.getString("pays"));
 				return client;
@@ -68,9 +64,9 @@ public class MySQLClientDAO implements ClientDAO {
 			requete.setInt(1, objet.getId());
 			requete.setString(2,objet.getNom());
 			requete.setString(3, objet.getPrenom());
-			requete.setInt(4, objet.getNo_rue());
+			requete.setInt(4, objet.getNoRue());
 			requete.setString(5, objet.getVoie());
-			requete.setInt(6, objet.getCodepost());
+			requete.setInt(6, objet.getCodePost());
 			requete.setString(7, objet.getVille());
 			requete.setString(8, objet.getPays());
 			
@@ -91,9 +87,9 @@ public class MySQLClientDAO implements ClientDAO {
 			requete.setInt(1,objet.getId());
 			requete.setString(2,objet.getNom());
 			requete.setString(3, objet.getPrenom());
-			requete.setInt(4, objet.getNo_rue());
+			requete.setInt(4, objet.getNoRue());
 			requete.setString(5, objet.getVoie());
-			requete.setInt(6, objet.getCodepost());
+			requete.setInt(6, objet.getCodePost());
 			requete.setString(7, objet.getVille());
 			requete.setString(8, objet.getPays());
 			requete.setInt(9, objet.getId());

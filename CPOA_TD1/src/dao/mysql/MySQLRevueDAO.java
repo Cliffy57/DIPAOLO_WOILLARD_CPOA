@@ -54,9 +54,9 @@ public class MySQLRevueDAO implements RevueDAO {
 			requete.setInt(1, objet.getId());
 			requete.setString(2,objet.getTitre());
 			requete.setString(3, objet.getDescription());
-			requete.setFloat(4, objet.getTarif_numero());
+			requete.setFloat(4, objet.getTarifNumero());
 			requete.setString(5, objet.getVisuel());
-			requete.setInt(6, objet.getId_periodicite());
+			requete.setInt(6, objet.getIdPeriodicite());
 			int res = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
@@ -74,9 +74,9 @@ public class MySQLRevueDAO implements RevueDAO {
 			requete.setInt(1, objet.getId());
 			requete.setString(2,objet.getTitre());
 			requete.setString(3, objet.getDescription());
-			requete.setFloat(4, objet.getTarif_numero());
+			requete.setFloat(4, objet.getTarifNumero());
 			requete.setString(5, objet.getVisuel());
-			requete.setInt(6, objet.getId_periodicite());
+			requete.setInt(6, objet.getIdPeriodicite());
 			requete.setInt(7, objet.getId());
 			nbLignes = requete.executeUpdate();
 			
