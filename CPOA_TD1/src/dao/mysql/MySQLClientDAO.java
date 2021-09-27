@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import dao.ClientDAO;
 import dao.DAO;
 import dao.metier.ClientMetier;
 import net.cpoa.Connexion;
 
-public class MySQLClientDAO implements DAO<ClientMetier> {
+public class MySQLClientDAO implements ClientDAO {
 
 	private static MySQLClientDAO instance;
 	
@@ -24,12 +25,27 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 	
 	@Override
 	public ClientMetier getById(int id) {
-		ClientMetier periodicite =null;
+		ClientMetier client =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Client where id_client=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			
+			if(res.next())
+			{
+				client = new ClientMetier();
+				client.setId(res.getInt("id_client"));
+				client.setNom(res.getString("nom"));
+				client.setPrenom(res.getString("prenom"));
+				client.setNo_rue(res.getInt("no_rue"));
+				client.setVoie(res.getString("voie"));
+				client.setCodepost(res.getInt("code_postal"));
+				client.setVille(res.getString("ville"));
+				client.setPays(res.getString("pays"));
+				return client;
+				
+			}
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -40,7 +56,7 @@ public class MySQLClientDAO implements DAO<ClientMetier> {
 				System.out.println("Pb dans select " + sqle.getMessage());
 			}
 		
-		return periodicite;
+		return client;
 	}
 
 	@Override

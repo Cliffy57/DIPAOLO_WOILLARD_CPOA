@@ -1,5 +1,7 @@
 package dao;
 
-public interface RevueDAO {
+import dao.metier.RevueMetier;
+
+public interface RevueDAO extends DAO<RevueMetier>{
 
 }

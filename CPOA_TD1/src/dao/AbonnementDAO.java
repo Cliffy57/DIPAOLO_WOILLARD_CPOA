@@ -1,5 +1,7 @@
 package dao;
 
-public interface AbonnementDAO {
+import dao.metier.AbonnementMetier;
+
+public interface AbonnementDAO extends DAO<AbonnementMetier>{
 
 }

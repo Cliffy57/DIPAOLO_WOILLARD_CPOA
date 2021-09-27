@@ -10,7 +10,7 @@ public class Connexion {
 		"jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/dipaolo6u_cpoatdun";
 		url += "?serverTimezone=Europe/Paris";
 		String login = "dipaolo6u_appli";
-		String pwd = ""; 
+		String pwd = "MmVay9SPfJ"; 
 		Connection maConnexion = null;
 		try { 
 		maConnexion = DriverManager.getConnection(url, login, pwd);
@@ -73,8 +73,8 @@ public class Connexion {
 		
 		Connexion laConnexion=new Connexion();
 		Connexion.creeConnexion();
-		laConnexion.uneRequete();
-		//laConnexion.insertPeriodicite("1", "TestTechnique");
+//		laConnexion.uneRequete();
+	//	laConnexion.insertPeriodicite("1", "TestTechnique");
 		//laConnexion.insertPeriodicite("2", "Javanais");
 		//laConnexion.deletePeriodicite("2");
 		//laConnexion.modifiePeriodicite(2, "Jacob", 1);

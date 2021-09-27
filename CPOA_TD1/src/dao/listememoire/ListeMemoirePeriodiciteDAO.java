@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.PeriodiciteDAO;
-import modele.Periodicite;
+import dao.metier.PeriodiciteMetier;
 
 public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 
 	private static ListeMemoirePeriodiciteDAO instance;
 
-	private List<Periodicite> donnees;
+	private List<PeriodiciteMetier> donnees;
 
 
 	public static ListeMemoirePeriodiciteDAO getInstance() {
@@ -24,21 +24,21 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 
 	private ListeMemoirePeriodiciteDAO() {
 
-		this.donnees = new ArrayList<Periodicite>();
+		this.donnees = new ArrayList<PeriodiciteMetier>();
 
-		this.donnees.add(new Periodicite(1, "Mensuel"));
-		this.donnees.add(new Periodicite(2, "Quotidien"));
+		this.donnees.add(new PeriodiciteMetier(1, "Mensuel"));
+		this.donnees.add(new PeriodiciteMetier(2, "Quotidien"));
 	}
 
 
 	@Override
-	public boolean create(Periodicite objet) {
+	public boolean create(PeriodiciteMetier objet) {
 
-		objet.setId(3);
+		objet.setID(3);
 		// Ne fonctionne que si l'objet métier est bien fait...
 		while (this.donnees.contains(objet)) {
 
-			objet.setId(objet.getId() + 1);
+			objet.setID(objet.getID() + 1);
 		}
 		boolean ok = this.donnees.add(objet);
 		
@@ -46,7 +46,7 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	}
 
 	@Override
-	public boolean update(Periodicite objet) {
+	public boolean update(PeriodiciteMetier objet) {
 		
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
@@ -61,9 +61,9 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	}
 
 	@Override
-	public boolean delete(Periodicite objet) {
+	public boolean delete(PeriodiciteMetier objet) {
 
-		Periodicite supprime;
+		PeriodiciteMetier supprime;
 		
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
@@ -77,9 +77,9 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	}
 
 	@Override
-	public Periodicite getById(int id) {
+	public PeriodiciteMetier getById(int id) {
 		// Ne fonctionne que si l'objet métier est bien fait...
-		int idx = this.donnees.indexOf(new Periodicite(id, "test"));
+		int idx = this.donnees.indexOf(new PeriodiciteMetier(id, "test"));
 		if (idx == -1) {
 			throw new IllegalArgumentException("Aucun objet ne possède cet identifiant");
 		} else {
@@ -88,7 +88,9 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	}
 
 	@Override
-	public ArrayList<Periodicite> findAll() {
-		return (ArrayList<Periodicite>) this.donnees;
+	public ArrayList<PeriodiciteMetier> findAll() {
+		return (ArrayList<PeriodiciteMetier>) this.donnees;
 	}
+
+
 }

@@ -6,10 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dao.DAO;
+import dao.RevueDAO;
 import dao.metier.RevueMetier;
 import net.cpoa.Connexion;
 
-public class MySQLRevueDAO implements DAO<RevueMetier> {
+public class MySQLRevueDAO implements RevueDAO {
 
 	private static MySQLRevueDAO instance;
 	
