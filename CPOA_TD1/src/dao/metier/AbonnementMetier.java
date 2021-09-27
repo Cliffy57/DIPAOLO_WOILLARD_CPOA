@@ -7,15 +7,15 @@ public class AbonnementMetier {
 	private int id;
 	private LocalDate dateDebut;
 	private LocalDate dateFin;
-	private int IDClient;
-	private int IDRevue;
+	private int idClient;
+	private int idRevue;
 
 	public AbonnementMetier(int id, LocalDate dateDebut, LocalDate dateFin, int IDClient, int IDRevue) {
 		this.id = id;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
-		this.IDClient = IDClient;
-		this.IDRevue = IDRevue;
+		this.idClient = IDClient;
+		this.idRevue = IDRevue;
 	}
 
 	public int getId() {
@@ -43,25 +43,25 @@ public class AbonnementMetier {
 	}
 
 	public int getIDClient() {
-		return IDClient;
+		return idClient;
 	}
 
 	public void setIDClient(int iDClient) {
-		IDClient = iDClient;
+		idClient = iDClient;
 	}
 
 	public int getIDRevue() {
-		return IDRevue;
+		return idRevue;
 	}
 
 	public void setIDRevue(int iDRevue) {
-		IDRevue = iDRevue;
+		idRevue = iDRevue;
 	}
 
 	@Override
 	public String toString() {
 		return "AbonnementMetier [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", IDClient="
-				+ IDClient + ", IDRevue=" + IDRevue + "]";
+				+ idClient + ", IDRevue=" + idRevue + "]";
 	}
 
 }
