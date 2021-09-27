@@ -42,19 +42,19 @@ public class AbonnementMetier {
 		this.dateFin = dateFin;
 	}
 
-	public int getIDClient() {
+	public int getIdClient() {
 		return idClient;
 	}
 
-	public void setIDClient(int iDClient) {
+	public void setIdClient(int iDClient) {
 		idClient = iDClient;
 	}
 
-	public int getIDRevue() {
+	public int getIdRevue() {
 		return idRevue;
 	}
 
-	public void setIDRevue(int iDRevue) {
+	public void setIdRevue(int iDRevue) {
 		idRevue = iDRevue;
 	}
 

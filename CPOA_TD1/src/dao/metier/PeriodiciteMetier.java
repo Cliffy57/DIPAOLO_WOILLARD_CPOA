@@ -2,14 +2,14 @@ package dao.metier;
 
 public class PeriodiciteMetier 
 {
-    private int ID;
+    private int id;
     private String libelle;
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
-    public void setID(int iD) {
-        ID = iD;
+    public void setId(int id) {
+        this.id = id;
     }
     public String getLibelle() {
         return libelle;
@@ -20,13 +20,13 @@ public class PeriodiciteMetier
 
     public PeriodiciteMetier(int id, String libelle)
     {
-        this.setID(id);
+        this.setId(id);
         this.setLibelle(libelle);
     }
     
     @Override
     public String toString() {
-        return "Periodicite [ID=" + ID + ", libelle=" + libelle + "]";
+        return "Periodicite [ID=" + id + ", libelle=" + libelle + "]";
     }
 
 

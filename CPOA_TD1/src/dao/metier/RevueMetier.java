@@ -5,9 +5,10 @@ public class RevueMetier {
 	private int id;
 	private String titre;
 	private String description;
-	private float tarif_numero;
+	private float tarifNumero;
 	private String visuel;
-	private int id_periodicite;
+	private int idPeriodicite;
+	
 	public int getId() {
 		return id;
 	}
@@ -26,11 +27,11 @@ public class RevueMetier {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public float getTarif_numero() {
-		return tarif_numero;
+	public float getTarifNumero() {
+		return tarifNumero;
 	}
-	public void setTarif_numero(float tarif_numero) {
-		this.tarif_numero = tarif_numero;
+	public void setTarifNumero(float tarifNumero) {
+		this.tarifNumero = tarifNumero;
 	}
 	public String getVisuel() {
 		return visuel;
@@ -38,24 +39,24 @@ public class RevueMetier {
 	public void setVisuel(String visuel) {
 		this.visuel = visuel;
 	}
-	public int getId_periodicite() {
-		return id_periodicite;
+	public int getIdPeriodicite() {
+		return idPeriodicite;
 	}
-	public void setId_periodicite(int id_periodicite) {
-		this.id_periodicite = id_periodicite;
+	public void setIdPeriodicite(int idPeriodicite) {
+		this.idPeriodicite = idPeriodicite;
 	}
-	public RevueMetier(int id , String description, String titre , int tarif_numero,String visuel,int id_periodicite) {
+	public RevueMetier(int id , String description, String titre , int tarifNumero,String visuel,int idPeriodicite) {
 		this.id=id;
 		this.description=description;
 		this.titre=titre;
 		this.visuel=visuel;
-		this.tarif_numero=tarif_numero;
-		this.id_periodicite=id_periodicite;
+		this.tarifNumero=tarifNumero;
+		this.idPeriodicite=idPeriodicite;
 	}
 	@Override 
 	public String toString() {
-		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero=" + tarif_numero + ", visuel=" + visuel
-				+ ", id_periodicite=" + id_periodicite +"]";
+		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero=" + tarifNumero + ", visuel=" + visuel
+				+ ", id_periodicite=" + idPeriodicite +"]";
 	}
 	
 	
