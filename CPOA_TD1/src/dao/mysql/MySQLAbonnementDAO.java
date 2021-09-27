@@ -56,8 +56,8 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 			requete.setInt(1, objet.getId());
 			requete.setDate(2, java.sql.Date.valueOf(objet.getDateDebut()));
 			requete.setDate(3, java.sql.Date.valueOf(objet.getDateFin()));
-			requete.setInt(4, objet.getIDClient());
-			requete.setInt(5, objet.getIDRevue());
+			requete.setInt(4, objet.getIdClient());
+			requete.setInt(5, objet.getIdRevue());
 			nbLignes = requete.executeUpdate();
 
 		} catch (SQLException sqle) {
@@ -76,8 +76,8 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 			requete.setInt(1, objet.getId());
 			requete.setDate(2, java.sql.Date.valueOf(objet.getDateDebut()));
 			requete.setDate(3, java.sql.Date.valueOf(objet.getDateFin()));
-			requete.setInt(4, objet.getIDClient());
-			requete.setInt(5, objet.getIDRevue());
+			requete.setInt(4, objet.getIdClient());
+			requete.setInt(5, objet.getIdRevue());
 			requete.setInt(6, objet.getId());
 			nbLignes = requete.executeUpdate();
 

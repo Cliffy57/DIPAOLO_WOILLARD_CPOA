@@ -1,13 +1,19 @@
 package dao.metier;
 
+import java.util.Scanner;
+
+import dao.Persistance;
+import dao.factory.DAOFactory;
+
 public class RevueMetier {
 	
 	private int id;
 	private String titre;
 	private String description;
-	private float tarif_numero;
+	private float tarifNumero;
 	private String visuel;
-	private int id_periodicite;
+	private int idPeriodicite;
+	
 	public int getId() {
 		return id;
 	}
@@ -26,11 +32,11 @@ public class RevueMetier {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public float getTarif_numero() {
-		return tarif_numero;
+	public float getTarifNumero() {
+		return tarifNumero;
 	}
-	public void setTarif_numero(float tarif_numero) {
-		this.tarif_numero = tarif_numero;
+	public void setTarifNumero(float tarifNumero) {
+		this.tarifNumero = tarifNumero;
 	}
 	public String getVisuel() {
 		return visuel;
@@ -38,25 +44,82 @@ public class RevueMetier {
 	public void setVisuel(String visuel) {
 		this.visuel = visuel;
 	}
-	public int getId_periodicite() {
-		return id_periodicite;
+	public int getIdPeriodicite() {
+		return idPeriodicite;
 	}
-	public void setId_periodicite(int id_periodicite) {
-		this.id_periodicite = id_periodicite;
+	public void setIdPeriodicite(int idPeriodicite) {
+		this.idPeriodicite = idPeriodicite;
 	}
-	public RevueMetier(int id , String description, String titre , int tarif_numero,String visuel,int id_periodicite) {
+	public RevueMetier(int id , String description, String titre , float tarifNumero,String visuel,int idPeriodicite) {
 		this.id=id;
 		this.description=description;
 		this.titre=titre;
 		this.visuel=visuel;
-		this.tarif_numero=tarif_numero;
-		this.id_periodicite=id_periodicite;
+		this.tarifNumero=tarifNumero;
+		this.idPeriodicite=idPeriodicite;
 	}
 	@Override 
 	public String toString() {
-		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero=" + tarif_numero + ", visuel=" + visuel
-				+ ", id_periodicite=" + id_periodicite +"]";
+		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero=" + tarifNumero + ", visuel=" + visuel
+				+ ", id_periodicite=" + idPeriodicite +"]";
 	}
 	
+	public static void revueLaunchSQL() {
+		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.MYSQL);
+		System.out.print("Voulez-vous :\n"
+				+ "(1) Ajouter\n"
+				+ "(2) Modifier\n"
+				+ "(3) Supprimer\n");
+		Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+		int res = scanner.nextInt();
+		switch (res) {
+		case 1:
+				System.out.print("Saisissez la valeur de l'ID\n");
+				int ID = scanner.nextInt();
+				System.out.print("Saisissez la valeur du titre\n");
+				String titre  = scanner.next();
+				System.out.print("Saisissez la valeur de la description\n");
+				String description  = scanner.next();
+				System.out.print("Saisissez la valeur du tarif\n");
+				float tarif_numero  = scanner.nextFloat();
+				System.out.print("Saisissez la valeur du visuel\n");
+				String visuel  = scanner.next();
+				System.out.print("Saisissez la valeur de l'ID_Periodicite\n");
+				int IDPeriodicite = scanner.nextInt();
+				factory.getRevueDAO().create(new RevueMetier(ID, description, titre, tarif_numero, visuel, IDPeriodicite));
+			break;
+		case 2:
+			
+			System.out.print("Saisissez la valeur de l'ID à modifier\n");
+			int IDold = scanner.nextInt();
+			System.out.print("Saisissez la valeur du nouveau ID\n");
+			int IDnew = scanner.nextInt();
+			System.out.print("Saisissez la valeur du titre\n");
+			String Newtitre  = scanner.next();
+			System.out.print("Saisissez la valeur de la description\n");
+			String Newdescription  = scanner.next();
+			System.out.print("Saisissez la valeur du tarif\n");
+			float Newtarif_numero  = scanner.nextFloat();
+			System.out.print("Saisissez la valeur du visuel\n");
+			String Newvisuel  = scanner.next();
+			System.out.print("Saisissez la valeur de l'ID_Periodicite\n");
+			int NewIDPeriodicite = scanner.nextInt();
+			factory.getRevueDAO().update(new RevueMetier(IDnew, Newdescription, Newtitre, Newtarif_numero, Newvisuel, NewIDPeriodicite));
+			break;
+		case 3:
+			
+			System.out.print("Saisissez la valeur de l'ID à supprimer\n");
+			int IDsuppr = scanner.nextInt();
+			factory.getRevueDAO().delete(factory.getRevueDAO().getById(IDsuppr));
+			break;
+			
+
+		default:
+			
+			break;
+		}
+	
+	
+}
 	
 }

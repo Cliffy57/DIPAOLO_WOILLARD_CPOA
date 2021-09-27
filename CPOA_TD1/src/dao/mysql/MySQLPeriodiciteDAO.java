@@ -4,11 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import dao.DAO;
 import dao.PeriodiciteDAO;
+import dao.Persistance;
+import dao.factory.DAOFactory;
 import dao.metier.PeriodiciteMetier;
 import net.cpoa.Connexion;
+import net.cpoa.Periodicite.AjouterPeriodicite;
+import net.cpoa.Periodicite.ModifierPeriodicite;
+import net.cpoa.Periodicite.SupprimerPeriodicite;
 
 public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 
@@ -50,7 +56,7 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("INSERT INTO `dipaolo6u_cpoatdun`.`Periodicite` (`id_periodicite`, `libelle`) VALUES (?, ?);");
-			requete.setInt(1, objet.getID());
+			requete.setInt(1, objet.getId());
 			requete.setString(2, objet.getLibelle());
 			nbLignes = requete.executeUpdate();
 			
@@ -67,9 +73,9 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Periodicite` SET `id_periodicite` = ?, `libelle` = ? WHERE `Periodicite`.`id_periodicite` = ?;");
-			requete.setInt(1,objet.getID());
+			requete.setInt(1,objet.getId());
 			requete.setString(2, objet.getLibelle());
-			requete.setInt(3, objet.getID());
+			requete.setInt(3, objet.getId());
 			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
@@ -82,7 +88,7 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("delete from Periodicite where id_periodicite=" + objet.getID());
+			PreparedStatement requete = laConnexion.prepareStatement("delete from Periodicite where id_periodicite=" + objet.getId());
 			nbLignes = requete.executeUpdate();
 			
 		} catch (SQLException sqle) {
