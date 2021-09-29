@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import dao.DAO;
 import dao.RevueDAO;
 import dao.metier.ClientMetier;
-import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
 import net.cpoa.Connexion;
 
@@ -29,12 +28,26 @@ public class MySQLRevueDAO implements RevueDAO {
 	
 	@Override
 	public RevueMetier getById(int id) {
-		RevueMetier periodicite =null;
+		RevueMetier revue =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Revue where id_revue=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			
+			if(res.next())
+			{
+				revue = new RevueMetier();
+				revue.setId(res.getInt("id"));
+				revue.setDescription(res.getString("description"));
+				revue.setTitre(res.getString("titre"));
+				revue.setVisuel(res.getString("visuel"));
+				revue.setTarifNumero(res.getInt("tarifNumero"));
+				revue.setIdPeriodicite(res.getInt("idPeriodicite"));
+			
+				
+			}
+			
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -45,7 +58,7 @@ public class MySQLRevueDAO implements RevueDAO {
 				System.out.println("Pb dans select " + sqle.getMessage());
 			}
 		
-		return periodicite;
+		return revue;
 	}
 
 	@Override
@@ -73,7 +86,7 @@ public class MySQLRevueDAO implements RevueDAO {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ?,`description`= ?,`tarif_numero`= ? , `visuel`= ?,`id_periodicite`= ?  WHERE `Revue`.`id_revue`= ?;");
 			requete.setInt(1, objet.getId());
 			requete.setString(2,objet.getTitre());
 			requete.setString(3, objet.getDescription());

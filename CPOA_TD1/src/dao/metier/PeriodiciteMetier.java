@@ -30,6 +30,9 @@ public class PeriodiciteMetier
         this.setId(id);
         this.setLibelle(libelle);
     }
+    public PeriodiciteMetier() {
+		this.id = -1;
+	}
     
     public PeriodiciteMetier() {
 		// TODO Auto-generated constructor stub

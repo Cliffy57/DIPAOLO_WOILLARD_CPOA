@@ -94,7 +94,7 @@ public class RevueMetier {
 			break;
 		case 2:
 			
-			System.out.print("Saisissez la valeur de l'ID à modifier\n");
+			System.out.print("Saisissez la valeur de l'ID ï¿½ modifier\n");
 			int IDnew = scanner.nextInt();
 			System.out.print("Saisissez la valeur du titre\n");
 			String Newtitre  = scannerStr.next();
@@ -110,7 +110,7 @@ public class RevueMetier {
 			break;
 		case 3:
 			
-			System.out.print("Saisissez la valeur de l'ID à supprimer\n");
+			System.out.print("Saisissez la valeur de l'ID ï¿½ supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getRevueDAO().delete(factory.getRevueDAO().getById(IDsuppr));
 			break;
