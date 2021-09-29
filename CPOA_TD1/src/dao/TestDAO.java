@@ -34,7 +34,7 @@ public class TestDAO {
 				System.out.println("Merci de votre visite et à bientôt");
 				break;
 			}
-
+			scanner.close();
 		
 	}
 }

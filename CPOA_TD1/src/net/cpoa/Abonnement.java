@@ -104,7 +104,7 @@ public class Abonnement {
 
 			break;
 		}
-
+		scanner.close();
 	}
 
 }
