@@ -58,6 +58,9 @@ public class RevueMetier {
 		this.tarifNumero=tarifNumero;
 		this.idPeriodicite=idPeriodicite;
 	}
+	public RevueMetier() {
+		// TODO Auto-generated constructor stub
+	}
 	@Override 
 	public String toString() {
 		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero=" + tarifNumero + ", visuel=" + visuel

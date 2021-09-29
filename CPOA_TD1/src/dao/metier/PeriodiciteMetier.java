@@ -31,7 +31,10 @@ public class PeriodiciteMetier
         this.setLibelle(libelle);
     }
     
-    @Override
+    public PeriodiciteMetier() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
     public String toString() {
         return "Periodicite [ID=" + id + ", libelle=" + libelle + "]";
     }

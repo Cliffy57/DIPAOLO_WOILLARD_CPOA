@@ -11,7 +11,7 @@ import dao.metier.RevueMetier;
 
 public class MainClass {
 	
-	public static void LauchSQL() {
+	public static void LaunchSQL() {
 		System.out.println("Quel table voulez-vous :\n"
 				+ "(1) Abonnement\n"
 				+ "(2) Client\n"
@@ -33,12 +33,13 @@ public class MainClass {
 			RevueMetier.revueLaunchSQL();
 			break;
 		default:
-			System.out.println("Merci de votre visite et à bientôt");
-			break;
+			LaunchSQL();
 		}
 	}
 	
-	
+	public static void LaunchListeMemoire() {
+		
+	}
 			
 	
 	public static void main(String[] args) {
@@ -47,11 +48,12 @@ public class MainClass {
 		System.out.println("Choissisez votre SGBD");
 		int res = scanner.nextInt();
 		switch(res) {
-		case 1 : LauchSQL();
+		case 1 : LaunchSQL();
 				break;
 		case 2 : PeriodiciteMetier.periodiciteLaunchListeMemoire(); 
 			break;
-		
+		default :
+			break;
 		}
 
 	}

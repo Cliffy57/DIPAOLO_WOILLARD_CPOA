@@ -1,5 +1,6 @@
 package dao.metier;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 import dao.Persistance;
@@ -75,7 +76,6 @@ public class ClientMetier {
 	}
 	
 	 public ClientMetier() {
-		this.id = -1;
 	}
 	
 	@Override
@@ -89,7 +89,8 @@ public class ClientMetier {
 		System.out.println("Voulez-vous :\n"
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
-				+ "(3) Supprimer\n");
+				+ "(3) Supprimer\n"
+				+ "(4) Tout afficher");
 		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
@@ -140,7 +141,14 @@ public class ClientMetier {
 			factory.getClientDAO().delete(factory.getClientDAO().getById(IDsuppr));
 			break;
 			
-
+		case 4 : 
+			Iterator<ClientMetier> iterator = factory.getClientDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
+			
 		default:
 			
 			break;
