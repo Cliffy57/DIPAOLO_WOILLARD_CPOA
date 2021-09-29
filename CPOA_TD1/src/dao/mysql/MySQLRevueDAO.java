@@ -70,7 +70,7 @@ public class MySQLRevueDAO implements RevueDAO {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ? WHERE `Revue`.`id_revue` = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ?,`description`= ?,`tarif_numero`= ? , `visuel`= ?,`id_periodicite`= ?  WHERE `Revue`.`id_revue`= ?;");
 			requete.setInt(1, objet.getId());
 			requete.setString(2,objet.getTitre());
 			requete.setString(3, objet.getDescription());
