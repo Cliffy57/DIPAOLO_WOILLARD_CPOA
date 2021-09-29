@@ -70,20 +70,21 @@ public class RevueMetier {
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
 				+ "(3) Supprimer\n");
-		Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
+		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
 		switch (res) {
 		case 1:
 				System.out.print("Saisissez la valeur de l'ID\n");
 				int ID = scanner.nextInt();
 				System.out.print("Saisissez la valeur du titre\n");
-				String titre  = scanner.next();
+				String titre  = scannerStr.next();
 				System.out.print("Saisissez la valeur de la description\n");
-				String description  = scanner.next();
+				String description  = scannerStr.next();
 				System.out.print("Saisissez la valeur du tarif\n");
 				float tarif_numero  = scanner.nextFloat();
 				System.out.print("Saisissez la valeur du visuel\n");
-				String visuel  = scanner.next();
+				String visuel  = scannerStr.next();
 				System.out.print("Saisissez la valeur de l'ID_Periodicite\n");
 				int IDPeriodicite = scanner.nextInt();
 				factory.getRevueDAO().create(new RevueMetier(ID, description, titre, tarif_numero, visuel, IDPeriodicite));
@@ -91,17 +92,15 @@ public class RevueMetier {
 		case 2:
 			
 			System.out.print("Saisissez la valeur de l'ID à modifier\n");
-			int IDold = scanner.nextInt();
-			System.out.print("Saisissez la valeur du nouveau ID\n");
 			int IDnew = scanner.nextInt();
 			System.out.print("Saisissez la valeur du titre\n");
-			String Newtitre  = scanner.next();
+			String Newtitre  = scannerStr.next();
 			System.out.print("Saisissez la valeur de la description\n");
-			String Newdescription  = scanner.next();
+			String Newdescription  = scannerStr.next();
 			System.out.print("Saisissez la valeur du tarif\n");
 			float Newtarif_numero  = scanner.nextFloat();
 			System.out.print("Saisissez la valeur du visuel\n");
-			String Newvisuel  = scanner.next();
+			String Newvisuel  = scannerStr.next();
 			System.out.print("Saisissez la valeur de l'ID_Periodicite\n");
 			int NewIDPeriodicite = scanner.nextInt();
 			factory.getRevueDAO().update(new RevueMetier(IDnew, Newdescription, Newtitre, Newtarif_numero, Newvisuel, NewIDPeriodicite));
@@ -119,7 +118,8 @@ public class RevueMetier {
 			break;
 		}
 	
-	
+	scannerStr.close();
+	scanner.close();
 }
 	
 }

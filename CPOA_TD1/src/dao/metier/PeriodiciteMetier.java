@@ -40,14 +40,15 @@ public class PeriodiciteMetier
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
 				+ "(3) Supprimer\n");
-		Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
+		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
 		switch (res) {
 		case 1:
 				System.out.println("Saisissez la valeur de l'ID\n");
 				int id = scanner.nextInt();
 				System.out.println("Saisissez la valeur du libellé\n");
-				String libelle= scanner.next();
+				String libelle= scannerStr.next();
 				factory.getPeriodiciteDAO().create(new PeriodiciteMetier(id, libelle) );
 			break;
 		case 2:
@@ -55,7 +56,7 @@ public class PeriodiciteMetier
 				System.out.println("Saisissez la valeur de l'ID à modifier\n");
 				int newId = scanner.nextInt();
 				System.out.println("Saisissez la valeur du libellé ID\n");
-				String newLibelle = scanner.next();
+				String newLibelle = scannerStr.next();
 				factory.getPeriodiciteDAO().update(new PeriodiciteMetier(newId, newLibelle));
 			break;
 		case 3:
@@ -70,8 +71,51 @@ public class PeriodiciteMetier
 			
 			break;
 		}
-	
+	scanner.close();
+	scannerStr.close();
 	
 }
+    
+    public static void periodiciteLaunchListeMemoire() {
+    	
+    	DAOFactory factory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
+		System.out.println("Voulez-vous :\n"
+				+ "(1) Ajouter\n"
+				+ "(2) Modifier\n"
+				+ "(3) Supprimer\n");
+		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
+		Scanner scanner = new Scanner(System.in);
+		int res = scanner.nextInt();
+		switch (res) {
+		case 1:
+				System.out.println("Saisissez la valeur de l'ID\n");
+				int id = scanner.nextInt();
+				System.out.println("Saisissez la valeur du libellé\n");
+				String libelle= scannerStr.next();
+				factory.getPeriodiciteDAO().create(new PeriodiciteMetier(id, libelle) );
+			break;
+		case 2:
+			
+				System.out.println("Saisissez la valeur de l'ID à modifier\n");
+				int newId = scanner.nextInt();
+				System.out.println("Saisissez la valeur du libellé ID\n");
+				String newLibelle = scannerStr.next();
+				factory.getPeriodiciteDAO().update(new PeriodiciteMetier(newId, newLibelle));
+			break;
+		case 3:
+			
+				System.out.println("Saisissez la valeur de l'ID à supprimer\n");
+				int IDsuppr = scanner.nextInt();
+				factory.getPeriodiciteDAO().delete(factory.getPeriodiciteDAO().getById(IDsuppr));
+			break;
+			
+
+		default:
+			
+			break;
+		}
+	scanner.close();
+	scannerStr.close();
+    }
 
 }

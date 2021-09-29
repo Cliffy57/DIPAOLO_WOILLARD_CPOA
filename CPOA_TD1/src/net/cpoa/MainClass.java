@@ -42,7 +42,14 @@ public class MainClass {
 			
 	
 	public static void main(String[] args) {
-			LauchSQL();
+		
+		Scanner scanner = new Scanner(System.in);	
+		System.out.println("Choissisez votre SGBD");
+		int res = scanner.nextInt();
+		switch(res) {
+		
+		}
+		LauchSQL();
 	
 		}
 }
