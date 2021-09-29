@@ -115,7 +115,15 @@ public class PeriodiciteMetier
 				factory.getPeriodiciteDAO().delete(factory.getPeriodiciteDAO().getById(IDsuppr));
 			break;
 			
-
+		case 4 : 
+			
+			Iterator<PeriodiciteMetier> iterator = factory.getPeriodiciteDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
+			
 		default:
 			
 			break;

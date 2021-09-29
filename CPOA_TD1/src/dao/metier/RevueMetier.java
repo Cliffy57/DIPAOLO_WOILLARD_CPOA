@@ -1,5 +1,6 @@
 package dao.metier;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 import dao.Persistance;
@@ -115,7 +116,13 @@ public class RevueMetier {
 			factory.getRevueDAO().delete(factory.getRevueDAO().getById(IDsuppr));
 			break;
 			
-
+		case 4 : 
+			Iterator<RevueMetier> iterator = factory.getRevueDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
 		default:
 			
 			break;

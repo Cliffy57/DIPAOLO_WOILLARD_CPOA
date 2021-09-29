@@ -2,6 +2,7 @@ package dao.metier;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import dao.Persistance;
@@ -114,7 +115,15 @@ public class AbonnementMetier {
 			int IDsuppr = scanner.nextInt();
 			factory.getAbonnementDAO().delete(factory.getAbonnementDAO().getById(IDsuppr));
 			break;
-
+		
+		case 4 : 
+			
+			Iterator<AbonnementMetier> iterator = factory.getAbonnementDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
 		default:
 
 			break;
