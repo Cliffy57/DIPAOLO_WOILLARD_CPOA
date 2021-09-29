@@ -23,6 +23,10 @@ public class AbonnementMetier {
 		this.idRevue = IDRevue;
 	}
 
+	public AbonnementMetier() {
+		
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -74,7 +78,7 @@ public class AbonnementMetier {
 		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.MYSQL);
 		DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n");
-		Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
 		switch (res) {
 		case 1:
@@ -115,6 +119,14 @@ public class AbonnementMetier {
 
 			break;
 		}
+		scanner.close();
 
 	}
+	
+	public static void abonnementLaunchListeMemoire() {
+		
+		
+	}
+	
+	
 }

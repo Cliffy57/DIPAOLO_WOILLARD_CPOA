@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import dao.DAO;
 import dao.RevueDAO;
+import dao.metier.ClientMetier;
+import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
 import net.cpoa.Connexion;
 
@@ -99,6 +102,42 @@ public class MySQLRevueDAO implements RevueDAO {
 	
 		return nbLignes ==1;
 	}
+
+	@Override
+	public ArrayList<RevueMetier> findAll() {
+		ArrayList<RevueMetier> list = new ArrayList<RevueMetier>();
+		RevueMetier revue =null;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
+			ResultSet res = requete.executeQuery();
+			
+			while(res.next())
+			{
+				revue = new RevueMetier();
+				revue.setId(res.getInt("id_revue"));
+				revue.setTitre(res.getString("titre"));
+				revue.setDescription(res.getString("description"));
+				revue.setTarifNumero(res.getFloat("tarif_numero"));
+				revue.setVisuel(res.getString("visuel"));
+				revue.setIdPeriodicite(res.getInt("id_periodicite"));
+				list.add(revue);
+				
+				
+			}
+			if (res != null)
+				res.close();
+			if (requete != null)
+				requete.close();
+			if(laConnexion != null)
+				laConnexion.close();
+			} catch (SQLException sqle) {
+				System.out.println("Pb dans select " + sqle.getMessage());
+			}
+		
+		return list;
+	}
+	
 
 	
 }
