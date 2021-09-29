@@ -23,6 +23,9 @@ public class AbonnementMetier {
 		this.idRevue = IDRevue;
 	}
 
+	public AbonnementMetier() {
+	}
+
 	public int getId() {
 		return id;
 	}

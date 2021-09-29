@@ -10,6 +10,7 @@ import dao.DAO;
 import dao.PeriodiciteDAO;
 import dao.Persistance;
 import dao.factory.DAOFactory;
+import dao.metier.ClientMetier;
 import dao.metier.PeriodiciteMetier;
 import net.cpoa.Connexion;
 import net.cpoa.Periodicite.AjouterPeriodicite;
@@ -37,6 +38,14 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite where id_periodicite=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			if(res.next())
+			{
+				periodicite = new PeriodiciteMetier();
+				periodicite.setId(res.getInt("id"));
+				periodicite.setLibelle(res.getString("libelle"));
+				
+				
+			}
 			if (res != null)
 				res.close();
 			if (requete != null)

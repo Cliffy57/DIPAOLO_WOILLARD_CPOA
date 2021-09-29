@@ -58,6 +58,10 @@ public class RevueMetier {
 		this.tarifNumero=tarifNumero;
 		this.idPeriodicite=idPeriodicite;
 	}
+	public RevueMetier() {
+		this.id = -1;
+	}
+	
 	@Override 
 	public String toString() {
 		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero=" + tarifNumero + ", visuel=" + visuel

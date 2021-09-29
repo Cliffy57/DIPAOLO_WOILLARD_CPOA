@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import dao.AbonnementDAO;
 import dao.DAO;
 import dao.metier.AbonnementMetier;
+import dao.metier.ClientMetier;
 import net.cpoa.Connexion;
 
 public class MySQLAbonnementDAO implements AbonnementDAO {
@@ -26,12 +27,24 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 
 	@Override
 	public AbonnementMetier getById(int id) {
-		AbonnementMetier periodicite = null;
+		AbonnementMetier abonnement = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement where id_abonnement=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			if(res.next())
+			{
+				abonnement = new AbonnementMetier();
+				abonnement.setId(res.getInt("id"));
+				abonnement.setDateDebut(res.getDate("DateDebut").toLocalDate());
+				abonnement.setDateFin(res.getDate("DateFin").toLocalDate());
+				abonnement.setIdClient(res.getInt("IDClient"));
+				abonnement.setIdRevue(res.getInt("IDRevue"));
+			
+				
+				
+			}
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -42,7 +55,7 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 			System.out.println("Pb dans select " + sqle.getMessage());
 		}
 
-		return periodicite;
+		return abonnement;
 	}
 
 	@Override

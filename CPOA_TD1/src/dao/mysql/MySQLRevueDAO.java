@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import dao.DAO;
 import dao.RevueDAO;
+import dao.metier.ClientMetier;
 import dao.metier.RevueMetier;
 import net.cpoa.Connexion;
 
@@ -26,12 +27,26 @@ public class MySQLRevueDAO implements RevueDAO {
 	
 	@Override
 	public RevueMetier getById(int id) {
-		RevueMetier periodicite =null;
+		RevueMetier revue =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Revue where id_revue=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			
+			if(res.next())
+			{
+				revue = new RevueMetier();
+				revue.setId(res.getInt("id"));
+				revue.setDescription(res.getString("description"));
+				revue.setTitre(res.getString("titre"));
+				revue.setVisuel(res.getString("visuel"));
+				revue.setTarifNumero(res.getInt("tarifNumero"));
+				revue.setIdPeriodicite(res.getInt("idPeriodicite"));
+			
+				
+			}
+			
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -42,7 +57,7 @@ public class MySQLRevueDAO implements RevueDAO {
 				System.out.println("Pb dans select " + sqle.getMessage());
 			}
 		
-		return periodicite;
+		return revue;
 	}
 
 	@Override

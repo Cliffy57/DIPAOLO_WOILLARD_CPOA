@@ -28,6 +28,9 @@ public class PeriodiciteMetier
         this.setId(id);
         this.setLibelle(libelle);
     }
+    public PeriodiciteMetier() {
+		this.id = -1;
+	}
     
     @Override
     public String toString() {

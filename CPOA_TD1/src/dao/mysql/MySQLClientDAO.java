@@ -39,7 +39,7 @@ public class MySQLClientDAO implements ClientDAO {
 				client.setCodePost(res.getInt("code_postal"));
 				client.setVille(res.getString("ville"));
 				client.setPays(res.getString("pays"));
-				return client;
+				
 				
 			}
 			if (res != null)
