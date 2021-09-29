@@ -114,7 +114,7 @@ public class Revue {
 					
 					break;
 				}
-			
+			scanner.close();
 			
 		}
 		}

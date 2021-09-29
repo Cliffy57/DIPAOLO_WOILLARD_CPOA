@@ -2,9 +2,6 @@ package dao;
 
 import java.util.ArrayList;
 
-import dao.metier.AbonnementMetier;
-import dao.metier.PeriodiciteMetier;
-
 public interface DAO<T> {
 
 	public abstract T getById(int id);
