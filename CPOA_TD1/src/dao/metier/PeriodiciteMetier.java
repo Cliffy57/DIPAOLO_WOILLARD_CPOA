@@ -1,5 +1,7 @@
 package dao.metier;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import dao.Persistance;
@@ -93,6 +95,7 @@ public class PeriodiciteMetier
 				System.out.println("Saisissez la valeur du libellé\n");
 				String libelle= scannerStr.next();
 				factory.getPeriodiciteDAO().create(new PeriodiciteMetier(id, libelle) );
+				
 			break;
 		case 2:
 			

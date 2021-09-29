@@ -47,10 +47,14 @@ public class MainClass {
 		System.out.println("Choissisez votre SGBD");
 		int res = scanner.nextInt();
 		switch(res) {
+		case 1 : LauchSQL();
+				break;
+		case 2 : PeriodiciteMetier.periodiciteLaunchListeMemoire(); 
+			break;
 		
 		}
-		LauchSQL();
+
+	}
 	
-		}
 }
 	
