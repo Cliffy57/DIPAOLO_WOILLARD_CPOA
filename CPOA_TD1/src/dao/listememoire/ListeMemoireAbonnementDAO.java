@@ -12,7 +12,6 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 
 	private List<AbonnementMetier> donnees;
 
-
 	public static ListeMemoireAbonnementDAO getInstance() {
 
 		if (instance == null) {
@@ -30,7 +29,6 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 		this.donnees.add(new AbonnementMetier(0, null, null, 0, 0));
 	}
 
-
 	@Override
 	public boolean create(AbonnementMetier objet) {
 
@@ -41,22 +39,22 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 			objet.setId(objet.getId() + 1);
 		}
 		boolean ok = this.donnees.add(objet);
-		
+
 		return ok;
 	}
 
 	@Override
 	public boolean update(AbonnementMetier objet) {
-		
+
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
 		} else {
-			
+
 			this.donnees.set(idx, objet);
 		}
-		
+
 		return true;
 	}
 
@@ -64,7 +62,7 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 	public boolean delete(AbonnementMetier objet) {
 
 		AbonnementMetier supprime;
-		
+
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
@@ -72,7 +70,7 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 		} else {
 			supprime = this.donnees.remove(idx);
 		}
-		
+
 		return objet.equals(supprime);
 	}
 
@@ -91,6 +89,5 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 	public ArrayList<AbonnementMetier> findAll() {
 		return (ArrayList<AbonnementMetier>) this.donnees;
 	}
-
 
 }

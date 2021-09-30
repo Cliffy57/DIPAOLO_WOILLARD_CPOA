@@ -144,7 +144,5 @@ public class MySQLRevueDAO implements RevueDAO {
 		
 		return list;
 	}
-	
 
-	
 }

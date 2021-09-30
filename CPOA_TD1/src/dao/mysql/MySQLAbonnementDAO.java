@@ -118,14 +118,13 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 	@Override
 	public ArrayList<AbonnementMetier> findAll() {
 		ArrayList<AbonnementMetier> list = new ArrayList<AbonnementMetier>();
-		AbonnementMetier abonnement =null;
+		AbonnementMetier abonnement = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement ");
 			ResultSet res = requete.executeQuery();
-			
-			while(res.next())
-			{
+
+			while (res.next()) {
 				abonnement = new AbonnementMetier();
 				abonnement.setId(res.getInt("id_abonnement"));
 				abonnement.setDateDebut(res.getDate("date_debut").toLocalDate());
@@ -133,19 +132,18 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 				abonnement.setIdClient(res.getInt("id_client"));
 				abonnement.setIdRevue(res.getInt("id_revue"));
 				list.add(abonnement);
-				
-				
+
 			}
 			if (res != null)
 				res.close();
 			if (requete != null)
 				requete.close();
-			if(laConnexion != null)
+			if (laConnexion != null)
 				laConnexion.close();
-			} catch (SQLException sqle) {
-				System.out.println("Pb dans select " + sqle.getMessage());
-			}
-		
+		} catch (SQLException sqle) {
+			System.out.println("Pb dans select " + sqle.getMessage());
+		}
+
 		return list;
 	}
 }
