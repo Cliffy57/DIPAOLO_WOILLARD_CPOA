@@ -26,12 +26,23 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 
 	@Override
 	public AbonnementMetier getById(int id) {
-		AbonnementMetier periodicite = null;
+		AbonnementMetier abonnement = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement where id_abonnement=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			
+			if(res.next())
+			{
+				abonnement = new AbonnementMetier();
+                abonnement.setId(res.getInt("id_abonnement"));
+                abonnement.setDateDebut(res.getDate("date_debut").toLocalDate());
+                abonnement.setDateFin(res.getDate("date_fin").toLocalDate());
+                abonnement.setIdClient(res.getInt("id_client"));
+                abonnement.setIdRevue(res.getInt("id_revue"));
+			}
+			
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -42,7 +53,7 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 			System.out.println("Pb dans select " + sqle.getMessage());
 		}
 
-		return periodicite;
+		return abonnement;
 	}
 
 	@Override
@@ -109,7 +120,7 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 		AbonnementMetier abonnement =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement ");
 			ResultSet res = requete.executeQuery();
 			
 			while(res.next())

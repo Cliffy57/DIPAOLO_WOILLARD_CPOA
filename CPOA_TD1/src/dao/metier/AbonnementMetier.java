@@ -78,7 +78,7 @@ public class AbonnementMetier {
 		
 		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.MYSQL);
 		DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n");
+		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n"+ "(4) Tout afficher");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
 		switch (res) {
@@ -128,7 +128,7 @@ public class AbonnementMetier {
 			abonnementLaunchSQL();
 			break;
 		}
-		scanner.close();
+		
 
 	}
 	
@@ -136,7 +136,7 @@ public class AbonnementMetier {
 		
 		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
 		DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n");
+		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n"+ "(4) Tout afficher");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
 		switch (res) {
@@ -155,7 +155,7 @@ public class AbonnementMetier {
 			break;
 		case 2:
 
-			System.out.print("Saisissez la valeur de l'ID à modifier\n");
+			System.out.print("Saisissez la valeur de l'ID de l'abonnement à modifier\n");	
 			int IDold = scanner.nextInt();
 			System.out.print("Saisissez la valeur de la date de début (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateDebutNew = LocalDate.parse(scanner.next(), formatage);
@@ -186,7 +186,6 @@ public class AbonnementMetier {
 			abonnementLaunchSQL();
 			break;
 		}
-		scanner.close();
 	}
 	
 	

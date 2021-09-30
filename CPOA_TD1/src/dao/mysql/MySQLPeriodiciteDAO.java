@@ -31,6 +31,11 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite where id_periodicite=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			if(res.next()) {
+				periodicite = new PeriodiciteMetier();
+                periodicite.setId(res.getInt("id_periodicite"));
+                periodicite.setLibelle(res.getString("libelle"));
+			}
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -98,7 +103,7 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		PeriodiciteMetier periodicite =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite ");
 			ResultSet res = requete.executeQuery();
 			
 			while(res.next())

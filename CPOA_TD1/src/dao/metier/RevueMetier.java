@@ -73,7 +73,8 @@ public class RevueMetier {
 		System.out.print("Voulez-vous :\n"
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
-				+ "(3) Supprimer\n");
+				+ "(3) Supprimer\n"
+				+ "(4) Tout afficher");
 		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
@@ -128,15 +129,14 @@ public class RevueMetier {
 			break;
 		}
 	
-	scannerStr.close();
-	scanner.close();
 }
 	public static void revueListeMemoire() {
 		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
 		System.out.print("Voulez-vous :\n"
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
-				+ "(3) Supprimer\n");
+				+ "(3) Supprimer\n"
+				+ "(4) Tout afficher");
 		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
@@ -191,7 +191,5 @@ public class RevueMetier {
 			break;
 		}
 	
-	scannerStr.close();
-	scanner.close();
 	}
 }

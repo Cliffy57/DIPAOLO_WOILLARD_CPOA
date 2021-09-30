@@ -43,7 +43,8 @@ public class PeriodiciteMetier
 		System.out.println("Voulez-vous :\n"
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
-				+ "(3) Supprimer\n");
+				+ "(3) Supprimer\n"
+				+ "(4) Tout afficher");
 		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
@@ -69,14 +70,18 @@ public class PeriodiciteMetier
 				int IDsuppr = scanner.nextInt();
 				factory.getPeriodiciteDAO().delete(factory.getPeriodiciteDAO().getById(IDsuppr));
 			break;
-			
+		case 4 : 	
+			Iterator<PeriodiciteMetier> iterator = factory.getPeriodiciteDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
 
 		default:
 			
 			break;
 		}
-	scanner.close();
-	scannerStr.close();
 	
 }
     
@@ -86,7 +91,8 @@ public class PeriodiciteMetier
 		System.out.println("Voulez-vous :\n"
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
-				+ "(3) Supprimer\n");
+				+ "(3) Supprimer\n"
+				+ "(4) Tout afficher");
 		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
@@ -103,9 +109,9 @@ public class PeriodiciteMetier
 			
 				System.out.println("Saisissez la valeur de l'ID à modifier\n");
 				int newId = scanner.nextInt();
-				System.out.println("Saisissez la valeur du libellé ID\n");
+				System.out.println("Saisissez la valeur du libellé\n");
 				String newLibelle = scannerStr.next();
-				factory.getPeriodiciteDAO().update(new PeriodiciteMetier(newId, newLibelle));
+				factory.getPeriodiciteDAO().update(factory.getPeriodiciteDAO().getById(newId));
 			break;
 		case 3:
 			
@@ -127,8 +133,6 @@ public class PeriodiciteMetier
 			
 			break;
 		}
-	scanner.close();
-	scannerStr.close();
     }
 
 }

@@ -21,21 +21,24 @@ public class MainClass {
 		switch (res) {
 		case 1:
 			AbonnementMetier.abonnementLaunchSQL();
+			LaunchSQL();
 			break;
 		case 2:
 			ClientMetier.clientLaunchSQL();
+			LaunchSQL();
 			break;
 		case 3:
 			PeriodiciteMetier.periodiciteLaunchSQL();
+			LaunchSQL();
 			break;
 		case 4 :
 			RevueMetier.revueLaunchSQL();
+			LaunchSQL();
 			break;
 		case 5 : break;
 		default:
 			LaunchSQL();
 		}
-		scanner.close();
 	}
 	
 	public static void LaunchListeMemoire() {
@@ -50,21 +53,24 @@ public class MainClass {
 		switch (res) {
 		case 1:
 			AbonnementMetier.abonnementLaunchListeMemoire();
+			LaunchListeMemoire();
 			break;
 		case 2:
-			ClientMetier.clientLaunchListeMemoire();;
+			ClientMetier.clientLaunchListeMemoire();
+			LaunchListeMemoire();
 			break;
 		case 3:
-			PeriodiciteMetier.periodiciteLaunchListeMemoire();;
+			PeriodiciteMetier.periodiciteLaunchListeMemoire();
+			LaunchListeMemoire();
 			break;
 		case 4 :
 			RevueMetier.revueListeMemoire();
+			LaunchListeMemoire();
 			break;
 		case 5 : break;
 		default:
-			LaunchSQL();
+			LaunchListeMemoire();
 		}
-		scanner.close();
 	}
 			
 	
@@ -79,7 +85,7 @@ public class MainClass {
 		switch(res) {
 		case 1 : LaunchSQL();
 				break;
-		case 2 : PeriodiciteMetier.periodiciteLaunchListeMemoire(); 
+		case 2 : LaunchListeMemoire();
 			break;
 		case 3 : break;
 		default :
