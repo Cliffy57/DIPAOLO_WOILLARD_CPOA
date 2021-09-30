@@ -121,7 +121,7 @@ public class Client {
 			
 			break;
 		}
-	
+	scanner.close();
 	
 }
 	

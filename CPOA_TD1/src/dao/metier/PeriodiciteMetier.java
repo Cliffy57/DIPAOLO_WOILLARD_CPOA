@@ -1,5 +1,6 @@
 package dao.metier;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 import dao.Persistance;
@@ -32,7 +33,10 @@ public class PeriodiciteMetier
 		this.id = -1;
 	}
     
-    @Override
+    public PeriodiciteMetier() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
     public String toString() {
         return "Periodicite [ID=" + id + ", libelle=" + libelle + "]";
     }
@@ -96,6 +100,7 @@ public class PeriodiciteMetier
 				System.out.println("Saisissez la valeur du libellé\n");
 				String libelle= scannerStr.next();
 				factory.getPeriodiciteDAO().create(new PeriodiciteMetier(id, libelle) );
+				
 			break;
 		case 2:
 			
@@ -112,7 +117,15 @@ public class PeriodiciteMetier
 				factory.getPeriodiciteDAO().delete(factory.getPeriodiciteDAO().getById(IDsuppr));
 			break;
 			
-
+		case 4 : 
+			
+			Iterator<PeriodiciteMetier> iterator = factory.getPeriodiciteDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
+			
 		default:
 			
 			break;

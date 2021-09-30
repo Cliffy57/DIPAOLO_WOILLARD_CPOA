@@ -95,7 +95,7 @@ public class Periodicite {
 				break;
 			}
 		
-		
+		scanner.close();
 	}
 	
 }

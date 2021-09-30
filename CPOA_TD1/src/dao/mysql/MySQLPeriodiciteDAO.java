@@ -4,18 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
+import java.util.ArrayList;
 
-import dao.DAO;
 import dao.PeriodiciteDAO;
-import dao.Persistance;
-import dao.factory.DAOFactory;
-import dao.metier.ClientMetier;
 import dao.metier.PeriodiciteMetier;
 import net.cpoa.Connexion;
-import net.cpoa.Periodicite.AjouterPeriodicite;
-import net.cpoa.Periodicite.ModifierPeriodicite;
-import net.cpoa.Periodicite.SupprimerPeriodicite;
 
 public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 
@@ -105,6 +98,37 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		}
 	
 		return nbLignes == 1;
+	}
+	
+	@Override
+	public ArrayList<PeriodiciteMetier> findAll() {
+		ArrayList<PeriodiciteMetier> list = new ArrayList<PeriodiciteMetier>();
+		PeriodiciteMetier periodicite =null;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
+			ResultSet res = requete.executeQuery();
+			
+			while(res.next())
+			{
+				periodicite = new PeriodiciteMetier();
+				periodicite.setId(res.getInt("id_periodicite"));
+				periodicite.setLibelle(res.getString("libelle"));
+				list.add(periodicite);
+				
+				
+			}
+			if (res != null)
+				res.close();
+			if (requete != null)
+				requete.close();
+			if(laConnexion != null)
+				laConnexion.close();
+			} catch (SQLException sqle) {
+				System.out.println("Pb dans select " + sqle.getMessage());
+			}
+		
+		return list;
 	}
 
 	

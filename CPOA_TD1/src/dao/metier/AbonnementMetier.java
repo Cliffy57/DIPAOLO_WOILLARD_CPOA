@@ -2,6 +2,7 @@ package dao.metier;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import dao.Persistance;
@@ -24,6 +25,7 @@ public class AbonnementMetier {
 	}
 
 	public AbonnementMetier() {
+		
 	}
 
 	public int getId() {
@@ -83,6 +85,64 @@ public class AbonnementMetier {
 		case 1:
 			System.out.print("Saisissez la valeur de l'ID\n");
 			int ID = scanner.nextInt();
+			System.out.print("Saisissez la valeur de la date de dï¿½but (sous la forme dd/MM/yyyy)\n");
+			LocalDate dateDebut = LocalDate.parse(scanner.next(), formatage);
+			System.out.print("Saisissez la valeur de la date de fin (sous la forme dd/MM/yyyy)\n");
+			LocalDate dateFin = LocalDate.parse(scanner.next(), formatage);
+			System.out.print("Saisissez la valeur de l'ID du Client\n");
+			int IDclient = scanner.nextInt();
+			System.out.print("Saisissez la valeur de l'ID de la revue\n");
+			int IDrevue = scanner.nextInt();
+			factory.getAbonnementDAO().create(new AbonnementMetier(ID, dateDebut, dateFin, IDclient, IDrevue));
+			break;
+		case 2:
+
+			System.out.print("Saisissez la valeur de l'ID ï¿½ modifier\n");
+			int IDold = scanner.nextInt();
+			System.out.print("Saisissez la valeur de la date de dï¿½but (sous la forme dd/MM/yyyy)\n");
+			LocalDate dateDebutNew = LocalDate.parse(scanner.next(), formatage);
+			System.out.print("Saisissez la valeur de la date de fin (sous la forme dd/MM/yyyy)\n");
+			LocalDate dateFinNew = LocalDate.parse(scanner.next(), formatage);
+			System.out.print("Saisissez la valeur de l'ID du Client\n");
+			int IDclientNew = scanner.nextInt();
+			System.out.print("Saisissez la valeur de l'ID de la revue\n");
+			int IDrevueNew = scanner.nextInt();
+			factory.getAbonnementDAO().update(new AbonnementMetier(IDold, dateDebutNew, dateFinNew, IDclientNew, IDrevueNew));
+			break;
+		case 3:
+
+			System.out.print("Saisissez la valeur de l'ID ï¿½ supprimer\n");
+			int IDsuppr = scanner.nextInt();
+			factory.getAbonnementDAO().delete(factory.getAbonnementDAO().getById(IDsuppr));
+			break;
+		
+		case 4 : 
+			
+			Iterator<AbonnementMetier> iterator = factory.getAbonnementDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
+		default:
+			abonnementLaunchSQL();
+			break;
+		}
+		scanner.close();
+
+	}
+	
+	public static void abonnementLaunchListeMemoire() {
+		
+		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
+		DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n");
+		Scanner scanner = new Scanner(System.in);
+		int res = scanner.nextInt();
+		switch (res) {
+		case 1:
+			System.out.print("Saisissez la valeur de l'ID\n");
+			int ID = scanner.nextInt();
 			System.out.print("Saisissez la valeur de la date de début (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateDebut = LocalDate.parse(scanner.next(), formatage);
 			System.out.print("Saisissez la valeur de la date de fin (sous la forme dd/MM/yyyy)\n");
@@ -113,18 +173,20 @@ public class AbonnementMetier {
 			int IDsuppr = scanner.nextInt();
 			factory.getAbonnementDAO().delete(factory.getAbonnementDAO().getById(IDsuppr));
 			break;
-
+		
+		case 4 : 
+			
+			Iterator<AbonnementMetier> iterator = factory.getAbonnementDAO().findAll().iterator();
+			while(iterator.hasNext())
+			{
+				System.out.println(iterator.next());
+			}
+			break;
 		default:
-
+			abonnementLaunchSQL();
 			break;
 		}
 		scanner.close();
-
-	}
-	
-	public static void abonnementLaunchListeMemoire() {
-		
-		
 	}
 	
 	

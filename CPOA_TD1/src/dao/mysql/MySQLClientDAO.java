@@ -1,6 +1,7 @@
 package dao.mysql;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import dao.ClientDAO;
 import dao.metier.ClientMetier;
@@ -114,6 +115,43 @@ public class MySQLClientDAO implements ClientDAO {
 		}
 	
 		return nbLignes == 1;
+	}
+
+	@Override
+	public ArrayList<ClientMetier> findAll() {
+		ArrayList<ClientMetier> list = new ArrayList<ClientMetier>();
+		ClientMetier client =null;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
+			ResultSet res = requete.executeQuery();
+			
+			while(res.next())
+			{
+				client = new ClientMetier();
+				client.setId(res.getInt("id_client"));
+				client.setNom(res.getString("nom"));
+				client.setPrenom(res.getString("prenom"));
+				client.setNoRue(res.getInt("no_rue"));
+				client.setVoie(res.getString("voie"));
+				client.setCodePost(res.getInt("code_postal"));
+				client.setVille(res.getString("ville"));
+				client.setPays(res.getString("pays"));
+				list.add(client);
+				
+				
+			}
+			if (res != null)
+				res.close();
+			if (requete != null)
+				requete.close();
+			if(laConnexion != null)
+				laConnexion.close();
+			} catch (SQLException sqle) {
+				System.out.println("Pb dans select " + sqle.getMessage());
+			}
+		
+		return list;
 	}
 
 	
