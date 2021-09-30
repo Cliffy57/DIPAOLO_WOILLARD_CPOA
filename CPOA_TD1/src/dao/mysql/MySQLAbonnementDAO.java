@@ -33,18 +33,17 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement where id_abonnement=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
+			
 			if(res.next())
 			{
 				abonnement = new AbonnementMetier();
-				abonnement.setId(res.getInt("id"));
-				abonnement.setDateDebut(res.getDate("DateDebut").toLocalDate());
-				abonnement.setDateFin(res.getDate("DateFin").toLocalDate());
-				abonnement.setIdClient(res.getInt("IDClient"));
-				abonnement.setIdRevue(res.getInt("IDRevue"));
-			
-				
-				
+                abonnement.setId(res.getInt("id_abonnement"));
+                abonnement.setDateDebut(res.getDate("date_debut").toLocalDate());
+                abonnement.setDateFin(res.getDate("date_fin").toLocalDate());
+                abonnement.setIdClient(res.getInt("id_client"));
+                abonnement.setIdRevue(res.getInt("id_revue"));
 			}
+			
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -122,7 +121,7 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 		AbonnementMetier abonnement =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement ");
 			ResultSet res = requete.executeQuery();
 			
 			while(res.next())

@@ -35,16 +35,13 @@ public class MySQLRevueDAO implements RevueDAO {
 			if(res.next())
 			{
 				revue = new RevueMetier();
-				revue.setId(res.getInt("id"));
-				revue.setDescription(res.getString("description"));
-				revue.setTitre(res.getString("titre"));
-				revue.setVisuel(res.getString("visuel"));
-				revue.setTarifNumero(res.getInt("tarifNumero"));
-				revue.setIdPeriodicite(res.getInt("idPeriodicite"));
-			
-				
+				revue.setId(res.getInt("id_revue"));
+                revue.setDescription(res.getString("description"));
+                revue.setTitre(res.getString("titre"));
+                revue.setVisuel(res.getString("visuel"));
+                revue.setTarifNumero(res.getInt("tarif_numero"));
+                revue.setIdPeriodicite(res.getInt("id_periodicite")); 
 			}
-			
 			if (res != null)
 				res.close();
 			if (requete != null)
@@ -83,7 +80,7 @@ public class MySQLRevueDAO implements RevueDAO {
 		int nbLignes = 0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ?,`description`= ?,`tarif_numero`= ? , `visuel`= ?,`id_periodicite`= ?  WHERE `Revue`.`id_revue`= ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("UPDATE `dipaolo6u_cpoatdun`.`Revue` SET `id_revue` = ?, `titre` = ?,`description` = ?,`tarif_numero`=?,`visuel` =?,`id_periodicite` = ? WHERE `Revue`.`id_revue` = ?;");
 			requete.setInt(1, objet.getId());
 			requete.setString(2,objet.getTitre());
 			requete.setString(3, objet.getDescription());
@@ -119,7 +116,7 @@ public class MySQLRevueDAO implements RevueDAO {
 		RevueMetier revue =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Revue ");
 			ResultSet res = requete.executeQuery();
 			
 			while(res.next())

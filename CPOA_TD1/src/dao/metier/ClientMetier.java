@@ -153,8 +153,6 @@ public class ClientMetier {
 			
 			break;
 		}	
-		scanner.close();
-		scannerStr.close();
 }
 
 	public static void clientLaunchListeMemoire() {
@@ -227,7 +225,5 @@ public class ClientMetier {
 			
 			break;
 		}	
-		scanner.close();
-		scannerStr.close();
 	}
 }
