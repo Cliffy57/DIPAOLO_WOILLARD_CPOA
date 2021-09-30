@@ -33,17 +33,14 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement where id_abonnement=?");
 			requete.setInt(1, id);
 			ResultSet res = requete.executeQuery();
-			if(res.next())
-			{
+			if (res.next()) {
 				abonnement = new AbonnementMetier();
-				abonnement.setId(res.getInt("id"));
-				abonnement.setDateDebut(res.getDate("DateDebut").toLocalDate());
-				abonnement.setDateFin(res.getDate("DateFin").toLocalDate());
-				abonnement.setIdClient(res.getInt("IDClient"));
-				abonnement.setIdRevue(res.getInt("IDRevue"));
-			
-				
-				
+				abonnement.setId(res.getInt("id_abonnement"));
+				abonnement.setDateDebut(res.getDate("date_debut").toLocalDate());
+				abonnement.setDateFin(res.getDate("date_fin").toLocalDate());
+				abonnement.setIdClient(res.getInt("id_client"));
+				abonnement.setIdRevue(res.getInt("id_revue"));
+
 			}
 			if (res != null)
 				res.close();
@@ -119,14 +116,13 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 	@Override
 	public ArrayList<AbonnementMetier> findAll() {
 		ArrayList<AbonnementMetier> list = new ArrayList<AbonnementMetier>();
-		AbonnementMetier abonnement =null;
+		AbonnementMetier abonnement = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
 			PreparedStatement requete = laConnexion.prepareStatement("select * from Client ");
 			ResultSet res = requete.executeQuery();
-			
-			while(res.next())
-			{
+
+			while (res.next()) {
 				abonnement = new AbonnementMetier();
 				abonnement.setId(res.getInt("id_abonnement"));
 				abonnement.setDateDebut(res.getDate("date_debut").toLocalDate());
@@ -134,19 +130,18 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 				abonnement.setIdClient(res.getInt("id_client"));
 				abonnement.setIdRevue(res.getInt("id_revue"));
 				list.add(abonnement);
-				
-				
+
 			}
 			if (res != null)
 				res.close();
 			if (requete != null)
 				requete.close();
-			if(laConnexion != null)
+			if (laConnexion != null)
 				laConnexion.close();
-			} catch (SQLException sqle) {
-				System.out.println("Pb dans select " + sqle.getMessage());
-			}
-		
+		} catch (SQLException sqle) {
+			System.out.println("Pb dans select " + sqle.getMessage());
+		}
+
 		return list;
 	}
 }

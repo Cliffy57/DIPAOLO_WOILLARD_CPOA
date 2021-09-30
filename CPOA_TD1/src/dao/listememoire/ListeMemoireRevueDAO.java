@@ -12,7 +12,6 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 
 	private List<RevueMetier> donnees;
 
-
 	public static ListeMemoireRevueDAO getInstance() {
 
 		if (instance == null) {
@@ -26,10 +25,9 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 
 		this.donnees = new ArrayList<RevueMetier>();
 
-		this.donnees.add(new RevueMetier(1, "", null, 0, null, 0));
-		this.donnees.add(new RevueMetier(2, "Quotidien", null, 0, null, 0));
+		this.donnees.add(new RevueMetier(2,"testo","sterone",2,"5",2));
+		this.donnees.add(new RevueMetier(6, "Quotidien","de malchanceux", 4,"OUGA BOUGA", 3));
 	}
-
 
 	@Override
 	public boolean create(RevueMetier objet) {
@@ -41,22 +39,22 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 			objet.setId(objet.getId() + 1);
 		}
 		boolean ok = this.donnees.add(objet);
-		
+
 		return ok;
 	}
 
 	@Override
 	public boolean update(RevueMetier objet) {
-		
+
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
 		} else {
-			
+
 			this.donnees.set(idx, objet);
 		}
-		
+
 		return true;
 	}
 
@@ -64,7 +62,7 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 	public boolean delete(RevueMetier objet) {
 
 		RevueMetier supprime;
-		
+
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
@@ -72,7 +70,7 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 		} else {
 			supprime = this.donnees.remove(idx);
 		}
-		
+
 		return objet.equals(supprime);
 	}
 
@@ -91,6 +89,5 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 	public ArrayList<RevueMetier> findAll() {
 		return (ArrayList<RevueMetier>) this.donnees;
 	}
-
 
 }

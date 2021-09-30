@@ -12,7 +12,6 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 
 	private List<PeriodiciteMetier> donnees;
 
-
 	public static ListeMemoirePeriodiciteDAO getInstance() {
 
 		if (instance == null) {
@@ -30,7 +29,6 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 		this.donnees.add(new PeriodiciteMetier(2, "Quotidien"));
 	}
 
-
 	@Override
 	public boolean create(PeriodiciteMetier objet) {
 
@@ -41,22 +39,22 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 			objet.setId(objet.getId() + 1);
 		}
 		boolean ok = this.donnees.add(objet);
-		
+
 		return ok;
 	}
 
 	@Override
 	public boolean update(PeriodiciteMetier objet) {
-		
+
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
 		} else {
-			
+
 			this.donnees.set(idx, objet);
 		}
-		
+
 		return true;
 	}
 
@@ -64,7 +62,7 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	public boolean delete(PeriodiciteMetier objet) {
 
 		PeriodiciteMetier supprime;
-		
+
 		// Ne fonctionne que si l'objet métier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
@@ -72,7 +70,7 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 		} else {
 			supprime = this.donnees.remove(idx);
 		}
-		
+
 		return objet.equals(supprime);
 	}
 
@@ -91,6 +89,5 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	public ArrayList<PeriodiciteMetier> findAll() {
 		return (ArrayList<PeriodiciteMetier>) this.donnees;
 	}
-
 
 }

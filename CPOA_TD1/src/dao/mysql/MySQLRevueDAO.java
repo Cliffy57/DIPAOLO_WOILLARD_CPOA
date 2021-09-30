@@ -35,12 +35,12 @@ public class MySQLRevueDAO implements RevueDAO {
 			if(res.next())
 			{
 				revue = new RevueMetier();
-				revue.setId(res.getInt("id"));
+				revue.setId(res.getInt("id_revue"));
 				revue.setDescription(res.getString("description"));
 				revue.setTitre(res.getString("titre"));
 				revue.setVisuel(res.getString("visuel"));
-				revue.setTarifNumero(res.getInt("tarifNumero"));
-				revue.setIdPeriodicite(res.getInt("idPeriodicite"));
+				revue.setTarifNumero(res.getInt("tarif_numero"));
+				revue.setIdPeriodicite(res.getInt("id_periodicite"));
 			
 				
 			}
@@ -147,7 +147,5 @@ public class MySQLRevueDAO implements RevueDAO {
 		
 		return list;
 	}
-	
 
-	
 }

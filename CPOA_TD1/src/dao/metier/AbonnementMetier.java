@@ -25,7 +25,7 @@ public class AbonnementMetier {
 	}
 
 	public AbonnementMetier() {
-		
+
 	}
 
 	public int getId() {
@@ -75,7 +75,7 @@ public class AbonnementMetier {
 	}
 
 	public static void abonnementLaunchSQL() {
-		
+
 		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.MYSQL);
 		DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n");
@@ -107,7 +107,8 @@ public class AbonnementMetier {
 			int IDclientNew = scanner.nextInt();
 			System.out.print("Saisissez la valeur de l'ID de la revue\n");
 			int IDrevueNew = scanner.nextInt();
-			factory.getAbonnementDAO().update(new AbonnementMetier(IDold, dateDebutNew, dateFinNew, IDclientNew, IDrevueNew));
+			factory.getAbonnementDAO()
+					.update(new AbonnementMetier(IDold, dateDebutNew, dateFinNew, IDclientNew, IDrevueNew));
 			break;
 		case 3:
 
@@ -115,12 +116,11 @@ public class AbonnementMetier {
 			int IDsuppr = scanner.nextInt();
 			factory.getAbonnementDAO().delete(factory.getAbonnementDAO().getById(IDsuppr));
 			break;
-		
-		case 4 : 
-			
+
+		case 4:
+
 			Iterator<AbonnementMetier> iterator = factory.getAbonnementDAO().findAll().iterator();
-			while(iterator.hasNext())
-			{
+			while (iterator.hasNext()) {
 				System.out.println(iterator.next());
 			}
 			break;
@@ -131,9 +131,9 @@ public class AbonnementMetier {
 		scanner.close();
 
 	}
-	
+
 	public static void abonnementLaunchListeMemoire() {
-		
+
 		DAOFactory factory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
 		DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		System.out.print("Voulez-vous :\n" + "(1) Ajouter\n" + "(2) Modifier\n" + "(3) Supprimer\n");
@@ -165,7 +165,8 @@ public class AbonnementMetier {
 			int IDclientNew = scanner.nextInt();
 			System.out.print("Saisissez la valeur de l'ID de la revue\n");
 			int IDrevueNew = scanner.nextInt();
-			factory.getAbonnementDAO().update(new AbonnementMetier(IDold, dateDebutNew, dateFinNew, IDclientNew, IDrevueNew));
+			factory.getAbonnementDAO()
+					.update(new AbonnementMetier(IDold, dateDebutNew, dateFinNew, IDclientNew, IDrevueNew));
 			break;
 		case 3:
 
@@ -173,12 +174,11 @@ public class AbonnementMetier {
 			int IDsuppr = scanner.nextInt();
 			factory.getAbonnementDAO().delete(factory.getAbonnementDAO().getById(IDsuppr));
 			break;
-		
-		case 4 : 
-			
+
+		case 4:
+
 			Iterator<AbonnementMetier> iterator = factory.getAbonnementDAO().findAll().iterator();
-			while(iterator.hasNext())
-			{
+			while (iterator.hasNext()) {
 				System.out.println(iterator.next());
 			}
 			break;
@@ -188,6 +188,5 @@ public class AbonnementMetier {
 		}
 		scanner.close();
 	}
-	
-	
+
 }
