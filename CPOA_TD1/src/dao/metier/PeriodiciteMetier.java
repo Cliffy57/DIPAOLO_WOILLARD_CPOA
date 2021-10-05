@@ -34,7 +34,29 @@ public class PeriodiciteMetier {
 	public PeriodiciteMetier() {
 
 	}
+	
+//	public PeriodiciteMetier(String label) {
+//		this.libelle=label;
+//		this.id = -1;
+//	}
+	
 
+	@Override
+	public boolean equals(Object o) {
+		
+		PeriodiciteMetier m = (PeriodiciteMetier) o;
+		if(o == null) {
+			return false;
+		}
+		if(this.getClass()==m.getClass()) {
+			if(m.getId() == this.getId()) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	@Override
 	public String toString() {
 		return "Periodicite [ID=" + id + ", libelle=" + libelle + "]";
@@ -78,13 +100,6 @@ public class PeriodiciteMetier {
 				System.out.println(iterator.next());
 			}
 			break;
-		case 4 : 	
-			Iterator<PeriodiciteMetier> iterator = factory.getPeriodiciteDAO().findAll().iterator();
-			while(iterator.hasNext())
-			{
-				System.out.println(iterator.next());
-			}
-			break;
 
 		default:
 
@@ -92,6 +107,8 @@ public class PeriodiciteMetier {
 		}
 	
 }
+
+	
     
     public static void periodiciteLaunchListeMemoire() {
     	
@@ -119,7 +136,7 @@ public class PeriodiciteMetier {
 				int newId = scanner.nextInt();
 				System.out.println("Saisissez la valeur du libell�\n");
 				String newLibelle = scannerStr.next();
-				factory.getPeriodiciteDAO().update(factory.getPeriodiciteDAO().getById(newId));
+				factory.getPeriodiciteDAO().update(new PeriodiciteMetier(newId,newLibelle));
 			break;
 		case 3:
 
