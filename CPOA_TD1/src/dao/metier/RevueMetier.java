@@ -77,6 +77,22 @@ public class RevueMetier {
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		
+		RevueMetier m = (RevueMetier) o;
+		if(o == null) {
+			return false;
+		}
+		if(this.getClass()==m.getClass()) {
+			if(m.getId() == this.getId()) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	@Override
 	public String toString() {
 		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero="
 				+ tarifNumero + ", visuel=" + visuel + ", id_periodicite=" + idPeriodicite + "]";

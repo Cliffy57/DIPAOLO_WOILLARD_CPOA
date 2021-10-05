@@ -96,6 +96,22 @@ public class ClientMetier {
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		
+		ClientMetier m = (ClientMetier) o;
+		if(o == null) {
+			return false;
+		}
+		if(this.getClass()==m.getClass()) {
+			if(m.getId() == this.getId()) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	@Override
 	public String toString() {
 		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", no_rue=" + noRue + ", voie=" + voie
 				+ ", codepost=" + codePost + ", ville=" + ville + ", pays=" + pays + "]";

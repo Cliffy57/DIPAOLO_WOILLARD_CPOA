@@ -27,6 +27,22 @@ public class AbonnementMetier {
 	public AbonnementMetier() {
 
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		
+		AbonnementMetier m = (AbonnementMetier) o;
+		if(o == null) {
+			return false;
+		}
+		if(this.getClass()==m.getClass()) {
+			if(m.getId() == this.getId()) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 
 	public int getId() {
 		return id;
