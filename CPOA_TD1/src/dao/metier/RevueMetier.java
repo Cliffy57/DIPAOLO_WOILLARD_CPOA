@@ -104,7 +104,11 @@ public class RevueMetier {
 				+ "(1) Ajouter\n"
 				+ "(2) Modifier\n"
 				+ "(3) Supprimer\n"
-				+ "(4) Tout afficher");
+				+ "(4) Tout afficher\n"
+				+ "(5) Retour\n"
+				+ "(6) Choix SGBD\n"
+				+ "(7) Quitter\n"
+				);
 		Scanner scannerStr = new Scanner(System.in).useDelimiter("\n");
 		Scanner scanner = new Scanner(System.in);
 		int res = scanner.nextInt();
@@ -123,6 +127,7 @@ public class RevueMetier {
 			System.out.print("Saisissez la valeur de l'ID_Periodicite\n");
 			int IDPeriodicite = scanner.nextInt();
 			factory.getRevueDAO().create(new RevueMetier(ID, description, titre, tarif_numero, visuel, IDPeriodicite));
+			revueLaunchSQL();
 			break;
 		case 2:
 
@@ -140,12 +145,14 @@ public class RevueMetier {
 			int NewIDPeriodicite = scanner.nextInt();
 			factory.getRevueDAO().update(
 					new RevueMetier(IDnew, Newdescription, Newtitre, Newtarif_numero, Newvisuel, NewIDPeriodicite));
+			revueLaunchSQL();
 			break;
 		case 3:
 
 			System.out.print("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getRevueDAO().delete(factory.getRevueDAO().getById(IDsuppr));
+			revueLaunchSQL();
 			break;
 
 		case 4:
@@ -153,6 +160,13 @@ public class RevueMetier {
 			while (iterator.hasNext()) {
 				System.out.println(iterator.next());
 			}
+			revueLaunchSQL();
+			break;
+		case 5 :
+			break;
+		case 6 :
+			break;
+		case 7 :
 			break;
 		default:
 
@@ -202,6 +216,7 @@ public class RevueMetier {
 			int NewIDPeriodicite = scanner.nextInt();
 			factory.getRevueDAO().update(
 					new RevueMetier(IDnew, Newdescription, Newtitre, Newtarif_numero, Newvisuel, NewIDPeriodicite));
+			
 			break;
 		case 3:
 
