@@ -1,10 +1,5 @@
 package dao.metier;
 
-import java.util.Iterator;
-import java.util.Scanner;
-
-import dao.Persistance;
-import dao.factory.DAOFactory;
 
 public class ClientMetier {
 	private int id;

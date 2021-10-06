@@ -1,12 +1,6 @@
 package dao.metier;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Iterator;
-import java.util.Scanner;
-
-import dao.Persistance;
-import dao.factory.DAOFactory;
 
 public class AbonnementMetier {
 
