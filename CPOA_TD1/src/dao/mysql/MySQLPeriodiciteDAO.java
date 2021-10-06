@@ -108,7 +108,7 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		PeriodiciteMetier periodicite = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite");
 			ResultSet res = requete.executeQuery();
 
 			while (res.next()) {

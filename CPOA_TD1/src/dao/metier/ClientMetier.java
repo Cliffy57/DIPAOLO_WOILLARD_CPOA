@@ -132,7 +132,7 @@ public class ClientMetier {
 			String nom = scannerStr.next().trim();
 			System.out.println("Saisissez la valeur du prenom\n");
 			String prenom = scannerStr.next().trim();
-			System.out.println("Saisissez la valeur du num�ro de rue\n");
+			System.out.println("Saisissez la valeur du numero de rue\n");
 			int no_rue = scanner.nextInt();
 			System.out.println("Saisissez la valeur de la voie\n");
 			String voie = scannerStr.next().trim();
@@ -146,13 +146,13 @@ public class ClientMetier {
 			break;
 		case 2:
 
-			System.out.println("Saisissez la valeur de l'ID � modifier\n");
+			System.out.println("Saisissez la valeur de l'ID a modifier\n");
 			int newID = scanner.nextInt();
 			System.out.println("Saisissez la valeur du nom\n");
 			String Newnom = scannerStr.next().trim();
 			System.out.println("Saisissez la valeur du prenom\n");
 			String Newprenom = scannerStr.next().trim();
-			System.out.println("Saisissez la valeur du num�ro de rue\n");
+			System.out.println("Saisissez la valeur du numero de rue\n");
 			int Newno_rue = scanner.nextInt();
 			System.out.println("Saisissez la valeur de la voie\n");
 			String Newvoie = scannerStr.next().trim();
@@ -167,7 +167,7 @@ public class ClientMetier {
 			break;
 		case 3:
 
-			System.out.println("Saisissez la valeur de l'ID � supprimer\n");
+			System.out.println("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getClientDAO().delete(factory.getClientDAO().getById(IDsuppr));
 			break;
@@ -201,7 +201,7 @@ public class ClientMetier {
 			String nom = scannerStr.next().trim();
 			System.out.println("Saisissez la valeur du prenom\n");
 			String prenom = scannerStr.next().trim();
-			System.out.println("Saisissez la valeur du num�ro de rue\n");
+			System.out.println("Saisissez la valeur du numero de rue\n");
 			int no_rue = scanner.nextInt();
 			System.out.println("Saisissez la valeur de la voie\n");
 			String voie = scannerStr.next().trim();
@@ -215,13 +215,13 @@ public class ClientMetier {
 			break;
 		case 2:
 
-			System.out.println("Saisissez la valeur de l'ID � modifier\n");
+			System.out.println("Saisissez la valeur de l'ID a modifier\n");
 			int newID = scanner.nextInt();
 			System.out.println("Saisissez la valeur du nom\n");
 			String Newnom = scannerStr.next().trim();
 			System.out.println("Saisissez la valeur du prenom\n");
 			String Newprenom = scannerStr.next().trim();
-			System.out.println("Saisissez la valeur du num�ro de rue\n");
+			System.out.println("Saisissez la valeur du numero de rue\n");
 			int Newno_rue = scanner.nextInt();
 			System.out.println("Saisissez la valeur de la voie\n");
 			String Newvoie = scannerStr.next().trim();
@@ -236,7 +236,7 @@ public class ClientMetier {
 			break;
 		case 3:
 
-			System.out.println("Saisissez la valeur de l'ID � supprimer\n");
+			System.out.println("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getClientDAO().delete(factory.getClientDAO().getById(IDsuppr));
 			break;

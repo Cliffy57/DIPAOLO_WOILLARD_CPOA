@@ -94,7 +94,7 @@ public class RevueMetier {
 	
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero="
+		return "Revue [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero="
 				+ tarifNumero + ", visuel=" + visuel + ", id_periodicite=" + idPeriodicite + "]";
 	}
 
@@ -126,7 +126,7 @@ public class RevueMetier {
 			break;
 		case 2:
 
-			System.out.print("Saisissez la valeur de l'ID � modifier\n");
+			System.out.print("Saisissez la valeur de l'ID a modifier\n");
 			int IDnew = scanner.nextInt();
 			System.out.print("Saisissez la valeur du titre\n");
 			String Newtitre = scannerStr.next();
@@ -143,7 +143,7 @@ public class RevueMetier {
 			break;
 		case 3:
 
-			System.out.print("Saisissez la valeur de l'ID � supprimer\n");
+			System.out.print("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getRevueDAO().delete(factory.getRevueDAO().getById(IDsuppr));
 			break;
@@ -188,7 +188,7 @@ public class RevueMetier {
 			break;
 		case 2:
 
-			System.out.print("Saisissez la valeur de l'ID � modifier\n");
+			System.out.print("Saisissez la valeur de l'ID a modifier\n");
 			int IDnew = scanner.nextInt();
 			System.out.print("Saisissez la valeur du titre\n");
 			String Newtitre = scannerStr.next();
@@ -205,7 +205,7 @@ public class RevueMetier {
 			break;
 		case 3:
 
-			System.out.print("Saisissez la valeur de l'ID � supprimer\n");
+			System.out.print("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getRevueDAO().delete(factory.getRevueDAO().getById(IDsuppr));
 			break;

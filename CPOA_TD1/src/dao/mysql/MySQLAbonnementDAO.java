@@ -121,7 +121,7 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 		AbonnementMetier abonnement = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement");
 			ResultSet res = requete.executeQuery();
 
 			while (res.next()) {

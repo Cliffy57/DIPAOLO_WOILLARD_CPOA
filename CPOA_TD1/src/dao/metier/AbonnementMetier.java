@@ -86,7 +86,7 @@ public class AbonnementMetier {
 
 	@Override
 	public String toString() {
-		return "AbonnementMetier [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", IDClient="
+		return "Abonnement [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", IDClient="
 				+ idClient + ", IDRevue=" + idRevue + "]";
 	}
 
@@ -113,9 +113,9 @@ public class AbonnementMetier {
 			break;
 		case 2:
 
-			System.out.print("Saisissez la valeur de l'ID ï¿½ modifier\n");
+			System.out.print("Saisissez la valeur de l'ID a modifier\n");
 			int IDold = scanner.nextInt();
-			System.out.print("Saisissez la valeur de la date de dï¿½but (sous la forme dd/MM/yyyy)\n");
+			System.out.print("Saisissez la valeur de la date de debut (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateDebutNew = LocalDate.parse(scanner.next(), formatage);
 			System.out.print("Saisissez la valeur de la date de fin (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateFinNew = LocalDate.parse(scanner.next(), formatage);
@@ -128,7 +128,7 @@ public class AbonnementMetier {
 			break;
 		case 3:
 
-			System.out.print("Saisissez la valeur de l'ID ï¿½ supprimer\n");
+			System.out.print("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getAbonnementDAO().delete(factory.getAbonnementDAO().getById(IDsuppr));
 			break;
@@ -186,7 +186,7 @@ public class AbonnementMetier {
 			break;
 		case 3:
 
-			System.out.print("Saisissez la valeur de l'ID à supprimer\n");
+			System.out.print("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getAbonnementDAO().delete(factory.getAbonnementDAO().getById(IDsuppr));
 			break;

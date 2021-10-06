@@ -70,7 +70,7 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Choissisez votre SGBD:\n" + "(1) SQL\n" + "(2) ListeMemoire\n" + "(3) Partir");
+		System.out.println("Choisissez votre SGBD:\n" + "(1) SQL\n" + "(2) ListeMemoire\n" + "(3) Partir");
 		int res = scanner.nextInt();
 		switch(res) {
 		case 1 : LaunchSQL();

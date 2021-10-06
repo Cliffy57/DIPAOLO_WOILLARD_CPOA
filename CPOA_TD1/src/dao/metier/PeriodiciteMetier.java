@@ -76,21 +76,21 @@ public class PeriodiciteMetier {
 		case 1:
 			System.out.println("Saisissez la valeur de l'ID\n");
 			int id = scanner.nextInt();
-			System.out.println("Saisissez la valeur du libell�\n");
+			System.out.println("Saisissez la valeur du libelle\n");
 			String libelle = scannerStr.next();
 			factory.getPeriodiciteDAO().create(new PeriodiciteMetier(id, libelle));
 			break;
 		case 2:
 
-			System.out.println("Saisissez la valeur de l'ID � modifier\n");
+			System.out.println("Saisissez la valeur de l'ID a modifier\n");
 			int newId = scanner.nextInt();
-			System.out.println("Saisissez la valeur du libell� ID\n");
+			System.out.println("Saisissez la valeur du libelle ID\n");
 			String newLibelle = scannerStr.next();
 			factory.getPeriodiciteDAO().update(new PeriodiciteMetier(newId, newLibelle));
 			break;
 		case 3:
 
-			System.out.println("Saisissez la valeur de l'ID � supprimer\n");
+			System.out.println("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getPeriodiciteDAO().delete(factory.getPeriodiciteDAO().getById(IDsuppr));
 			break;
@@ -125,22 +125,22 @@ public class PeriodiciteMetier {
 		case 1:
 			System.out.println("Saisissez la valeur de l'ID\n");
 			int id = scanner.nextInt();
-			System.out.println("Saisissez la valeur du libell�\n");
+			System.out.println("Saisissez la valeur du libelle\n");
 			String libelle = scannerStr.next();
 			factory.getPeriodiciteDAO().create(new PeriodiciteMetier(id, libelle));
 
 			break;
 		case 2:
 			
-				System.out.println("Saisissez la valeur de l'ID � modifier\n");
+				System.out.println("Saisissez la valeur de l'ID a modifier\n");
 				int newId = scanner.nextInt();
-				System.out.println("Saisissez la valeur du libell�\n");
+				System.out.println("Saisissez la valeur du libelle\n");
 				String newLibelle = scannerStr.next();
 				factory.getPeriodiciteDAO().update(new PeriodiciteMetier(newId,newLibelle));
 			break;
 		case 3:
 
-			System.out.println("Saisissez la valeur de l'ID � supprimer\n");
+			System.out.println("Saisissez la valeur de l'ID a supprimer\n");
 			int IDsuppr = scanner.nextInt();
 			factory.getPeriodiciteDAO().delete(factory.getPeriodiciteDAO().getById(IDsuppr));
 			break;
