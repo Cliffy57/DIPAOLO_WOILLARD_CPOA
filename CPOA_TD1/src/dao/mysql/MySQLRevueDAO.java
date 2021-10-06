@@ -5,9 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import connexion.Connexion;
 import dao.RevueDAO;
 import dao.metier.RevueMetier;
-import net.cpoa.Connexion;
 
 public class MySQLRevueDAO implements RevueDAO {
 

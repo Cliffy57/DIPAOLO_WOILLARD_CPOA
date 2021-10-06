@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import connexion.Connexion;
 import dao.PeriodiciteDAO;
 import dao.metier.PeriodiciteMetier;
-import net.cpoa.Connexion;
 
 public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 

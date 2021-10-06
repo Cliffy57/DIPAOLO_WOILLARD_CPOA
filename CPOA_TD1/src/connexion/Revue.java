@@ -1,4 +1,4 @@
-package net.cpoa;
+package connexion;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

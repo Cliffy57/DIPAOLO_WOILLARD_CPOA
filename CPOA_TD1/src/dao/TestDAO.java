@@ -2,10 +2,10 @@ package dao;
 
 import java.util.Scanner;
 
-import net.cpoa.Abonnement;
-import net.cpoa.Client;
-import net.cpoa.Periodicite;
-import net.cpoa.Revue;
+import connexion.Abonnement;
+import connexion.Client;
+import connexion.Periodicite;
+import connexion.Revue;
 
 public class TestDAO {
 
