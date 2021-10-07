@@ -1,4 +1,4 @@
 module net.cpoa {
-	exports net.cpoa;
+	exports connexion;
 	requires java.sql;
 }

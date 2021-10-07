@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import connexion.Connexion;
 import dao.PeriodiciteDAO;
 import dao.metier.PeriodiciteMetier;
-import net.cpoa.Connexion;
 
 public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 
@@ -108,7 +108,7 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		PeriodiciteMetier periodicite = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Periodicite");
 			ResultSet res = requete.executeQuery();
 
 			while (res.next()) {

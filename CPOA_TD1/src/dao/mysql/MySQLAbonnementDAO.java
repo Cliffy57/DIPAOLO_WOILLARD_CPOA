@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import connexion.Connexion;
 import dao.AbonnementDAO;
 import dao.metier.AbonnementMetier;
 import dao.metier.ClientMetier;
-import net.cpoa.Connexion;
 
 public class MySQLAbonnementDAO implements AbonnementDAO {
 
@@ -121,7 +121,7 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 		AbonnementMetier abonnement = null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Abonnement");
 			ResultSet res = requete.executeQuery();
 
 			while (res.next()) {

@@ -5,9 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import connexion.Connexion;
 import dao.RevueDAO;
 import dao.metier.RevueMetier;
-import net.cpoa.Connexion;
 
 public class MySQLRevueDAO implements RevueDAO {
 
@@ -116,7 +117,7 @@ public class MySQLRevueDAO implements RevueDAO {
 		RevueMetier revue =null;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("select * from Revue ");
+			PreparedStatement requete = laConnexion.prepareStatement("select * from Revue");
 			ResultSet res = requete.executeQuery();
 			
 			while(res.next())

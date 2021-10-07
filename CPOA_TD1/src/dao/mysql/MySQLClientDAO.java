@@ -3,9 +3,9 @@ package dao.mysql;
 import java.sql.*;
 import java.util.ArrayList;
 
+import connexion.Connexion;
 import dao.ClientDAO;
 import dao.metier.ClientMetier;
-import net.cpoa.Connexion;
 
 public class MySQLClientDAO implements ClientDAO {
 
