@@ -10,9 +10,9 @@ public class NormalisationVille {
 		{
 			str = str.replaceFirst(Character.toString(firstLetter), Character.toString(Character.toUpperCase(firstLetter)));
 		}
-		if(str.contains(" lès "))
+		if(str.contains(" lÃ¨s "))
 		{
-			str = str.replace(" lès ", "-lès-");
+			str = str.replace(" lÃ¨s ", "-lÃ¨s-");
 		}
 		if(str.contains(" le "))
 		{
@@ -26,9 +26,9 @@ public class NormalisationVille {
 		{
 			str = str.replace(" sur ", "-sur-");
 		}
-		if(str.contains(" à "))
+		if(str.contains(" Ã  "))
 		{
-			str = str.replace(" à ", "-à-");
+			str = str.replace(" Ã  ", "-Ã -");
 		}
 		if(str.contains(" aux "))
 		{

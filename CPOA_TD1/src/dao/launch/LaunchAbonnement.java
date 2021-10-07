@@ -23,7 +23,7 @@ public class LaunchAbonnement {
 		case 1:
 			System.out.print("Saisissez la valeur de l'ID\n");
 			int ID = scanner.nextInt();
-			System.out.print("Saisissez la valeur de la date de dï¿½but (sous la forme dd/MM/yyyy)\n");
+			System.out.print("Saisissez la valeur de la date de dÃ©but (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateDebut = LocalDate.parse(scanner.next(), formatage);
 			System.out.print("Saisissez la valeur de la date de fin (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateFin = LocalDate.parse(scanner.next(), formatage);
@@ -93,7 +93,7 @@ public class LaunchAbonnement {
 		case 1:
 			System.out.print("Saisissez la valeur de l'ID\n");
 			int ID = scanner.nextInt();
-			System.out.print("Saisissez la valeur de la date de début (sous la forme dd/MM/yyyy)\n");
+			System.out.print("Saisissez la valeur de la date de dÃ©but (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateDebut = LocalDate.parse(scanner.next(), formatage);
 			System.out.print("Saisissez la valeur de la date de fin (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateFin = LocalDate.parse(scanner.next(), formatage);
@@ -106,9 +106,9 @@ public class LaunchAbonnement {
 			break;
 		case 2:
 
-			System.out.print("Saisissez la valeur de l'ID de l'abonnement à modifier\n");
+			System.out.print("Saisissez la valeur de l'ID de l'abonnement Ã  modifier\n");
 			int IDold = scanner.nextInt();
-			System.out.print("Saisissez la valeur de la date de début (sous la forme dd/MM/yyyy)\n");
+			System.out.print("Saisissez la valeur de la date de dï¿½but (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateDebutNew = LocalDate.parse(scanner.next(), formatage);
 			System.out.print("Saisissez la valeur de la date de fin (sous la forme dd/MM/yyyy)\n");
 			LocalDate dateFinNew = LocalDate.parse(scanner.next(), formatage);
