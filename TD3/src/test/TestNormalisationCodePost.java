@@ -12,7 +12,7 @@ public class TestNormalisationCodePost {
 	@Test
 	public void testSainte() {
 		String ville = "SteMarthesurlelac";
-		assertEquals("Sainte-MarthesurleLac", normalastionVille, normalisation(ville));
+		assertEquals("Sainte-MarthesurleLac", normalisationVille, normalisation(ville));
 
 	}
 
