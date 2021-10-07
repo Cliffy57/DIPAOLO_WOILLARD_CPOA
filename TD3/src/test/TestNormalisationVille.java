@@ -4,8 +4,10 @@ import org.junit.Test;
 
 public class TestNormalisationVille {
 
-	// lËs, sous, sur, ‡, aux (Montigny-lËs-Metz) ;
-	// St/Ste (Saint-Julien-lËs-Metz)
+//	les noms de ville commencent par une majuscule ; quand le nom de ville contient une pr√©position le,
+//	l√®s, sous, sur, √†, aux, la pr√©position est pr√©c√©d√©e et suivie de tirets (Montigny-l√®s-Metz) ; les St/Ste ne sont
+//	pas abr√©g√©s et sont suivis d'un tiret (Saint-Julien-l√®s-Metz)
+
 
 	@Test
 	public void testMajuscule() {
@@ -15,10 +17,10 @@ public class TestNormalisationVille {
 
 	}
 	@Test
-	public void testPrepositionlËs() {
+	public void testPrepositionl√®s() {
 
-		String ville = "Montigny lËs Metz";
-		assertEquals("Montigny-lËs-Metz", normalisationVille.normalisation(ville));
+		String ville = "Montigny l√®s Metz";
+		assertEquals("Montigny-l√®s-Metz", normalisationVille.normalisation(ville));
 
 	}
 	@Test
@@ -36,10 +38,10 @@ public class TestNormalisationVille {
 
 	}
 	@Test
-	public void testPreposition‡() {
+	public void testPreposition√†() {
 
-		String ville = "Montigny ‡ Metz";
-		assertEquals("Montigny-‡-Metz", normalisationVille.normalisation(ville));
+		String ville = "Montigny √† Metz";
+		assertEquals("Montigny-√†-Metz", normalisationVille.normalisation(ville));
 
 	}
 	@Test
@@ -51,8 +53,8 @@ public class TestNormalisationVille {
 	}
 	@Test
 	public void testSaint() {
-		String ville = "StJulienlËsMetz";
-		assertEquals("Saint-JulienlËsMetz", normalastionVille, normalisation(ville));
+		String ville = "StJulienlÔøΩsMetz";
+		assertEquals("Saint-JulienlÔøΩsMetz", normalastionVille, normalisation(ville));
 
 	}
 	@Test
