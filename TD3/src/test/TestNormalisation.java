@@ -1,34 +1,24 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
+import normalisation.NormalisationPays;
+
 public class TestNormalisation {
 
-	
-	public static String normalisation(String str) {
-		
-		str = str.trim();
-		switch(str) {
-		case "letzebuerg" : str = " Luxembourg"; break;
-		case "belgium" : str = "Belgique"; break;
-		case "Switzerland" : str = " Suisse"; break;
-		case "Schweiz" : str = " Suisse"; break;
-		}
-		return str;
-	}
-	
-	
-	public static void main(String[] args) {
-		System.out.println(normalisation("belgium"));
+	@Test
+	public void testPaysNULL() {
+		String pays = null;
+		assertNull(NormalisationPays.normalisation(pays));
 	}
 	
 	@Test
-	public void testBelgium() {
-		String pays ="belgium";
-		assertEquals("Belgique", normalisation(pays));
+	public void testPaysTrim() {
+		String pays ="    pays                ";
+		assertEquals("pays", NormalisationPays.normalisation(pays));
 	}
-	
 }
