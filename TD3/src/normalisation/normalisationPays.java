@@ -1,0 +1,16 @@
+package normalisation;
+
+public class normalisationPays {
+
+	public static String normalisation(String str) {
+
+        str = str.trim();
+        switch(str) {
+        case "letzebuerg" : str = "Luxembourg"; break;
+        case "belgium" : str = "Belgique"; break;
+        case "Switzerland" : str = "Suisse"; break;
+        case "Schweiz" : str = "Suisse"; break;
+        }
+        return str;
+    }
+}
