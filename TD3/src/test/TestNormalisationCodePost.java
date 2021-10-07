@@ -10,10 +10,18 @@ public class TestNormalisationCodePost {
 
 	
 	@Test
-	public void testSainte() {
-		String ville = "SteMarthesurlelac";
-		assertEquals("Sainte-MarthesurleLac", normalisationVille, normalisation(ville));
+	public void test0() {
+		String codepost = "8200";
+		assertEquals("08200", normalisationCodePost, normalisation(codepost));
 
 	}
+	@Test
+	public void testIndicatif() {
+		String codepost = "L-2270";
+		assertEquals("2270", normalisationCodePost, normalisation(codepost));
+
+	}
+	
+	
 
 }
