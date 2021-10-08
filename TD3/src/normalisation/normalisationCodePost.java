@@ -1,20 +1,29 @@
 package normalisation;
 
 
+
 public class normalisationCodePost {
 
 public static String normalisation(String str) {
 	
-	str = str.trim();
-	char firstLetter = str.charAt(0);
-	if(str.length()!=5)
+	if(str != null)
 	{
-		str = str.replaceFirst(Character.toString(firstLetter),"0");
-	}
+	str = str.trim();
+	
 	if(str.contains("L-"))
 	{
-		str = str.replace(" lès ", "-lès-");
+		str = str.replace("L-", "");
 	}
+	else if(str.length()==4) {
+		
+		char zero = '0';
+        str = zero + str;
+		
+	}
+	
+	}
+	
+	
 	
 	
 	return str;

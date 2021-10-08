@@ -1,6 +1,10 @@
 package test;
 
+
+import static org.junit.Assert.assertEquals;
+import normalisation.normalisationCodePost;
 import org.junit.Test;
+
 
 public class TestNormalisationCodePost {
 
@@ -12,13 +16,13 @@ public class TestNormalisationCodePost {
 	@Test
 	public void test0() {
 		String codepost = "8200";
-		assertEquals("08200", normalisationCodePost, normalisation(codepost));
+		assertEquals("08200", normalisationCodePost.normalisation(codepost));
 
 	}
 	@Test
 	public void testIndicatif() {
 		String codepost = "L-2270";
-		assertEquals("2270", normalisationCodePost, normalisation(codepost));
+		assertEquals("2270", normalisationCodePost.normalisation(codepost));
 
 	}
 	
