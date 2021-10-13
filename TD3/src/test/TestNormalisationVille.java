@@ -1,6 +1,10 @@
 package test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import org.junit.Test;
+import normalisation.*;
 
 public class TestNormalisationVille {
 
@@ -13,55 +17,82 @@ public class TestNormalisationVille {
 	public void testMajuscule() {
 
 		String ville = "paris";
-		assertEquals("Paris", normalisationVille.normalisation(ville));
+		assertEquals("Paris", NormalisationVille.normalisation(ville));
 
 	}
 	@Test
 	public void testPrepositionlès() {
 
 		String ville = "Montigny lès Metz";
-		assertEquals("Montigny-lès-Metz", normalisationVille.normalisation(ville));
+		assertEquals("Montigny-lès-Metz", NormalisationVille.normalisation(ville));
 
 	}
 	@Test
 	public void testPrepositionsous() {
 
 		String ville = "Ville sous Anjou";
-		assertEquals("Ville-sous-Anjou", normalisationVille.normalisation(ville));
+		assertEquals("Ville-sous-Anjou", NormalisationVille.normalisation(ville));
 
 	}
 	@Test
 	public void testPrepositionsur() {
 
 		String ville = "Sainte-Marthe sur le-lac";
-		assertEquals("SainteMarthe-sur-leLac", normalastionVille, normalisation(ville));
+		assertEquals("Sainte-Marthe-sur-le-lac", NormalisationVille.normalisation(ville));
 
 	}
 	@Test
 	public void testPrepositionà() {
 
 		String ville = "Montigny à Metz";
-		assertEquals("Montigny-à-Metz", normalisationVille.normalisation(ville));
+		assertEquals("Montigny-à-Metz", NormalisationVille.normalisation(ville));
 
 	}
 	@Test
 	public void testPrepositionaux() {
 
 		String ville = "Montigny aux Metz";
-		assertEquals("Montigny-aux-Metz", normalisationVille.normalisation(ville));
+		assertEquals("Montigny-aux-Metz", NormalisationVille.normalisation(ville));
 
 	}
 	@Test
 	public void testSaint() {
-		String ville = "StJulienl�sMetz";
-		assertEquals("Saint-Julienl�sMetz", normalastionVille, normalisation(ville));
+		String ville = "St JulienlesMetz";
+		assertEquals("Saint-JulienlesMetz", NormalisationVille.normalisation(ville));
+
+	}
+	@Test
+	public void testSaintTiret() {
+		String ville = "St-JulienlesMetz";
+		assertEquals("Saint-JulienlesMetz", NormalisationVille.normalisation(ville));
+
+	}
+	@Test
+	public void testSainteTiret() {
+		String ville = "Ste-Marthesurlelac";
+		assertEquals("Sainte-Marthesurlelac", NormalisationVille.normalisation(ville));
 
 	}
 	@Test
 	public void testSainte() {
-		String ville = "SteMarthesurlelac";
-		assertEquals("Sainte-MarthesurleLac", normalastionVille, normalisation(ville));
+		String ville = "Ste Marthesurlelac";
+		assertEquals("Sainte-Marthesurlelac", NormalisationVille.normalisation(ville));
 
+	}
+	@Test
+	public void testNull() {
+		String ville = null;
+		assertNull(NormalisationVille.normalisation(ville));
+	}
+	@Test
+	public void testVIde() {
+		String ville = "";
+		assertEquals("", NormalisationVille.normalisation(ville));
+	}
+	@Test
+	public void testTrim() {
+		String ville = "  Paris    ";
+		assertEquals("Paris", NormalisationVille.normalisation(ville));
 	}
 
 }

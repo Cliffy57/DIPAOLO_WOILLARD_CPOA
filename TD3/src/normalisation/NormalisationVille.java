@@ -4,7 +4,8 @@ public class NormalisationVille {
 
 	public static String normalisation(String str) {
 		
-		if(str != null) {
+		if(str != null && str != "") {
+			
 			str = str.trim();
 			char firstLetter = str.charAt(0);
 			if(!(Character.isUpperCase(firstLetter)))

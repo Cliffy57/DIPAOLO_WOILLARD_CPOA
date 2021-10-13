@@ -2,7 +2,7 @@ package test;
 
 
 import static org.junit.Assert.assertEquals;
-import normalisation.normalisationCodePost;
+import normalisation.*;
 import org.junit.Test;
 
 
