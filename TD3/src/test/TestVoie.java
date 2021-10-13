@@ -65,7 +65,7 @@ public class TestVoie {
 	}
 	
 	@Test
-	public void TestNormalisationVoieNumeroNULL() {
+	public void TestNormalisationVoieNULL() {
 		String voie = null;
 		assertNull(null,NormalisationVoie.normalisation(voie));
 	}
