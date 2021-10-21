@@ -1,6 +1,6 @@
 # DIPAOLO_WOILLARD_CPOA
 
-Projet de CPAO , G3 WOILLARD Eric & DI PAOLO Hugo
+Projet de CPOA , G3 WOILLARD Eric & DI PAOLO Hugo
 
 https://trello.com/invite/b/7reDDmgr/266ce52b2dc380b89fd3b69dce13916c/cpoa
 
