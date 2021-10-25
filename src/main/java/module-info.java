@@ -15,4 +15,6 @@ module javafx.woillard_dipaolo_cpoa {
     opens javafx to javafx.fxml;
     exports javafx;
     exports test;
+    exports test.testListeMemoire;
+
 }
