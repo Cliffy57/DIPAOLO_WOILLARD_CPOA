@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac6c42d5-1a5c-442c-a171-0907a35f4446" name="Changes" comment="ajout des classes test (a completer).">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationCodePost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationPays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVille.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVoie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLAbonnementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLPeriodiciteTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLRevueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1zohPxXZadchAETpG0ZCfnsFB0o" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DUT-INFO/2A/CPOA/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="JUnit.ListeMemoirePeriodiciteTest.testDelete">
+    <configuration name="ListeMemoirePeriodiciteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.testListeMemoire.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
+      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoirePeriodiciteTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListeMemoirePeriodiciteTest.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.testListeMemoire.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
+      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoirePeriodiciteTest" />
+      <option name="METHOD_NAME" value="testCreate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListeMemoirePeriodiciteTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.testListeMemoire.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
+      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoirePeriodiciteTest" />
+      <option name="METHOD_NAME" value="testDelete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListeMemoirePeriodiciteTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.testListeMemoire.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
+      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoirePeriodiciteTest" />
+      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPeriodicite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestPeriodicite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="DIPAOLO_WOILLARD_CPOA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="DIPAOLO_WOILLARD_CPOA" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ListeMemoirePeriodiciteTest.testDelete" />
+        <item itemvalue="JUnit.ListeMemoirePeriodiciteTest.testUpdate" />
+        <item itemvalue="JUnit.ListeMemoirePeriodiciteTest.testCreate" />
+        <item itemvalue="JUnit.ListeMemoirePeriodiciteTest" />
+        <item itemvalue="JUnit.TestPeriodicite" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac6c42d5-1a5c-442c-a171-0907a35f4446" name="Changes" comment="" />
+      <created>1634820328328</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634820328328</updated>
+    </task>
+    <task id="LOCAL-00001" summary="ajout des classes test (a completer).">
+      <created>1635175499011</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635175499011</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ajout des classes test (a completer)." />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout des classes test (a completer)." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DIPAOLO_WOILLARD_CPOA$TestPeriodicite.ic" NAME="TestPeriodicite Coverage Results" MODIFIED="1635174250814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.*</FILTER>
+    </SUITE>
+  </component>
+</project>
