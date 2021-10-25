@@ -16,7 +16,7 @@ https://trello.com/invite/b/7reDDmgr/266ce52b2dc380b89fd3b69dce13916c/cpoa
 FONCTIONNE :
 
 -----------------------------------------------------------------------------------------------------------------
-NE FONCTIONNE PAS
+NE FONCTIONNE PAS :
 
 -----------------------------------------------------------------------------------------------------------------
 LA REPARTITION DES TACHES SERA VISIBLE SUR TRELLO :
