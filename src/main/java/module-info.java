@@ -10,7 +10,9 @@ module javafx.woillard_dipaolo_cpoa {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.sql;
+    requires junit;
 
     opens javafx to javafx.fxml;
     exports javafx;
+    exports test;
 }
