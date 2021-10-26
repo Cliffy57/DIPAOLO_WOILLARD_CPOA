@@ -12,7 +12,7 @@ public class TestPeriodicite {
 
         PeriodiciteMetier tested = new PeriodiciteMetier();
         try {
-            tested.setLibelle("Jacob");
+            tested.setLibelle("Mensuel");
         } catch (IllegalArgumentException iae) {
             fail("Le test échoue alors que la periodicite est bonne !");
         }

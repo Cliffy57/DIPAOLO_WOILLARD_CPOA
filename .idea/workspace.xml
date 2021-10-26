@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac6c42d5-1a5c-442c-a171-0907a35f4446" name="Changes" comment="ajout des classes test (a completer).">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationCodePost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationPays.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVille.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVoie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLAbonnementTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLPeriodiciteTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLRevueTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestPeriodicite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestPeriodicite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
