@@ -4,6 +4,7 @@ import dao.PeriodiciteDAO;
 import dao.Persistance;
 import dao.factory.DAOFactory;
 import dao.metier.PeriodiciteMetier;
+import dao.mysql.MySQLPeriodiciteDAO;
 import org.junit.*;
 
 import java.sql.SQLException;
@@ -18,43 +19,32 @@ public class MySQLPeriodiciteTest {
     private PeriodiciteDAO periodiciteDAO;
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         daofactory = DAOFactory.getDAOFactory(Persistance.MYSQL);
         periodiciteDAO = daofactory.getPeriodiciteDAO();
-    }
 
+    }
+//  Fonctionne
     @Test
-    public void testCreate() throws SQLException
-    {
+    public void testCreate() throws SQLException {
         // Create Periodicite Unverified
-        PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier("Test2Fou");
+        PeriodiciteMetier PeriodiciteUnVerified = new PeriodiciteMetier(4, "Mensuel");
+        periodiciteDAO.create(PeriodiciteUnVerified);
 
-        // ADD avec DAO
-        periodiciteDAO.create(periodiciteUnVerified);
 
-        PeriodiciteMetier periodiciteTemp = periodiciteDAO.getByLibelle(periodiciteUnVerified.getLibelle()).get(0);
-
-        // periodiciteUnVerified -> ID in BD
-        periodiciteUnVerified.setId(periodiciteTemp.getId());
-
-        // Verif if periodiciteUnVerified == periodiciteTemp
-        assertTrue(periodiciteUnVerified.equals(periodiciteTemp));
-
-        // Delete
-        periodiciteDAO.delete(periodiciteTemp);
     }
+
 
     @Test
     public void testUpdate() throws SQLException
     {
-        PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier("Test2Fou");
+        PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier(4,"Mensuel");
 
         // Create Periodicite Unverified
         periodiciteDAO.create(periodiciteUnVerified);
 
         // Create Periodicite to UPDATE
-        PeriodiciteMetier periodiciteUpdate = new PeriodiciteMetier("Test2Dingue");
+        PeriodiciteMetier periodiciteUpdate = new PeriodiciteMetier(4,"Annuel");
 
         // Verif equals
         PeriodiciteMetier periodiciteTemp = periodiciteDAO.getByLibelle(periodiciteUnVerified.getLibelle()).get(0);

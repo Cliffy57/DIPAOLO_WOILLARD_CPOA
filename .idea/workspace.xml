@@ -4,12 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6c42d5-1a5c-442c-a171-0907a35f4446" name="Changes" comment="ajout des classes test (a completer).">
+    <list default="true" id="ac6c42d5-1a5c-442c-a171-0907a35f4446" name="Changes" comment="Test des ListeMemoire ( revoir les local dates)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestPeriodicite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestPeriodicite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WOILLARD_DIPAOLO_CPOA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WOILLARD_DIPAOLO_CPOA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLPeriodiciteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLPeriodiciteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestPeriodicite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TestPeriodicite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireAbonnementTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireAbonnementTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireClientTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireClientTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoirePeriodiciteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoirePeriodiciteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireRevueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireRevueTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/TestMySQLAbonnement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/TestMySQLClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/TestMySQLPeriodicite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/TestMySQLRevue.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +70,22 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.ListeMemoirePeriodiciteTest.testDelete">
+  <component name="RunManager" selected="JUnit.MySQLPeriodiciteTest.testCreate">
+    <configuration name="ListeMemoireClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.testListeMemoire.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
+      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoireClientTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ListeMemoirePeriodiciteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
@@ -73,7 +101,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListeMemoirePeriodiciteTest.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ListeMemoireRevueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
         <pattern>
@@ -82,56 +110,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.testListeMemoire" />
-      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoirePeriodiciteTest" />
+      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoireRevueTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListeMemoireRevueTest.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.testListeMemoire.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
+      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoireRevueTest" />
       <option name="METHOD_NAME" value="testCreate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListeMemoirePeriodiciteTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MySQLPeriodiciteTest.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.testListeMemoire.*" />
+          <option name="PATTERN" value="test.testMySQL.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
-      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoirePeriodiciteTest" />
-      <option name="METHOD_NAME" value="testDelete" />
+      <option name="PACKAGE_NAME" value="test.testMySQL" />
+      <option name="MAIN_CLASS_NAME" value="test.testMySQL.MySQLPeriodiciteTest" />
+      <option name="METHOD_NAME" value="testCreate" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ListeMemoirePeriodiciteTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WOILLARD_DIPAOLO_CPOA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.testListeMemoire.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.testListeMemoire" />
-      <option name="MAIN_CLASS_NAME" value="test.testListeMemoire.ListeMemoirePeriodiciteTest" />
-      <option name="METHOD_NAME" value="testUpdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPeriodicite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WOILLARD_DIPAOLO_CPOA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestPeriodicite" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ListeMemoirePeriodiciteTest.testDelete" />
-        <item itemvalue="JUnit.ListeMemoirePeriodiciteTest.testUpdate" />
-        <item itemvalue="JUnit.ListeMemoirePeriodiciteTest.testCreate" />
+        <item itemvalue="JUnit.MySQLPeriodiciteTest.testCreate" />
+        <item itemvalue="JUnit.ListeMemoireRevueTest" />
+        <item itemvalue="JUnit.ListeMemoireRevueTest.testCreate" />
         <item itemvalue="JUnit.ListeMemoirePeriodiciteTest" />
-        <item itemvalue="JUnit.TestPeriodicite" />
+        <item itemvalue="JUnit.ListeMemoireClientTest" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635175499011</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Test des ListeMemoire ( revoir les local dates)">
+      <created>1635251501718</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635251501718</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,15 +212,21 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ajout des classes test (a completer)." />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout des classes test (a completer)." />
+    <MESSAGE value="Test des ListeMemoire ( revoir les local dates)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test des ListeMemoire ( revoir les local dates)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

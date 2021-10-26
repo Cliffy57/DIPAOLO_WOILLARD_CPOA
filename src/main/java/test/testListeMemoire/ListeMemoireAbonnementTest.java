@@ -6,6 +6,7 @@ import dao.metier.AbonnementMetier;
 import org.junit.*;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 import static org.junit.Assert.*;
 
@@ -22,23 +23,27 @@ public class ListeMemoireAbonnementTest {
     @Test
     public void testCreate() throws SQLException
     {
-        AbonnementMetier AbonnementUnVerified = new AbonnementMetier(4,1990-09-09,2001-06-19,3,5);
-
-        AbonnementDAO.create(AbonnementUnVerified);
-
-        assertTrue(AbonnementDAO.create(AbonnementUnVerified));
-    }
-
-    @Test
-    public void testUpdate() throws SQLException
-    {
-        AbonnementMetier AbonnementUnVerified = new AbonnementMetier(4,1990-09-09,2001-06-19,3,5);
+        AbonnementMetier AbonnementUnVerified = new AbonnementMetier(4, LocalDate.of(1990,9,9),LocalDate.of(2001,6,19),3,5);
 
         AbonnementDAO.create(AbonnementUnVerified);
 
         AbonnementMetier AbonnementTemp = AbonnementDAO.getById(AbonnementUnVerified.getId());
 
-        AbonnementMetier AbonnementUpdate = new AbonnementMetier(4,1990-09-09,2001-06-19,3,5);
+        assertEquals(AbonnementUnVerified,AbonnementTemp);
+
+//      assertTrue(AbonnementDAO.create(AbonnementUnVerified));
+    }
+
+    @Test
+    public void testUpdate() throws SQLException
+    {
+        AbonnementMetier AbonnementUnVerified = new AbonnementMetier(4,LocalDate.of(1990,9,9),LocalDate.of(2001,6,19),3,5);
+
+        AbonnementDAO.create(AbonnementUnVerified);
+
+        AbonnementMetier AbonnementTemp = AbonnementDAO.getById(AbonnementUnVerified.getId());
+
+        AbonnementMetier AbonnementUpdate = new AbonnementMetier(4,LocalDate.of(1990,9,9),LocalDate.of(2001,6,19),3,5);
 
         AbonnementDAO.update(AbonnementUpdate);
 
@@ -51,7 +56,7 @@ public class ListeMemoireAbonnementTest {
     @Test
     public void testDelete() throws SQLException
     {
-        AbonnementMetier AbonnementUnVerified = new AbonnementMetier(4,1990-09-09,2001-06-19,3,5);
+        AbonnementMetier AbonnementUnVerified = new AbonnementMetier(4,LocalDate.of(1990,9,9),LocalDate.of(2001,6,19),3,5);
 
         AbonnementDAO.create(AbonnementUnVerified);
 

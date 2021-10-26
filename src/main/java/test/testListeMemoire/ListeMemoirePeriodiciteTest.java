@@ -2,6 +2,7 @@ package test.testListeMemoire;
 
 import dao.*;
 import dao.factory.DAOFactory;
+import dao.metier.AbonnementMetier;
 import dao.metier.PeriodiciteMetier;
 import org.junit.*;
 
@@ -11,22 +12,27 @@ import static org.junit.Assert.*;
 
 public class ListeMemoirePeriodiciteTest {
     private DAOFactory daofactory;
-    private PeriodiciteDAO periodiciteDAO;
+    private PeriodiciteDAO PeriodiciteDAO;
 
     @Before
     public void setUp() {
         daofactory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
-        periodiciteDAO = daofactory.getPeriodiciteDAO();
+        PeriodiciteDAO = daofactory.getPeriodiciteDAO();
     }
 
     @Test
     public void testCreate() throws SQLException
     {
-        PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier(3,"Mensuel");
+        PeriodiciteMetier PeriodiciteUnVerified = new PeriodiciteMetier(3,"Mensuel");
 
-        periodiciteDAO.create(periodiciteUnVerified);
+        PeriodiciteDAO.create(PeriodiciteUnVerified);
 
-        assertTrue(periodiciteDAO.create(periodiciteUnVerified));
+        PeriodiciteMetier PeriodiciteTemp = PeriodiciteDAO.getById(PeriodiciteUnVerified.getId());
+
+        assertEquals(PeriodiciteUnVerified,PeriodiciteTemp);
+
+
+//        assertTrue(periodiciteDAO.create(periodiciteUnVerified));
     }
 
     @Test
@@ -34,15 +40,15 @@ public class ListeMemoirePeriodiciteTest {
     {
         PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier(3,"Update");
 
-        periodiciteDAO.create(periodiciteUnVerified);
+        PeriodiciteDAO.create(periodiciteUnVerified);
 
-        PeriodiciteMetier periodiciteTemp = periodiciteDAO.getById(periodiciteUnVerified.getId());
+        PeriodiciteMetier periodiciteTemp = PeriodiciteDAO.getById(periodiciteUnVerified.getId());
 
         PeriodiciteMetier periodiciteUpdate = new PeriodiciteMetier(3,"Update");
 
-        periodiciteDAO.update(periodiciteUpdate);
+        PeriodiciteDAO.update(periodiciteUpdate);
 
-        periodiciteTemp = periodiciteDAO.getById(periodiciteUpdate.getId());
+        periodiciteTemp = PeriodiciteDAO.getById(periodiciteUpdate.getId());
 
         assertEquals(periodiciteUpdate, periodiciteTemp);
 
@@ -53,11 +59,11 @@ public class ListeMemoirePeriodiciteTest {
     {
         PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier(3,"Update");
 
-        periodiciteDAO.create(periodiciteUnVerified);
+        PeriodiciteDAO.create(periodiciteUnVerified);
 
-        periodiciteDAO.delete(periodiciteUnVerified);
+        PeriodiciteDAO.delete(periodiciteUnVerified);
 
-        assertFalse(periodiciteDAO.findAll().contains(periodiciteUnVerified));
+        assertFalse(PeriodiciteDAO.findAll().contains(periodiciteUnVerified));
     }
 
 }

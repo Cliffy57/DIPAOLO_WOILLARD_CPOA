@@ -16,5 +16,6 @@ module javafx.woillard_dipaolo_cpoa {
     exports javafx;
     exports test;
     exports test.testListeMemoire;
+    exports test.testMySQL;
 
 }

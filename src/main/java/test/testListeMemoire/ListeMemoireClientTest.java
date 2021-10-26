@@ -2,6 +2,7 @@ package test.testListeMemoire;
 
 import dao.*;
 import dao.factory.DAOFactory;
+import dao.metier.AbonnementMetier;
 import dao.metier.ClientMetier;
 import org.junit.*;
 
@@ -25,7 +26,11 @@ public class ListeMemoireClientTest {
 
         ClientDAO.create(ClientUnVerified);
 
-        assertTrue(ClientDAO.create(ClientUnVerified));
+        ClientMetier ClientTemp = ClientDAO.getById(ClientUnVerified.getId());
+
+        assertEquals(ClientUnVerified,ClientTemp);
+
+//        assertTrue(ClientDAO.create(ClientUnVerified));
     }
 
     @Test

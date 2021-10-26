@@ -2,6 +2,7 @@ package test.testListeMemoire;
 
 import dao.*;
 import dao.factory.DAOFactory;
+import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
 import org.junit.*;
 
@@ -25,7 +26,11 @@ public class ListeMemoireRevueTest {
 
         RevueDAO.create(RevueUnVerified);
 
-        assertTrue(RevueDAO.create(RevueUnVerified));
+        RevueMetier RevueTemp = RevueDAO.getById(RevueUnVerified.getId());
+
+        assertEquals(RevueUnVerified,RevueTemp);
+
+//        assertTrue(RevueDAO.create(RevueUnVerified));
     }
 
     @Test
