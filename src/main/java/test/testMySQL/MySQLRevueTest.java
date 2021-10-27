@@ -2,8 +2,6 @@ package test.testMySQL;
 
 import dao.Persistance;
 import dao.factory.DAOFactory;
-import dao.metier.ClientMetier;
-import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
 import org.junit.Before;
 import org.junit.Test;
