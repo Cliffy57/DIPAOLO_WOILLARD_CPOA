@@ -1,5 +1,6 @@
 package javafx;
 
+
 import dao.Persistance;
 import dao.factory.DAOFactory;
 import dao.metier.AbonnementMetier;
@@ -29,7 +30,10 @@ public class MenuController {
     @FXML Button btnVisualiser;
     @FXML Button btnRetour;
 
-    @FXML ListView<String> list;
+    @FXML public ListView<String> list;
+    private String table;
+
+
 
     public void btnListeMClick(ActionEvent actionEvent) throws IOException {
         btnAbonnement.setDisable(false);
@@ -120,6 +124,8 @@ public class MenuController {
             HelloApplication.listObservable.add(iterator.next().toString());
         }
         list.setItems(HelloApplication.listObservable);
+        table = "periodicite";
+
     }
 
     public void btnClientClick(ActionEvent actionEvent) {
@@ -159,6 +165,11 @@ public class MenuController {
         btnRetour.setVisible(false);
         list.setVisible(false);
 
+        list.getItems().clear();
+    }
+
+    public void btnAjouterClick(ActionEvent actionEvent) {
+        HelloApplication.screenController.activate("periodicite");
         list.getItems().clear();
     }
 }

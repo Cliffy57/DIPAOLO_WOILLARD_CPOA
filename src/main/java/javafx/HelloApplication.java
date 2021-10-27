@@ -26,7 +26,9 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 620, 440);
         screenController = new ScreenController(scene);
         HelloApplication.screenController.addScreen("menu",FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        HelloApplication.screenController.addScreen("periodicite",FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
         HelloApplication.screenController.activate("menu");
+
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

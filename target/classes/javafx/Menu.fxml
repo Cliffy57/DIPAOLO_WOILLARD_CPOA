@@ -31,7 +31,7 @@
             <Button fx:id="btnPeriodicite" onAction="#btnPeriodiciteClick" disable="true" mnemonicParsing="false" text="Periodicité" GridPane.rowIndex="1" />
             <Button fx:id="btnClient" onAction="#btnClientClick" disable="true" mnemonicParsing="false" text="Client" GridPane.columnIndex="1" />
             <Button fx:id="btnImporter" disable="true" mnemonicParsing="false" text="Importer" GridPane.rowIndex="2" />
-            <Button fx:id="btnAjouter" mnemonicParsing="false" text="Ajouter" visible="false" />
+            <Button fx:id="btnAjouter" onAction="#btnAjouterClick" mnemonicParsing="false" text="Ajouter" visible="false" />
             <Button fx:id="btnModifier" mnemonicParsing="false" text="Modifier" visible="false" GridPane.columnIndex="1" />
             <Button fx:id="btnSupprimer" mnemonicParsing="false" text="Supprimer" visible="false" GridPane.rowIndex="1" />
             <Button fx:id="btnVisualiser" mnemonicParsing="false" text="Visualiser" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
