@@ -24,7 +24,8 @@ public class MySQLPeriodiciteTest {
         periodiciteDAO = daofactory.getPeriodiciteDAO();
 
     }
-//  Fonctionne
+
+    //  Fonctionne
     @Test
     public void testCreate() throws SQLException {
         // Create Periodicite Unverified
@@ -36,18 +37,17 @@ public class MySQLPeriodiciteTest {
 
 
     @Test
-    public void testUpdate() throws SQLException
-    {
-        PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier(4,"Mensuel");
+    public void testUpdate() throws SQLException {
+        PeriodiciteMetier periodiciteUnVerified = new PeriodiciteMetier(4, "Mensuel");
 
         // Create Periodicite Unverified
         periodiciteDAO.create(periodiciteUnVerified);
 
         // Create Periodicite to UPDATE
-        PeriodiciteMetier periodiciteUpdate = new PeriodiciteMetier(4,"Annuel");
+        PeriodiciteMetier periodiciteUpdate = new PeriodiciteMetier(4, "Annuel");
 
         // Verif equals
-        PeriodiciteMetier periodiciteTemp = periodiciteDAO.getByLibelle(periodiciteUnVerified.getLibelle()).get(0);
+        PeriodiciteMetier periodiciteTemp = periodiciteDAO.getById(periodiciteUnVerified.getId());
 
         // Define var id Temp -> Update
         periodiciteUpdate.setId(periodiciteTemp.getId());
@@ -65,24 +65,17 @@ public class MySQLPeriodiciteTest {
         periodiciteDAO.delete(periodiciteTemp);
     }
 
+
     @Test
     public void testDelete() throws SQLException
     {
         // Create Periodicite
-        PeriodiciteMetier periodiciteDelete = new PeriodiciteMetier("Test2Fou");
+        PeriodiciteMetier periodiciteDelete = new PeriodiciteMetier(4, "Mensuel");
 
         // Insert In DB
         periodiciteDAO.create(periodiciteDelete);
+        // Delete In DB
+        assertTrue(periodiciteDAO.delete(periodiciteDelete));
 
-        PeriodiciteMetier periodiciteTemp = periodiciteDAO.getByLibelle(periodiciteDelete.getLibelle()).get(0);
-
-        periodiciteDelete.setId(periodiciteTemp.getId());
-
-        periodiciteDAO.delete(periodiciteTemp);
-
-        List<PeriodiciteMetier> liste = new ArrayList<>();
-        liste = periodiciteDAO.getByLibelle("Test2Fou");
-
-        assertEquals(0, liste.size());
     }
 }
