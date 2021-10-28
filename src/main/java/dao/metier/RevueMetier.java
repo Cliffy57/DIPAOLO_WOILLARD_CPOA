@@ -67,6 +67,14 @@ public class RevueMetier {
 		this.idPeriodicite = idPeriodicite;
 	}
 
+	public RevueMetier(String description, String titre, float tarifNumero, String visuel, int idPeriodicite) {
+		this.description = description;
+		this.titre = titre;
+		this.visuel = visuel;
+		this.tarifNumero = tarifNumero;
+		this.idPeriodicite = idPeriodicite;
+	}
+
 	public RevueMetier() {
 
 	}

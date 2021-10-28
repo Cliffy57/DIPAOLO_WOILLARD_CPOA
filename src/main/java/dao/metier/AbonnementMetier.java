@@ -18,6 +18,13 @@ public class AbonnementMetier {
 		this.idRevue = IDRevue;
 	}
 
+	public AbonnementMetier(LocalDate dateDebut, LocalDate dateFin, int IDClient, int IDRevue) {
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.idClient = IDClient;
+		this.idRevue = IDRevue;
+	}
+
 	public AbonnementMetier() {
 
 	}

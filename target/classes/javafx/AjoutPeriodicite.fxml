@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.PeriodiciteController">
    <children>
       <GridPane prefHeight="97.0" prefWidth="600.0">
@@ -27,7 +26,8 @@
       </GridPane>
       <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="btnValider" mnemonicParsing="false"  onAction="#btnAbonnementClick" text="Valider" />
+            <Button fx:id="btnValider" mnemonicParsing="false" onAction="#btnAbonnementClick" text="Valider" />
+            <Button fx:id="btnAnnuler" mnemonicParsing="false" onAction="#btnAnnulerClick" text="Annuler" />
          </children>
       </FlowPane>
    </children>

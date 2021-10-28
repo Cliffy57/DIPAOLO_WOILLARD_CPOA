@@ -9,8 +9,11 @@ import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -30,8 +33,9 @@ public class MenuController {
     @FXML Button btnVisualiser;
     @FXML Button btnRetour;
 
-    @FXML public ListView<String> list;
-    private String table;
+    @FXML ListView<String> list;
+    private static String table;
+    public static PeriodiciteMetier periodicite = new PeriodiciteMetier("");
 
 
 
@@ -78,7 +82,7 @@ public class MenuController {
             HelloApplication.listObservable.add(iterator.next().toString());
         }
         list.setItems(HelloApplication.listObservable);
-
+        table = "abonnement";
 
     }
 
@@ -102,6 +106,7 @@ public class MenuController {
             HelloApplication.listObservable.add(iterator.next().toString());
         }
         list.setItems(HelloApplication.listObservable);
+        table = "revue";
     }
 
     public void btnPeriodiciteClick(ActionEvent actionEvent) {
@@ -148,6 +153,7 @@ public class MenuController {
             HelloApplication.listObservable.add(iterator.next().toString());
         }
         list.setItems(HelloApplication.listObservable);
+        table = "client";
     }
 
     public void btnRetourClick(ActionEvent actionEvent) {
@@ -163,13 +169,57 @@ public class MenuController {
         btnSupprimer.setVisible(false);
         btnVisualiser.setVisible(false);
         btnRetour.setVisible(false);
+        btnModifier.setDisable(true);
+        btnSupprimer.setDisable(true);
+        btnVisualiser.setDisable(true);
         list.setVisible(false);
 
         list.getItems().clear();
     }
 
     public void btnAjouterClick(ActionEvent actionEvent) {
-        HelloApplication.screenController.activate("periodicite");
-        list.getItems().clear();
+       HelloApplication.screenController.activate(table);
+       list.getItems().clear();
+       btnModifier.setDisable(true);
+       btnSupprimer.setDisable(true);
+       btnVisualiser.setDisable(true);
+
+    }
+
+    public void listClick(MouseEvent mouseEvent) {
+         if (list.getSelectionModel().getSelectedIndex() != -1) {
+           btnModifier.setDisable(false);
+           btnSupprimer.setDisable(false);
+           btnVisualiser.setDisable(false);
+         }
+    }
+
+    public void btnSupprimerClick(ActionEvent actionEvent) {
+        if (table == "periodicite"){
+            String idString = list.getSelectionModel().getSelectedItem();
+            char idChar = idString.charAt(idString.indexOf("ID")+3);
+            int id = Character.getNumericValue(idChar);
+            HelloApplication.factory.getPeriodiciteDAO().delete(HelloApplication.factory.getPeriodiciteDAO().getById(id));
+            list.getItems().clear();
+            Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next().toString());
+            }
+        }
+
+    }
+
+    public void btnModifierClick(ActionEvent actionEvent) throws IOException {
+
+        if(table == "periodicite"){
+
+            periodicite.setLibelle("zaezae");
+            HelloApplication.screenController.addScreen("periodicite",FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
+            list.getItems().clear();
+            btnModifier.setDisable(true);
+            btnSupprimer.setDisable(true);
+            btnVisualiser.setDisable(true);
+            HelloApplication.screenController.activate("periodicite");
+        }
     }
 }

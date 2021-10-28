@@ -87,6 +87,17 @@ public class ClientMetier {
 		this.pays = pays;
 	}
 
+	public ClientMetier( String nom, String prenom, int noRue, String voie, int codePost, String ville,
+						String pays) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.noRue = noRue;
+		this.voie = voie;
+		this.codePost = codePost;
+		this.ville = ville;
+		this.pays = pays;
+	}
+
 	public ClientMetier() {
 	}
 

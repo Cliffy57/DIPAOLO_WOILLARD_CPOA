@@ -26,6 +26,10 @@ public class PeriodiciteMetier {
 		this.setLibelle(libelle);
 	}
 
+	public PeriodiciteMetier( String libelle) {
+		this.setLibelle(libelle);
+	}
+
 	public PeriodiciteMetier() {
 
 	}
