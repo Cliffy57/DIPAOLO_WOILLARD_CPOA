@@ -33,7 +33,7 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 	public boolean create(AbonnementMetier objet) {
 
 		objet.setId(3);
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		while (this.donnees.contains(objet)) {
 
 			objet.setId(objet.getId() + 1);
@@ -46,7 +46,7 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 	@Override
 	public boolean update(AbonnementMetier objet) {
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
@@ -63,7 +63,7 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 
 		AbonnementMetier supprime;
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
@@ -76,10 +76,10 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 
 	@Override
 	public AbonnementMetier getById(int id) {
-		// Ne fonctionne que si l'objet métier est bien fait...
-		int idx = this.donnees.indexOf(new AbonnementMetier(0, null, null, 0, 0));
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
+		int idx = this.donnees.indexOf(new AbonnementMetier(id, null, null, 0, 0));
 		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne possède cet identifiant");
+			throw new IllegalArgumentException("Aucun objet ne possï¿½de cet identifiant");
 		} else {
 			return this.donnees.get(idx);
 		}

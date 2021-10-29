@@ -255,8 +255,9 @@ public class MenuController {
     public void btnModifierClick(ActionEvent actionEvent) throws IOException {
         choix = "modif";
         String idString = list.getSelectionModel().getSelectedItem().toLowerCase();
-        char idChar = idString.charAt(idString.indexOf("id") + 3);
-        int id = Character.getNumericValue(idChar);
+        String ID = idString.substring(idString.indexOf("id=")+3,idString.indexOf(","));
+        int id = Integer.parseInt(ID);
+        System.out.println(id);
 
         if(table == "periodicite"){
             periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
@@ -268,7 +269,8 @@ public class MenuController {
             HelloApplication.screenController.activate(table);
         }
         else if(table == "abonnement"){
-            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
+            abonnement = HelloApplication.factory.getAbonnementDAO().getById(id);
+            System.out.println(HelloApplication.factory.getAbonnementDAO().getById(id));
             HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
             list.getItems().clear();
             btnModifier.setDisable(true);

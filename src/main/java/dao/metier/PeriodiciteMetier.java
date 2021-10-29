@@ -53,7 +53,7 @@ public class PeriodiciteMetier {
 	
 	@Override
 	public String toString() {
-		return "Periodicite [ID=" + id + ", libelle=" + libelle + "]";
+		return "Periodicite [id=" + id + ", libelle=" + libelle + "]";
 	}
 
 

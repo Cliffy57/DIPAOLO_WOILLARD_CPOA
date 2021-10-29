@@ -33,7 +33,7 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 	public boolean create(RevueMetier objet) {
 
 		objet.setId(3);
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		while (this.donnees.contains(objet)) {
 
 			objet.setId(objet.getId() + 1);
@@ -46,7 +46,7 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 	@Override
 	public boolean update(RevueMetier objet) {
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
@@ -63,7 +63,7 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 
 		RevueMetier supprime;
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
@@ -76,10 +76,10 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 
 	@Override
 	public RevueMetier getById(int id) {
-		// Ne fonctionne que si l'objet métier est bien fait...
-		int idx = this.donnees.indexOf(new RevueMetier(0, "test", null, 0, null, 0));
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
+		int idx = this.donnees.indexOf(new RevueMetier(id, "test", null, 0, null, 0));
 		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne possède cet identifiant");
+			throw new IllegalArgumentException("Aucun objet ne possï¿½de cet identifiant");
 		} else {
 			return this.donnees.get(idx);
 		}
