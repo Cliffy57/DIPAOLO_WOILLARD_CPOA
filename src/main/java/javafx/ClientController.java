@@ -14,8 +14,15 @@ public class ClientController {
 
     @FXML Button btnValider;
     @FXML Button btnAnnuler;
+    @FXML TextField textNom;
+    @FXML TextField textPrenom;
+    @FXML TextField textNumVoie;
+    @FXML TextField textCodePostal;
+    @FXML TextField textPays;
+    @FXML TextField textRue;
+    @FXML TextField textVille;
 
-    private PeriodiciteMetier periodiciteNew;
+    private ClientMetier clientNew;
     @FXML
     public void initialize() {
         if (MenuController.choix == "modif") {
@@ -30,7 +37,7 @@ public class ClientController {
         }
         else if(MenuController.choix == "modif") {
             clientNew = MenuController.client;
-            clientNew.set(.getText());
+
             HelloApplication.factory.getClientDAO().update(clientNew);
         }
 

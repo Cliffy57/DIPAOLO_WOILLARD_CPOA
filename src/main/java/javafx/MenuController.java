@@ -279,7 +279,7 @@ public class MenuController {
             HelloApplication.screenController.activate(table);
         }
         else if(table == "client"){
-            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
+            client = HelloApplication.factory.getClientDAO().getById(id);
             HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
             list.getItems().clear();
             btnModifier.setDisable(true);
@@ -288,7 +288,7 @@ public class MenuController {
             HelloApplication.screenController.activate(table);
         }
         else if(table == "revue"){
-            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
+            revue = HelloApplication.factory.getRevueDAO().getById(id);
             HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
             list.getItems().clear();
             btnModifier.setDisable(true);
