@@ -12,7 +12,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -35,6 +34,7 @@ public class MenuController {
 
     @FXML ListView<String> list;
     private static String table;
+    public static String choix;
     public static PeriodiciteMetier periodicite = new PeriodiciteMetier("");
 
 
@@ -177,12 +177,14 @@ public class MenuController {
         list.getItems().clear();
     }
 
-    public void btnAjouterClick(ActionEvent actionEvent) {
-       HelloApplication.screenController.activate(table);
-       list.getItems().clear();
-       btnModifier.setDisable(true);
-       btnSupprimer.setDisable(true);
-       btnVisualiser.setDisable(true);
+    public void btnAjouterClick(ActionEvent actionEvent) throws IOException {
+        choix = "ajout";
+        list.getItems().clear();
+        btnModifier.setDisable(true);
+        btnSupprimer.setDisable(true);
+        btnVisualiser.setDisable(true);
+        HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
+        HelloApplication.screenController.activate(table);
 
     }
 
@@ -210,16 +212,18 @@ public class MenuController {
     }
 
     public void btnModifierClick(ActionEvent actionEvent) throws IOException {
-
+        choix = "modif";
         if(table == "periodicite"){
-
-            periodicite.setLibelle("zaezae");
-            HelloApplication.screenController.addScreen("periodicite",FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
+            String idString = list.getSelectionModel().getSelectedItem();
+            char idChar = idString.charAt(idString.indexOf("ID")+3);
+            int id = Character.getNumericValue(idChar);
+            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
+            HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
             list.getItems().clear();
             btnModifier.setDisable(true);
             btnSupprimer.setDisable(true);
             btnVisualiser.setDisable(true);
-            HelloApplication.screenController.activate("periodicite");
+            HelloApplication.screenController.activate(table);
         }
     }
 }
