@@ -27,12 +27,14 @@ public class AbonnementController {
     public void initialize() {
         //ObservableList<ClientMetier> listC = (ObservableList<ClientMetier>) HelloApplication.factory.getClientDAO().findAll();
         //cboxClient.setItems(listC);
-        Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+        Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            cboxClient.getItems().add(iterator.next());
         }
-        ObservableList<RevueMetier> listR = (ObservableList<RevueMetier>) HelloApplication.factory.getRevueDAO().findAll();
-        cboxRevue.setItems(listR);
+        Iterator<RevueMetier> iteratorR = HelloApplication.factory.getRevueDAO().findAll().iterator();
+        while (iteratorR.hasNext()) {
+            cboxRevue.getItems().add(iteratorR.next());
+        }
         if (MenuController.choix == "modif") {
             cboxClient.getSelectionModel().select(HelloApplication.factory.getClientDAO().getById(MenuController.abonnement.getIdClient()));
             cboxRevue.getSelectionModel().select(HelloApplication.factory.getRevueDAO().getById(MenuController.abonnement.getIdRevue()));
