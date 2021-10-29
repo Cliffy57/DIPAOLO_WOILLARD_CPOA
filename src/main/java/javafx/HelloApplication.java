@@ -26,10 +26,10 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 620, 440);
         screenController = new ScreenController(scene);
         HelloApplication.screenController.addScreen("menu",FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.addScreen("abonnement",FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
-        HelloApplication.screenController.addScreen("client",FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
+       //HelloApplication.screenController.addScreen("abonnement",FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
+        //HelloApplication.screenController.addScreen("client",FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
         //HelloApplication.screenController.addScreen("periodicite",FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
-        HelloApplication.screenController.addScreen("revue",FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
+       // HelloApplication.screenController.addScreen("revue",FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
         HelloApplication.screenController.activate("menu");
 
         stage.setTitle("Hello!");

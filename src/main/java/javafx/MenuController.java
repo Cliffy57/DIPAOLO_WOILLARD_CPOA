@@ -35,7 +35,10 @@ public class MenuController {
     @FXML ListView<String> list;
     private static String table;
     public static String choix;
-    public static PeriodiciteMetier periodicite = new PeriodiciteMetier("");
+    public static PeriodiciteMetier periodicite = new PeriodiciteMetier();
+    public static AbonnementMetier abonnement = new AbonnementMetier();
+    public static ClientMetier client = new ClientMetier();
+    public static RevueMetier revue = new RevueMetier();
 
 
 
@@ -183,8 +186,22 @@ public class MenuController {
         btnModifier.setDisable(true);
         btnSupprimer.setDisable(true);
         btnVisualiser.setDisable(true);
-        HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
-        HelloApplication.screenController.activate(table);
+        if (table == "periodicite") {
+            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
+            HelloApplication.screenController.activate(table);
+        }
+        else if (table == "abonnement") {
+            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
+            HelloApplication.screenController.activate(table);
+        }
+        else if (table == "client") {
+            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
+            HelloApplication.screenController.activate(table);
+        }
+        else if (table == "revue") {
+            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
+            HelloApplication.screenController.activate(table);
+        }
 
     }
 
@@ -197,10 +214,11 @@ public class MenuController {
     }
 
     public void btnSupprimerClick(ActionEvent actionEvent) {
-        if (table == "periodicite"){
-            String idString = list.getSelectionModel().getSelectedItem();
-            char idChar = idString.charAt(idString.indexOf("ID")+3);
-            int id = Character.getNumericValue(idChar);
+        String idString = list.getSelectionModel().getSelectedItem().toLowerCase();
+        char idChar = idString.charAt(idString.indexOf("id") + 3);
+        int id = Character.getNumericValue(idChar);
+
+        if (table == "periodicite") {
             HelloApplication.factory.getPeriodiciteDAO().delete(HelloApplication.factory.getPeriodiciteDAO().getById(id));
             list.getItems().clear();
             Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
@@ -208,17 +226,68 @@ public class MenuController {
                 HelloApplication.listObservable.add(iterator.next().toString());
             }
         }
-
+        if (table == "abonnement") {
+            HelloApplication.factory.getAbonnementDAO().delete(HelloApplication.factory.getAbonnementDAO().getById(id));
+            list.getItems().clear();
+            Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next().toString());
+            }
+        }
+        if (table == "client") {
+            HelloApplication.factory.getClientDAO().delete(HelloApplication.factory.getClientDAO().getById(id));
+            list.getItems().clear();
+            Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next().toString());
+            }
+        }
+        if (table == "revue") {
+            HelloApplication.factory.getRevueDAO().delete(HelloApplication.factory.getRevueDAO().getById(id));
+            list.getItems().clear();
+            Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next().toString());
+            }
+        }
     }
 
     public void btnModifierClick(ActionEvent actionEvent) throws IOException {
         choix = "modif";
+        String idString = list.getSelectionModel().getSelectedItem().toLowerCase();
+        char idChar = idString.charAt(idString.indexOf("id") + 3);
+        int id = Character.getNumericValue(idChar);
+
         if(table == "periodicite"){
-            String idString = list.getSelectionModel().getSelectedItem();
-            char idChar = idString.charAt(idString.indexOf("ID")+3);
-            int id = Character.getNumericValue(idChar);
             periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
             HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
+            list.getItems().clear();
+            btnModifier.setDisable(true);
+            btnSupprimer.setDisable(true);
+            btnVisualiser.setDisable(true);
+            HelloApplication.screenController.activate(table);
+        }
+        else if(table == "abonnement"){
+            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
+            HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
+            list.getItems().clear();
+            btnModifier.setDisable(true);
+            btnSupprimer.setDisable(true);
+            btnVisualiser.setDisable(true);
+            HelloApplication.screenController.activate(table);
+        }
+        else if(table == "client"){
+            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
+            HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
+            list.getItems().clear();
+            btnModifier.setDisable(true);
+            btnSupprimer.setDisable(true);
+            btnVisualiser.setDisable(true);
+            HelloApplication.screenController.activate(table);
+        }
+        else if(table == "revue"){
+            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
+            HelloApplication.screenController.addScreen(table,FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
             list.getItems().clear();
             btnModifier.setDisable(true);
             btnSupprimer.setDisable(true);
