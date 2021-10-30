@@ -39,8 +39,6 @@ public class AbonnementController {
         }
         if (MenuController.choix == "modif") {
             cboxClient.getSelectionModel().select(HelloApplication.factory.getClientDAO().getById(MenuController.abonnement.getIdClient()));
-            System.out.println(MenuController.abonnement.getIdRevue());
-            System.out.println(HelloApplication.factory.getRevueDAO().getById(2));
             cboxRevue.getSelectionModel().select(HelloApplication.factory.getRevueDAO().getById(MenuController.abonnement.getIdRevue()));
             dateDebut.setValue(MenuController.abonnement.getDateDebut());
             dateFin.setValue(MenuController.abonnement.getDateFin());

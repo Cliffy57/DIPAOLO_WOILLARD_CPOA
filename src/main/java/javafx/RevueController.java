@@ -22,21 +22,21 @@ public class RevueController {
             TextTitre.setText(MenuController.revue.getTitre());
             TextDescri.setText(MenuController.revue.getDescription());
             TextTarif.setText(String.valueOf(MenuController.revue.getTarifNumero()));
-            TextVisuel.setText(MenuController.revue.getVisuel());
+            //TextVisuel.setText(MenuController.revue.getVisuel());
         }
 
     }
 
     public void btnValiderClick(ActionEvent actionEvent) {
         if (MenuController.choix == "ajout") {
-            HelloApplication.factory.getRevueDAO().create(new RevueMetier(TextTitre.getText(),TextDescri.getText(),TextTarif.getText()));
+         //   HelloApplication.factory.getRevueDAO().create(new RevueMetier(TextTitre.getText(),TextDescri.getText(),TextTarif.getText()));
         }
         else if(MenuController.choix == "modif") {
             revueNew = MenuController.revue;
             revueNew.setTitre(TextTitre.getText());
             revueNew.setDescription(TextDescri.getText());
             revueNew.setTarifNumero(Float.parseFloat(TextTarif.getText()));
-            revueNew.setVisuel(TextVisuel.getText());
+            //revueNew.setVisuel(TextVisuel.getText());
             HelloApplication.factory.getRevueDAO().update(revueNew);
         }
 

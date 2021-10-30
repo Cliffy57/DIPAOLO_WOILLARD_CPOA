@@ -54,8 +54,8 @@
       </GridPane>
       <FlowPane alignment="CENTER" prefHeight="70.0" prefWidth="600.0">
          <children>
-            <Button fx:id="btnValider" mnemonicParsing="false" text="Valider" />
-            <Button fx:id="btnAnnuler" mnemonicParsing="false" text="Annuler" />
+            <Button fx:id="btnValider" mnemonicParsing="false" onAction="#btnValiderClick" text="Valider" />
+            <Button fx:id="btnAnnuler" mnemonicParsing="false" onAction="#btnAnnulerClick" text="Annuler" />
          </children>
       </FlowPane>
    </children>

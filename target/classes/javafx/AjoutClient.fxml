@@ -18,16 +18,13 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Numéro" />
-            <Label text="Nom" GridPane.rowIndex="1" />
-            <Label text="Prénom" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Nom" />
+            <Label text="Prénom" GridPane.rowIndex="1" />
+            <TextField fx:id="textNom" GridPane.columnIndex="1" />
+            <TextField fx:id="textPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <GridPane>
@@ -48,17 +45,17 @@
             <Label text="Code postal" GridPane.rowIndex="1" />
             <Label text="Pays" GridPane.rowIndex="2" />
             <Label text="Ville" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="3" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="textNumVoie" GridPane.columnIndex="1" />
+            <TextField fx:id="textCodePostal" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="textPays" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textRue" GridPane.columnIndex="3" />
+            <TextField fx:id="textVille" GridPane.columnIndex="3" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <FlowPane alignment="CENTER" prefHeight="70.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Valider" />
-            <Button fx:id="btnAnnuler" mnemonicParsing="false" text="Annuler" />
+            <Button fx:id="btnValider" mnemonicParsing="false" onAction="#btnValiderClick" text="Valider" />
+            <Button fx:id="btnAnnuler" mnemonicParsing="false" onAction="#btnAnnulerClick" text="Annuler" />
          </children>
       </FlowPane>
    </children>
