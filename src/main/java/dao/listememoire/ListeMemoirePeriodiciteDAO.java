@@ -32,8 +32,8 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	@Override
 	public boolean create(PeriodiciteMetier objet) {
 
-		objet.setId(3);
-		// Ne fonctionne que si l'objet métier est bien fait...
+		objet.setId(1);
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		while (this.donnees.contains(objet)) {
 			objet.setId(objet.getId() + 1);
 		}
@@ -45,7 +45,7 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	@Override
 	public boolean update(PeriodiciteMetier objet) {
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
@@ -62,7 +62,7 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 
 		PeriodiciteMetier supprime;
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
@@ -75,10 +75,10 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 
 	@Override
 	public PeriodiciteMetier getById(int id) {
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(new PeriodiciteMetier(id, "Mensuel"));
 		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne possède cet identifiant");
+			throw new IllegalArgumentException("Aucun objet ne possï¿½de cet identifiant");
 		} else {
 			return this.donnees.get(idx);
 		}

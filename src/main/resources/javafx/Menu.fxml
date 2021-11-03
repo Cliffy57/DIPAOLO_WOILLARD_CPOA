@@ -34,7 +34,7 @@
             <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#btnAjouterClick" text="Ajouter" visible="false" />
             <Button fx:id="btnModifier" disable="true" mnemonicParsing="false"  onAction="#btnModifierClick"  text="Modifier" visible="false" GridPane.columnIndex="1" />
             <Button fx:id="btnSupprimer" disable="true" mnemonicParsing="false" onAction="#btnSupprimerClick" text="Supprimer" visible="false" GridPane.rowIndex="1" />
-            <Button fx:id="btnVisualiser" disable="true" mnemonicParsing="false" text="Visualiser" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="btnVisualiser" disable="true" mnemonicParsing="false" onAction="#btnVisualiserClick" text="Visualiser" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <ListView fx:id="list" onMouseClicked="#listClick" prefHeight="200.0" prefWidth="200.0" visible="false"/>

@@ -18,6 +18,8 @@ public class HelloApplication extends Application {
     public static ScreenController screenController;
     public static DAOFactory factory;
     public static ObservableList<String> listObservable = FXCollections.observableArrayList();
+    public static ObservableList<String> imageList = FXCollections.observableArrayList();
+    public static ImageController imageController;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -25,6 +27,10 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 620, 440);
         screenController = new ScreenController(scene);
+        imageController = new ImageController();
+        imageController.addImage("rick","C:\\Users\\Eric\\IdeaProjects\\DIPAOLO_WOILLARD_CPOA\\src\\main\\resources\\images\\rick.jpg");
+        imageController.addImage("salsifie","src/main/resources/images/salsifieMoney.png");
+        imageController.createObservableList(imageList);
         HelloApplication.screenController.addScreen("menu",FXMLLoader.load(getClass().getResource("Menu.fxml")));
        //HelloApplication.screenController.addScreen("abonnement",FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
         //HelloApplication.screenController.addScreen("client",FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));

@@ -33,7 +33,7 @@ public class MenuController {
     @FXML Button btnRetour;
 
     @FXML ListView<String> list;
-    private static String table;
+    public static String table;
     public static String choix;
     public static PeriodiciteMetier periodicite = new PeriodiciteMetier();
     public static AbonnementMetier abonnement = new AbonnementMetier();
@@ -296,5 +296,10 @@ public class MenuController {
             btnVisualiser.setDisable(true);
             HelloApplication.screenController.activate(table);
         }
+    }
+
+    public void btnVisualiserClick(ActionEvent actionEvent) throws IOException {
+        HelloApplication.screenController.addScreen("visualiser",FXMLLoader.load(getClass().getResource("Visualiser.fxml")));
+        HelloApplication.screenController.activate("visualiser");
     }
 }

@@ -25,14 +25,14 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 
 		this.donnees = new ArrayList<RevueMetier>();
 
-		this.donnees.add(new RevueMetier(2,"testo","sterone",2,"5",2));
-		this.donnees.add(new RevueMetier(6, "Quotidien","de malchanceux", 4,"OUGA BOUGA", 3));
+		//this.donnees.add(new RevueMetier(2,"testo","sterone",2,"rick",2));
+		//this.donnees.add(new RevueMetier(6, "Quotidien","de malchanceux", 4,"salsifie", 3));
 	}
 
 	@Override
 	public boolean create(RevueMetier objet) {
 
-		objet.setId(3);
+		objet.setId(1);
 		// Ne fonctionne que si l'objet m�tier est bien fait...
 		while (this.donnees.contains(objet)) {
 
