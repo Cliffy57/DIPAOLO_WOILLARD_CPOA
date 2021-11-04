@@ -25,15 +25,15 @@ public class ListeMemoireClientDAO implements ClientDAO {
 
 		this.donnees = new ArrayList<ClientMetier>();
 		
-		this.donnees.add(new ClientMetier(1,"DELAVAUD","Gabriel",14,"rue du Square",54720,"Lexy","France"));
-		this.donnees.add(new ClientMetier(5,"Cobin","Jacque",14,"rue de la saucisse",21041,"SaucisseTown","SaucisseLand"));
+		//this.donnees.add(new ClientMetier(1,"DELAVAUD","Gabriel",14,"rue du Square",54720,"Lexy","France"));
+		//this.donnees.add(new ClientMetier(5,"Cobin","Jacque",14,"rue de la saucisse",21041,"SaucisseTown","SaucisseLand"));
 	}
 
 	@Override
 	public boolean create(ClientMetier objet) {
 
-		objet.setId(3);
-		// Ne fonctionne que si l'objet métier est bien fait...
+		objet.setId(1);
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		while (this.donnees.contains(objet)) {
 
 			objet.setId(objet.getId() + 1);
@@ -46,7 +46,7 @@ public class ListeMemoireClientDAO implements ClientDAO {
 	@Override
 	public boolean update(ClientMetier objet) {
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
@@ -63,7 +63,7 @@ public class ListeMemoireClientDAO implements ClientDAO {
 
 		ClientMetier supprime;
 
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(objet);
 		if (idx == -1) {
 			throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
@@ -76,10 +76,10 @@ public class ListeMemoireClientDAO implements ClientDAO {
 
 	@Override
 	public ClientMetier getById(int id) {
-		// Ne fonctionne que si l'objet métier est bien fait...
+		// Ne fonctionne que si l'objet mï¿½tier est bien fait...
 		int idx = this.donnees.indexOf(new ClientMetier(id, "test", null, 0, null, 0, null, null));
 		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne possède cet identifiant");
+			throw new IllegalArgumentException("Aucun objet ne possï¿½de cet identifiant");
 		} else {
 			return this.donnees.get(idx);
 		}

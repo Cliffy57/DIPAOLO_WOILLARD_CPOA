@@ -26,6 +26,10 @@ public class PeriodiciteMetier {
 		this.setLibelle(libelle);
 	}
 
+	public PeriodiciteMetier( String libelle) {
+		this.setLibelle(libelle);
+	}
+
 	public PeriodiciteMetier() {
 
 	}
@@ -49,7 +53,7 @@ public class PeriodiciteMetier {
 	
 	@Override
 	public String toString() {
-		return "Periodicite [ID=" + id + ", libelle=" + libelle + "]";
+		return "Periodicite [id=" + id + ", libelle=" + libelle + "]";
 	}
 
 
