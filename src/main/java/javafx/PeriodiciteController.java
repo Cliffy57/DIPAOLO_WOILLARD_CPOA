@@ -34,19 +34,22 @@ public class PeriodiciteController {
         }
 
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("periodicite");
 
         Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) {
        // libelle.setText("");
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("periodicite");
+
         Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 }

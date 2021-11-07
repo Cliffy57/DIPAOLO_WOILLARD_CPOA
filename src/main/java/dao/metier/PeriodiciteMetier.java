@@ -1,6 +1,8 @@
 package dao.metier;
 
 
+import javafx.beans.property.SimpleIntegerProperty;
+
 public class PeriodiciteMetier {
 	private int id;
 	private String libelle;
@@ -8,6 +10,8 @@ public class PeriodiciteMetier {
 	public int getId() {
 		return id;
 	}
+
+	public SimpleIntegerProperty getIdTable(){ return new SimpleIntegerProperty(this.id);}
 
 	public void setId(int id) {
 		this.id = id;

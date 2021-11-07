@@ -55,19 +55,22 @@ public class ClientController {
         }
 
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("client");
 
         Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) {
 
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("client");
+
         Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 }

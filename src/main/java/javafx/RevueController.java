@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,7 +18,7 @@ public class RevueController {
     @FXML Button btnValider;
     @FXML Button btnAnnuler;
     @FXML TextField TextTitre;
-    @FXML TextField TextDescri;
+    @FXML TextArea TextDescri;
     @FXML TextField TextTarif;
     @FXML ComboBox<PeriodiciteMetier> CbBoxPeriodicite;
     @FXML ImageView image;
@@ -61,19 +62,21 @@ public class RevueController {
         }
 
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("revue");
 
         Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) {
 
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("revue");
         Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 

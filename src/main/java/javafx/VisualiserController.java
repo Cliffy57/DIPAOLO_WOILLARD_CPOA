@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.Iterator;
 
@@ -37,25 +38,20 @@ public class VisualiserController {
             }
 
         }
-        else if (MenuController.table == "abonnement")
+        else if (MenuController.table == "client")
         {
 
         }
-        else if (MenuController.table == "periodicite")
-        {
-            TableColumn<PeriodiciteMetier,Integer> column1 = new TableColumn<>("id");
-            TableColumn<PeriodiciteMetier,String> column2 = new TableColumn<>("libelle");
+        else if (MenuController.table == "periodicite") {
+            TableColumn<PeriodiciteMetier, Integer> column1 = new TableColumn<>("id");
+            TableColumn<PeriodiciteMetier, String> column2 = new TableColumn<>("Libelle");
+            column1.setCellValueFactory(new PropertyValueFactory<>("id"));
+            column2.setCellValueFactory(new PropertyValueFactory<>("libelle"));
             table.getColumns().add(column1);
             table.getColumns().add(column2);
-
-
-            Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
-            while (iterator.hasNext()) {
-                table.getItems().add(iterator.next());
-            }
-            table.getItems().add(new PeriodiciteMetier(97,"zea"));
+            this.table.getItems().addAll(HelloApplication.factory.getPeriodiciteDAO().findAll());
         }
-        else if (MenuController.table == "abonnement")
+        else if (MenuController.table == "revue")
         {
 
         }

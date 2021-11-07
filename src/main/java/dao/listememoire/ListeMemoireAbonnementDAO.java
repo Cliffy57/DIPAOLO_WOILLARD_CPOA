@@ -26,7 +26,7 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 		this.donnees = new ArrayList<AbonnementMetier>();
 
 		//this.donnees.add(new AbonnementMetier(1, null, null, 0, 0));
-		//this.donnees.add(new AbonnementMetier(0, null, null, 0, 0));
+		//this.donnees.add(new AbonnementMetier(2, null, null, 0, 0));
 	}
 
 	@Override

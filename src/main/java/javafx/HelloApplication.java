@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
 
     public static ScreenController screenController;
     public static DAOFactory factory;
-    public static ObservableList<String> listObservable = FXCollections.observableArrayList();
+    public static ObservableList<Object> listObservable = FXCollections.observableArrayList();
     public static ObservableList<String> imageList = FXCollections.observableArrayList();
     public static ImageController imageController;
 

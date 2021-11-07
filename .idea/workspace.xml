@@ -4,8 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6c42d5-1a5c-442c-a171-0907a35f4446" name="Changes" comment="TestMYSQL Fini">
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLRevueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testMySQL/MySQLRevueTest.java" afterDir="false" />
+    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="tableview">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/metier/PeriodiciteMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/metier/PeriodiciteMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/VisualiserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/VisualiserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/javafx/AjoutRevue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/javafx/AjoutRevue.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/PeriodiciteMetier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/metier/PeriodiciteMetier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AjoutRevue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AjoutRevue.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/VisualiserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/VisualiserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLRevueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLRevueTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -38,6 +65,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1zohPxXZadchAETpG0ZCfnsFB0o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,12 +76,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DUT-INFO/2A/CPOA/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$USER_HOME$/DUT-INFO/2A/CPOA/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.MySQLRevueTest.testUpdate">
+  <component name="RunManager" selected="Application.HelloApplication">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javafx.HelloApplication" />
+      <module name="WOILLARD_DIPAOLO_CPOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="javafx.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MySQLAbonnementTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
@@ -101,21 +142,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySQLRevueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WOILLARD_DIPAOLO_CPOA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.testMySQL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.testMySQL" />
-      <option name="MAIN_CLASS_NAME" value="test.testMySQL.MySQLRevueTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MySQLRevueTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
@@ -147,18 +173,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="JUnit.MySQLRevueTest.testUpdate" />
         <item itemvalue="JUnit.MySQLClientTest.testUpdate" />
         <item itemvalue="JUnit.MySQLAbonnementTest.testUpdate" />
         <item itemvalue="JUnit.MySQLPeriodiciteTest" />
-        <item itemvalue="JUnit.MySQLRevueTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ac6c42d5-1a5c-442c-a171-0907a35f4446" name="Changes" comment="" />
+      <changelist id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="tableview" />
       <created>1634820328328</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

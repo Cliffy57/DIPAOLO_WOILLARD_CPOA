@@ -61,19 +61,22 @@ public class AbonnementController {
         }
 
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("abonnement");
 
         Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) {
         // libelle.setText("");
         HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("abonnement");
+
         Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next().toString());
+            HelloApplication.listObservable.add(iterator.next());
         }
     }
 }
