@@ -15,6 +15,7 @@ module javafx.woillard_dipaolo_cpoa {
     opens javafx to javafx.fxml;
     exports javafx;
     exports test;
+    exports dao.metier;
     exports test.testListeMemoire;
     exports test.testMySQL;
 
