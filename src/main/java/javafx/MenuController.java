@@ -7,21 +7,22 @@ import dao.metier.AbonnementMetier;
 import dao.metier.ClientMetier;
 import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Iterator;
 
 public class MenuController {
+    @FXML TableColumn columnId;
     @FXML Button btnAbonnement;
     @FXML Button btnRevue;
     @FXML Button btnPeriodicite;
@@ -43,8 +44,67 @@ public class MenuController {
     public static AbonnementMetier abonnement = new AbonnementMetier();
     public static ClientMetier client = new ClientMetier();
     public static RevueMetier revue = new RevueMetier();
+    public static HashMap<String,TableColumn> PeriodiciteColonne = new HashMap<>();
+    public static HashMap<String,TableColumn> AbonnementColonne = new HashMap<>();
+    public static HashMap<String,TableColumn> ClientColonne = new HashMap<>();
+    public static HashMap<String,TableColumn> RevueColonne = new HashMap<>();
+
+    @FXML
+    public void initialize() {
 
 
+        if (table != null) {
+            moveToAction();
+            if (table =="periodicite"){
+                tableVue.getColumns().addAll(PeriodiciteColonne.values());
+            }
+            else if(table == "client"){
+
+            }
+            else if (table =="abonnement"){
+
+            }
+            else if(table == "revue"){
+
+            }
+        }
+        tableVue.getItems().addAll(HelloApplication.listObservable);
+    }
+
+    public void moveToAction(){
+        btnAbonnement.setVisible(false);
+        btnRevue.setVisible(false);
+        btnPeriodicite.setVisible(false);
+        btnClient.setVisible(false);
+        btnImporter.setVisible(true);
+        btnSql.setVisible(false);
+        btnListeM.setVisible(false);
+        btnAjouter.setVisible(true);
+        btnModifier.setVisible(true);
+        btnSupprimer.setVisible(true);
+        btnVisualiser.setVisible(true);
+        btnRetour.setVisible(true);
+        tableVue.setVisible(true);
+    }
+
+    public void moveToChoixTable(){
+        btnAbonnement.setVisible(true);
+        btnRevue.setVisible(true);
+        btnPeriodicite.setVisible(true);
+        btnClient.setVisible(true);
+        btnImporter.setVisible(false);
+        btnSql.setVisible(true);
+        btnListeM.setVisible(true);
+        btnAjouter.setVisible(false);
+        btnModifier.setVisible(false);
+        btnSupprimer.setVisible(false);
+        btnVisualiser.setVisible(false);
+        btnRetour.setVisible(false);
+        btnModifier.setDisable(true);
+        btnSupprimer.setDisable(true);
+        btnVisualiser.setDisable(true);
+        tableVue.setVisible(false);
+    }
 
     public void btnListeMClick(ActionEvent actionEvent) throws IOException {
         btnAbonnement.setDisable(false);
@@ -69,20 +129,8 @@ public class MenuController {
     }
 
     public void btnAbonnementClick(ActionEvent actionEvent) {
-        btnAbonnement.setVisible(false);
-        btnRevue.setVisible(false);
-        btnPeriodicite.setVisible(false);
-        btnClient.setVisible(false);
-        btnImporter.setVisible(true);
-        btnSql.setVisible(false);
-        btnListeM.setVisible(false);
-        btnAjouter.setVisible(true);
-        btnModifier.setVisible(true);
-        btnSupprimer.setVisible(true);
-        btnVisualiser.setVisible(true);
-        btnRetour.setVisible(true);
-        tableVue.setVisible(true);
 
+        moveToAction();
         TableColumn<PeriodiciteMetier, Integer> column1 = new TableColumn<>("ID");
         TableColumn<PeriodiciteMetier, LocalDate> column2 = new TableColumn<>("DateDebut");
         TableColumn<PeriodiciteMetier, LocalDate> column3 = new TableColumn<>("DateFin");
@@ -100,19 +148,7 @@ public class MenuController {
     }
 
     public void btnRevueClick(ActionEvent actionEvent) {
-        btnAbonnement.setVisible(false);
-        btnRevue.setVisible(false);
-        btnPeriodicite.setVisible(false);
-        btnClient.setVisible(false);
-        btnImporter.setVisible(true);
-        btnSql.setVisible(false);
-        btnListeM.setVisible(false);
-        btnAjouter.setVisible(true);
-        btnModifier.setVisible(true);
-        btnSupprimer.setVisible(true);
-        btnVisualiser.setVisible(true);
-        btnRetour.setVisible(true);
-        tableVue.setVisible(true);
+        moveToAction();
 
         TableColumn<RevueMetier, Integer> column1 = new TableColumn<>("ID");
         TableColumn<RevueMetier, String> column2 = new TableColumn<>("titre");
@@ -134,47 +170,27 @@ public class MenuController {
     }
 
     public void btnPeriodiciteClick(ActionEvent actionEvent) {
-        btnAbonnement.setVisible(false);
-        btnRevue.setVisible(false);
-        btnPeriodicite.setVisible(false);
-        btnClient.setVisible(false);
-        btnImporter.setVisible(true);
-        btnSql.setVisible(false);
-        btnListeM.setVisible(false);
-        btnAjouter.setVisible(true);
-        btnModifier.setVisible(true);
-        btnSupprimer.setVisible(true);
-        btnVisualiser.setVisible(true);
-        btnRetour.setVisible(true);
-        tableVue.setVisible(true);
+        moveToAction();
 
-        TableColumn<PeriodiciteMetier, Integer> column1 = new TableColumn<>("id");
         TableColumn<PeriodiciteMetier, String> column2 = new TableColumn<>("Libelle");
-        column1.setCellValueFactory(new PropertyValueFactory<>("id"));
+        columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         column2.setCellValueFactory(new PropertyValueFactory<>("libelle"));
-        tableVue.getColumns().addAll(column1,column2);
-        HelloApplication.listObservable.addAll(HelloApplication.factory.getPeriodiciteDAO().findAll());
-        this.tableVue.setItems(HelloApplication.listObservable);
+        PeriodiciteColonne.put("2",column2);
+        tableVue.getColumns().addAll(PeriodiciteColonne.values());
+
+        Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+        while (iterator.hasNext()) {
+            HelloApplication.listObservable.add(iterator.next());
+        }
+
+        this.tableVue.getItems().addAll(HelloApplication.listObservable);
         table = "periodicite";
 
     }
 
     public void btnClientClick(ActionEvent actionEvent) {
-        btnAbonnement.setVisible(false);
-        btnRevue.setVisible(false);
-        btnPeriodicite.setVisible(false);
-        btnClient.setVisible(false);
-        btnImporter.setVisible(true);
-        btnSql.setVisible(false);
-        btnListeM.setVisible(false);
-        btnAjouter.setVisible(true);
-        btnModifier.setVisible(true);
-        btnSupprimer.setVisible(true);
-        btnVisualiser.setVisible(true);
-        btnRetour.setVisible(true);
-        tableVue.setVisible(true);
+        moveToAction();
 
-        TableColumn<RevueMetier, Integer> column1 = new TableColumn<>("ID");
         TableColumn<RevueMetier, String> column2 = new TableColumn<>("nom");
         TableColumn<RevueMetier, String> column3 = new TableColumn<>("prenom");
         TableColumn<RevueMetier, Integer> column4 = new TableColumn<>("noRue");
@@ -183,7 +199,7 @@ public class MenuController {
         TableColumn<RevueMetier, String> column7 = new TableColumn<>("ville");
         TableColumn<RevueMetier, String> column8 = new TableColumn<>("pays");
 
-        column1.setCellValueFactory(new PropertyValueFactory<>("id"));
+
         column2.setCellValueFactory(new PropertyValueFactory<>("nom"));
         column3.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         column4.setCellValueFactory(new PropertyValueFactory<>("noRue"));
@@ -191,32 +207,32 @@ public class MenuController {
         column6.setCellValueFactory(new PropertyValueFactory<>("codePost"));
         column7.setCellValueFactory(new PropertyValueFactory<>("ville"));
         column8.setCellValueFactory(new PropertyValueFactory<>("pays"));
-        tableVue.getColumns().addAll(column1,column2,column3,column4,column5,column6,column7,column8);
+        tableVue.getColumns().addAll(column2,column3,column4,column5,column6,column7,column8);
 
         this.tableVue.getItems().addAll(HelloApplication.factory.getClientDAO().findAll());
         table = "client";
     }
 
     public void btnRetourClick(ActionEvent actionEvent) {
-        btnAbonnement.setVisible(true);
-        btnRevue.setVisible(true);
-        btnPeriodicite.setVisible(true);
-        btnClient.setVisible(true);
-        btnImporter.setVisible(false);
-        btnSql.setVisible(true);
-        btnListeM.setVisible(true);
-        btnAjouter.setVisible(false);
-        btnModifier.setVisible(false);
-        btnSupprimer.setVisible(false);
-        btnVisualiser.setVisible(false);
-        btnRetour.setVisible(false);
-        btnModifier.setDisable(true);
-        btnSupprimer.setDisable(true);
-        btnVisualiser.setDisable(true);
-        tableVue.setVisible(false);
+        moveToChoixTable();
 
+        HelloApplication.listObservable.clear();
         tableVue.getItems().clear();
-        tableVue.getColumns().clear();
+        if (table =="periodicite"){
+            tableVue.getColumns().removeAll(PeriodiciteColonne.values());
+        }
+        else if(table == "client"){
+            tableVue.getColumns().removeAll(ClientColonne.values());
+        }
+        else if (table =="abonnement"){
+            tableVue.getColumns().removeAll(AbonnementColonne.values());
+        }
+        else if(table == "revue"){
+            tableVue.getColumns().removeAll(RevueColonne.values());
+        }
+
+
+
     }
 
     public void btnAjouterClick(ActionEvent actionEvent) throws IOException {
@@ -225,6 +241,7 @@ public class MenuController {
         btnModifier.setDisable(true);
         btnSupprimer.setDisable(true);
         btnVisualiser.setDisable(true);
+        HelloApplication.listObservable.clear();
         if (table == "periodicite") {
             HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
             HelloApplication.screenController.activate(table);
@@ -249,19 +266,24 @@ public class MenuController {
            btnModifier.setDisable(false);
            btnSupprimer.setDisable(false);
            btnVisualiser.setDisable(false);
+
          }
     }
 
     public void btnSupprimerClick(ActionEvent actionEvent) {
-
-
+        TablePosition pos = (TablePosition) tableVue.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        int id = (Integer) columnId.getCellObservableValue(tableVue.getItems().get(row)).getValue();
         if (table == "periodicite") {
-            //HelloApplication.factory.getPeriodiciteDAO().delete(HelloApplication.factory.getPeriodiciteDAO().getById(tableVue.getSelectionModel().getSelectedItem().getId()));
+
+            HelloApplication.listObservable.clear();
+            HelloApplication.factory.getPeriodiciteDAO().delete(HelloApplication.factory.getPeriodiciteDAO().getById(id));
             tableVue.getItems().clear();
             Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
             while (iterator.hasNext()) {
                 HelloApplication.listObservable.add(iterator.next().toString());
             }
+            tableVue.getItems().addAll(HelloApplication.listObservable);
         }
         if (table == "abonnement") {
             //HelloApplication.factory.getAbonnementDAO().delete(HelloApplication.factory.getAbonnementDAO().getById(id));
@@ -270,6 +292,7 @@ public class MenuController {
             while (iterator.hasNext()) {
                 HelloApplication.listObservable.add(iterator.next().toString());
             }
+
         }
         if (table == "client") {
             //HelloApplication.factory.getClientDAO().delete(HelloApplication.factory.getClientDAO().getById(id));

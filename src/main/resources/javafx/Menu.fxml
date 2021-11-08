@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
@@ -37,7 +38,10 @@
             <Button fx:id="btnVisualiser" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnVisualiserClick" text="Visualiser" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <TableView fx:id="tableVue" onMouseClicked="#tableClick" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" visible="false" />
+      <TableView fx:id="tableVue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#tableClick" visible="false">
+         <columns>
+            <TableColumn fx:id="columnId" prefWidth="75.0" text="id" />
+         </columns></TableView>
       <FlowPane prefHeight="45.0" prefWidth="600.0">
          <children>
             <Button fx:id="btnListeM" mnemonicParsing="false" onAction="#btnListeMClick" text="Liste Memoire" />

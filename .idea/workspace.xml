@@ -4,34 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="tableview">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="tableview finit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/metier/PeriodiciteMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/metier/PeriodiciteMetier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/VisualiserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/VisualiserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/javafx/AjoutRevue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/javafx/AjoutRevue.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/PeriodiciteMetier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/metier/PeriodiciteMetier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AjoutRevue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AjoutRevue.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/VisualiserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/VisualiserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLRevueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLRevueTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +192,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635362747771</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tableview finit">
+      <created>1636253821048</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636253821048</updated>
+    </task>
+    <task id="LOCAL-00005" summary="tableview finit">
+      <created>1636253832697</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636253832697</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,7 +226,8 @@
     <MESSAGE value="ajout des classes test (a completer)." />
     <MESSAGE value="Test des ListeMemoire ( revoir les local dates)" />
     <MESSAGE value="TestMYSQL Fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestMYSQL Fini" />
+    <MESSAGE value="tableview finit" />
+    <option name="LAST_COMMIT_MESSAGE" value="tableview finit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
