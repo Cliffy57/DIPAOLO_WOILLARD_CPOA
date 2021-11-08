@@ -48,7 +48,7 @@ public class MenuController {
     public static HashMap<String,TableColumn> AbonnementColonne = new HashMap<>();
     public static HashMap<String,TableColumn> ClientColonne = new HashMap<>();
     public static HashMap<String,TableColumn> RevueColonne = new HashMap<>();
-
+    public static String persistance;
     @FXML
     public void initialize() {
 

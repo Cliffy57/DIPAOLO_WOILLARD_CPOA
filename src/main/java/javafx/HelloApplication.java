@@ -28,7 +28,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 620, 440);
         screenController = new ScreenController(scene);
         imageController = new ImageController();
-        imageController.addImage("rick","C:\\Users\\Eric\\IdeaProjects\\DIPAOLO_WOILLARD_CPOA\\src\\main\\resources\\images\\rick.jpg");
+        imageController.addImage("rick","src/main/resources/images/rick.jpg");
         imageController.addImage("salsifie","src/main/resources/images/salsifieMoney.png");
         imageController.createObservableList(imageList);
         HelloApplication.screenController.addScreen("menu",FXMLLoader.load(getClass().getResource("Menu.fxml")));

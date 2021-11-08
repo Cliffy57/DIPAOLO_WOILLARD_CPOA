@@ -33,15 +33,11 @@ public class AbonnementController {
         while (iteratorC.hasNext()) {
             cboxClient.getItems().add(iteratorC.next());
         }
-        ObservableList<ClientMetier> listC = (ObservableList<ClientMetier>) HelloApplication.factory.getClientDAO().findAll();
-        cboxClient.setItems(listC);
 
         Iterator<RevueMetier> iteratorR = HelloApplication.factory.getRevueDAO().findAll().iterator();
         while (iteratorC.hasNext()) {
             cboxClient.getItems().add(iteratorC.next());
         }
-        ObservableList<RevueMetier> listR = (ObservableList<RevueMetier>) HelloApplication.factory.getRevueDAO().findAll();
-        cboxRevue.setItems(listR);
 
         while (iteratorC.hasNext()) {
             cboxClient.getItems().add(iteratorC.next());
