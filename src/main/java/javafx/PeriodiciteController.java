@@ -48,14 +48,12 @@ public class PeriodiciteController {
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) throws IOException {
-       // libelle.setText("");
-        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.activate("menu");
-        HelloApplication.screenController.removeScreen("periodicite");
-
         Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
         while (iterator.hasNext()) {
             HelloApplication.listObservable.add(iterator.next());
         }
+        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("periodicite");
     }
 }
