@@ -31,7 +31,7 @@
             <Button fx:id="btnRevue" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnRevueClick" text="Revue" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button fx:id="btnPeriodicite" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnPeriodiciteClick" text="Periodicité" GridPane.rowIndex="1" />
             <Button fx:id="btnClient" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnClientClick" text="Client" GridPane.columnIndex="1" />
-            <Button fx:id="btnImporter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Importer" visible="false" GridPane.rowIndex="2" />
+            <Button fx:id="btnImporter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnInsertionClick" text="Importer" visible="false" GridPane.rowIndex="2" />
             <Button fx:id="btnAjouter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnAjouterClick" text="Ajouter" visible="false" />
             <Button fx:id="btnModifier" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnModifierClick" text="Modifier" visible="false" GridPane.columnIndex="1" />
             <Button fx:id="btnSupprimer" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnSupprimerClick" text="Supprimer" visible="false" GridPane.rowIndex="1" />

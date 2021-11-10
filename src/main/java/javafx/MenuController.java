@@ -15,11 +15,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 public class MenuController {
     @FXML TableColumn columnId;
@@ -40,6 +44,7 @@ public class MenuController {
 
     public static String table;
     public static String choix;
+    private static String instance;
     public static PeriodiciteMetier periodicite = new PeriodiciteMetier();
     public static AbonnementMetier abonnement = new AbonnementMetier();
     public static ClientMetier client = new ClientMetier();
@@ -49,10 +54,18 @@ public class MenuController {
     public static HashMap<String,TableColumn> ClientColonne = new HashMap<>();
     public static HashMap<String,TableColumn> RevueColonne = new HashMap<>();
     public static String persistance;
+    private static FileChooser fileChooser = new FileChooser();
     @FXML
-    public void initialize() {
+    public void initialize() throws IOException {
 
-
+        if (instance == "LM")
+        {
+            btnListeMClick();
+        }
+        else if (instance == "SQL")
+        {
+           btnSqlClick();
+        }
         if (table != null) {
             columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
             moveToAction();
@@ -70,6 +83,7 @@ public class MenuController {
             }
         }
         tableVue.getItems().addAll(HelloApplication.listObservable);
+
     }
 
     public void moveToAction(){
@@ -107,17 +121,18 @@ public class MenuController {
         tableVue.setVisible(false);
     }
 
-    public void btnListeMClick(ActionEvent actionEvent) throws IOException {
+    public void btnListeMClick() throws IOException {
         btnAbonnement.setDisable(false);
         btnRevue.setDisable(false);
         btnPeriodicite.setDisable(false);
         btnClient.setDisable(false);
         btnListeM.setDisable(true);
         btnSql.setDisable(false);
+        instance ="LM";
         HelloApplication.factory= DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
     }
 
-    public void btnSqlClick(ActionEvent actionEvent) {
+    public void btnSqlClick() {
         btnAbonnement.setDisable(false);
         btnRevue.setDisable(false);
         btnPeriodicite.setDisable(false);
@@ -125,6 +140,7 @@ public class MenuController {
         btnImporter.setDisable(false);
         btnSql.setDisable(true);
         btnListeM.setDisable(false);
+        instance ="SQL";
         HelloApplication.factory= DAOFactory.getDAOFactory(Persistance.MYSQL);
 
     }
@@ -296,6 +312,12 @@ public class MenuController {
            btnVisualiser.setDisable(false);
 
          }
+    }
+
+    public void btnInsertionClick(){
+        fileChooser.setSelectedExtensionFilter( new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
+        File file = fileChooser.showOpenDialog(btnImporter.getScene().getWindow());
+
     }
 
     public void btnSupprimerClick(ActionEvent actionEvent) {

@@ -63,7 +63,6 @@ public class RevueController {
 
         HelloApplication.screenController.activate("menu");
         HelloApplication.screenController.removeScreen("revue");
-
         Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
         while (iterator.hasNext()) {
             HelloApplication.listObservable.add(iterator.next());

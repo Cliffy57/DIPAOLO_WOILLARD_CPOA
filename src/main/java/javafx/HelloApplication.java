@@ -21,6 +21,7 @@ public class HelloApplication extends Application {
     public static ObservableList<String> imageList = FXCollections.observableArrayList();
     public static ImageController imageController;
 
+
     @Override
     public void start(Stage stage) throws IOException {
         Connexion.creeConnexion();

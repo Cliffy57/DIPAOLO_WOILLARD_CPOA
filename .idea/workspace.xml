@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="réglage de delete, probleme AbonnementController">
+    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="suppr à terminer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +40,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
