@@ -364,9 +364,15 @@ public class MenuController {
                 br = new BufferedReader(new FileReader(CsvFile));
 
                 String line;
+
+
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
-                    HelloApplication.factory.getPeriodiciteDAO().create(new PeriodiciteMetier(fields[0]));
+                    PeriodiciteMetier  periodiciteNew= new PeriodiciteMetier(fields[0]); //1
+                    if (!HelloApplication.factory.getPeriodiciteDAO().ifExist(periodiciteNew)){
+                        HelloApplication.factory.getPeriodiciteDAO().create(periodiciteNew);
+                    }
+
                 }
 
             } catch (FileNotFoundException ex) {
@@ -383,7 +389,10 @@ public class MenuController {
                 DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
-                    HelloApplication.factory.getAbonnementDAO().create(new AbonnementMetier(LocalDate.parse(fields[0],formatage) ,LocalDate.parse(fields[1],formatage)  ,Integer.parseInt(fields[2]),Integer.parseInt(fields[3])));
+                    AbonnementMetier abonnementNew = new AbonnementMetier(LocalDate.parse(fields[0],formatage) ,LocalDate.parse(fields[1],formatage)  ,Integer.parseInt(fields[2]),Integer.parseInt(fields[3]));
+                    if (!HelloApplication.factory.getAbonnementDAO().ifExist(abonnementNew)) {
+                        HelloApplication.factory.getAbonnementDAO().create(abonnementNew);
+                    }
                 }
 
             } catch (FileNotFoundException ex) {
@@ -400,7 +409,10 @@ public class MenuController {
 
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
-                    HelloApplication.factory.getClientDAO().create(new ClientMetier(fields[0],fields[1],Integer.parseInt(fields[2]), normalisationVoie.normalisation(fields[3]), Integer.parseInt(normalisationCodePost.normalisation(fields[4])), normalisationVille.normalisation(fields[5]),normalisationVille.normalisation(fields[6])));
+                    ClientMetier clientNew = new ClientMetier(fields[0],fields[1],Integer.parseInt(fields[2]), normalisationVoie.normalisation(fields[3]), Integer.parseInt(normalisationCodePost.normalisation(fields[4])), normalisationVille.normalisation(fields[5]),normalisationVille.normalisation(fields[6]));
+                    if(!HelloApplication.factory.getClientDAO().ifExist(clientNew)){
+                        HelloApplication.factory.getClientDAO().create(clientNew);
+                    }
                 }
 
             } catch (FileNotFoundException ex) {
@@ -417,7 +429,10 @@ public class MenuController {
 
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
-                    HelloApplication.factory.getRevueDAO().create(new RevueMetier(fields[0],fields[1],Float.parseFloat(fields[2]),fields[3],Integer.parseInt(fields[4])));
+                    RevueMetier revueNew = new RevueMetier(fields[0],fields[1],Float.parseFloat(fields[2]),fields[3],Integer.parseInt(fields[4]));
+                    if(!HelloApplication.factory.getRevueDAO().ifExist(revueNew)){
+                        HelloApplication.factory.getRevueDAO().create(revueNew);
+                    }
                 }
 
             } catch (FileNotFoundException ex) {
