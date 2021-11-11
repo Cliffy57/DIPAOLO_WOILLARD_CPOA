@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -50,31 +51,62 @@ public class AbonnementController {
             cboxRevue.getSelectionModel().select(HelloApplication.factory.getRevueDAO().getById(MenuController.abonnement.getIdRevue()));
             dateDebut.setValue(MenuController.abonnement.getDateDebut());
             dateFin.setValue(MenuController.abonnement.getDateFin());
-            System.out.println(MenuController.abonnement.getIdClient());
         }
 
     }
 
     public void btnValiderClick(ActionEvent actionEvent) throws IOException {
-        if (MenuController.choix == "ajout") {
-            HelloApplication.factory.getAbonnementDAO().create(new AbonnementMetier(dateDebut.getValue(),dateFin.getValue(),cboxClient.getSelectionModel().getSelectedItem().getId(),cboxRevue.getSelectionModel().getSelectedItem().getId()));
+        String erreur = "";
+        if (this.cboxClient.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null){
+            erreur+="Le client n'est pas saisie\n";
         }
-        else if(MenuController.choix == "modif") {
-            abonnementNew = MenuController.abonnement;
-            abonnementNew.setDateDebut(dateDebut.getValue());
-            abonnementNew.setDateFin(dateFin.getValue());
-            abonnementNew.setIdClient(cboxClient.getSelectionModel().getSelectedItem().getId());
-            abonnementNew.setIdRevue(cboxRevue.getSelectionModel().getSelectedItem().getId());
-            HelloApplication.factory.getAbonnementDAO().update(abonnementNew);
+        if (this.cboxRevue.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null){
+            erreur+="Le client n'est pas saisie\n";
+        }
+        if(this.dateDebut.getValue() == null){
+            erreur +="La date de debut n'est pas saisie\n";
+        }
+        if(this.dateFin.getValue() == null){
+            erreur +="La date de fin n'est pas saisie\n";
+        }
+        try {
+            int val = this.dateDebut.getValue().compareTo(this.dateFin.getValue());
+            if(val>0) {
+                erreur +="La date de fin doit etre superieur a la date de debut\n";
+            };
+        } catch (NullPointerException nullPointerException){
+
         }
 
-        Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
-        while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+
+
+        if(erreur =="") {
+            if (MenuController.choix == "ajout") {
+                HelloApplication.factory.getAbonnementDAO().create(new AbonnementMetier(dateDebut.getValue(), dateFin.getValue(), cboxClient.getSelectionModel().getSelectedItem().getId(), cboxRevue.getSelectionModel().getSelectedItem().getId()));
+            } else if (MenuController.choix == "modif") {
+                abonnementNew = MenuController.abonnement;
+                abonnementNew.setDateDebut(dateDebut.getValue());
+                abonnementNew.setDateFin(dateFin.getValue());
+                abonnementNew.setIdClient(cboxClient.getSelectionModel().getSelectedItem().getId());
+                abonnementNew.setIdRevue(cboxRevue.getSelectionModel().getSelectedItem().getId());
+                HelloApplication.factory.getAbonnementDAO().update(abonnementNew);
+            }
+
+            Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next());
+            }
+            HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+            HelloApplication.screenController.activate("menu");
+            HelloApplication.screenController.removeScreen("abonnement");
         }
-        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.activate("menu");
-        HelloApplication.screenController.removeScreen("abonnement");
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur lors de la saisie");
+            alert.setHeaderText("Un ou plusieurs champs sont mal remplis.");
+            alert.setContentText(erreur);
+            alert.showAndWait();
+        }
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) throws IOException {

@@ -7,6 +7,7 @@ import dao.metier.AbonnementMetier;
 import dao.metier.ClientMetier;
 import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,14 +17,19 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import normalisation.normalisationCodePost;
+import normalisation.normalisationVille;
+import normalisation.normalisationVoie;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MenuController {
     @FXML TableColumn columnId;
@@ -314,9 +320,114 @@ public class MenuController {
          }
     }
 
-    public void btnInsertionClick(){
+    public void btnInsertionClick() throws IOException {
         fileChooser.setSelectedExtensionFilter( new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
         File file = fileChooser.showOpenDialog(btnImporter.getScene().getWindow());
+        insertCSV(file.getPath());
+        tableVue.getItems().clear();
+        HelloApplication.listObservable.clear();
+
+        if (table == "periodicite") {
+            Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next());
+            }
+        }
+        else if (table == "abonnement") {
+            Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next());
+            }
+        }
+        else if (table == "client") {
+            Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next());
+            }
+        }
+        else if (table == "revue") {
+            Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
+            while (iterator.hasNext()) {
+                HelloApplication.listObservable.add(iterator.next());
+            }
+        }
+        this.tableVue.getItems().addAll(HelloApplication.listObservable);
+    }
+
+    public void insertCSV(String path) {
+
+        String CsvFile = path;
+        String FieldDelimiter = ";";
+        BufferedReader br;
+        if (table == "periodicite") {
+            try {
+                br = new BufferedReader(new FileReader(CsvFile));
+
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] fields = line.split(FieldDelimiter, -1);
+                    HelloApplication.factory.getPeriodiciteDAO().create(new PeriodiciteMetier(fields[0]));
+                }
+
+            } catch (FileNotFoundException ex) {
+                System.out.println("erreur csv");
+            } catch (IOException ex) {
+                System.out.println("erreur csv");
+            }
+        }
+        else if (table == "abonnement") {
+            try {
+                br = new BufferedReader(new FileReader(CsvFile));
+
+                String line;
+                DateTimeFormatter formatage = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                while ((line = br.readLine()) != null) {
+                    String[] fields = line.split(FieldDelimiter, -1);
+                    HelloApplication.factory.getAbonnementDAO().create(new AbonnementMetier(LocalDate.parse(fields[0],formatage) ,LocalDate.parse(fields[1],formatage)  ,Integer.parseInt(fields[2]),Integer.parseInt(fields[3])));
+                }
+
+            } catch (FileNotFoundException ex) {
+                System.out.println("erreur csv");
+            } catch (IOException ex) {
+                System.out.println("erreur csv");
+            }
+        }
+        else if (table == "client") {
+            try {
+                br = new BufferedReader(new FileReader(CsvFile));
+
+                String line;
+
+                while ((line = br.readLine()) != null) {
+                    String[] fields = line.split(FieldDelimiter, -1);
+                    HelloApplication.factory.getClientDAO().create(new ClientMetier(fields[0],fields[1],Integer.parseInt(fields[2]), normalisationVoie.normalisation(fields[3]), Integer.parseInt(normalisationCodePost.normalisation(fields[4])), normalisationVille.normalisation(fields[5]),normalisationVille.normalisation(fields[6])));
+                }
+
+            } catch (FileNotFoundException ex) {
+                System.out.println("erreur csv");
+            } catch (IOException ex) {
+                System.out.println("erreur csv");
+            }
+        }
+        else if (table == "revue") {
+            try {
+                br = new BufferedReader(new FileReader(CsvFile));
+
+                String line;
+
+                while ((line = br.readLine()) != null) {
+                    String[] fields = line.split(FieldDelimiter, -1);
+                    HelloApplication.factory.getRevueDAO().create(new RevueMetier(fields[0],fields[1],Float.parseFloat(fields[2]),fields[3],Integer.parseInt(fields[4])));
+                }
+
+            } catch (FileNotFoundException ex) {
+                System.out.println("erreur csv");
+            } catch (IOException ex) {
+                System.out.println("erreur csv");
+            }
+        }
+
+
 
     }
 

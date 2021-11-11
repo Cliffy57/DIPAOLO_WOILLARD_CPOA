@@ -146,4 +146,28 @@ public class MySQLRevueDAO implements RevueDAO {
 		return list;
 	}
 
+	@Override
+	public boolean ifExist(RevueMetier objet){
+		ResultSet rs;
+		int nbLignes =0;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM Revue WHERE Revue.titre = ? AND Revue.description = ? AND Revue.tarif_numero = ? and Revue.visuel = ? and Revue.id_periodicite = ?;");
+			requete.setString(1, objet.getTitre());
+			requete.setString(2, objet.getDescription());
+			requete.setFloat(3,objet.getTarifNumero());
+			requete.setString(4,objet.getVisuel());
+			requete.setInt(5,objet.getIdPeriodicite());
+			rs = requete.executeQuery();
+			if (rs.next()) {
+				do {
+					nbLignes+=1;
+				} while (rs.next());
+			}
+		} catch (SQLException sqle) {
+			System.out.println("Pb dans ifExist " + sqle.getMessage());
+		}
+		return nbLignes >= 1;
+	}
+
 }

@@ -1,9 +1,12 @@
 package dao.listememoire;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 import dao.RevueDAO;
+import dao.metier.ClientMetier;
 import dao.metier.RevueMetier;
 
 public class ListeMemoireRevueDAO implements RevueDAO {
@@ -89,5 +92,23 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 	public ArrayList<RevueMetier> findAll() {
 		return (ArrayList<RevueMetier>) this.donnees;
 	}
+
+	@Override
+	public boolean ifExist(RevueMetier objet) {
+
+			boolean existe = false;
+			Iterator<RevueMetier> iterator = this.donnees.iterator();
+			while (iterator.hasNext() && !existe) {
+				if(		Objects.equals(objet.getVisuel(), iterator.next().getVisuel()) &&
+						Objects.equals(objet.getDescription(), iterator.next().getDescription()) &&
+						Objects.equals(objet.getIdPeriodicite(), iterator.next().getIdPeriodicite()) &&
+						Objects.equals(objet.getTitre(), iterator.next().getTitre()) &&
+						Objects.equals(objet.getTarifNumero(), iterator.next().getTarifNumero()) )
+				{
+					existe = true;
+				}
+			}
+			return existe;
+		}
 
 }

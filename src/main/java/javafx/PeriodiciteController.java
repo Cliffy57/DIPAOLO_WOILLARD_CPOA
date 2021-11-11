@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class PeriodiciteController {
@@ -27,25 +28,46 @@ public class PeriodiciteController {
     }
 
     public void btnValiderClick(ActionEvent actionEvent) throws IOException {
-      if (libelle.getText() != null && libelle.getText() != "") {
+        String erreur = "";
+        boolean ok = true;
+        if (libelle.getText() != null && libelle.getText() != "") {
           if (MenuController.choix == "ajout") {
-              HelloApplication.factory.getPeriodiciteDAO().create(new PeriodiciteMetier(libelle.getText()));
+              periodiciteNew= new PeriodiciteMetier(libelle.getText());
+              if(!HelloApplication.factory.getPeriodiciteDAO().ifExist(periodiciteNew))
+              {HelloApplication.factory.getPeriodiciteDAO().create(periodiciteNew);}
+              else {
+                  ok = false;
+                  erreur ="Un doublon existe dans la base !";
+              }
+
           } else if (MenuController.choix == "modif") {
               periodiciteNew = MenuController.periodicite;
               periodiciteNew.setLibelle(libelle.getText());
-              HelloApplication.factory.getPeriodiciteDAO().update(periodiciteNew);
-          }
+              if(!HelloApplication.factory.getPeriodiciteDAO().ifExist(periodiciteNew))
+              {HelloApplication.factory.getPeriodiciteDAO().update(periodiciteNew);}
+              else {
+                  ok = false;
+                  erreur ="Un doublon existe dans la base !";
+              }
 
-          Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
-          while (iterator.hasNext()) {
-              HelloApplication.listObservable.add(iterator.next());
           }
-          HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-          HelloApplication.screenController.activate("menu");
-          HelloApplication.screenController.removeScreen("periodicite");
+            if(ok){
+                Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+                while (iterator.hasNext()) {
+                    HelloApplication.listObservable.add(iterator.next());
+                }
+                HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+                HelloApplication.screenController.activate("menu");
+                HelloApplication.screenController.removeScreen("periodicite");
+            }
+
       }
       else {
-          String erreur = "Le libelle n'est pas correcte !";
+          ok =false;
+          erreur +="Le libelle n'est pas saisie !";
+      }
+      if(!ok){
+
           Alert alert=new Alert(Alert.AlertType.ERROR);
           alert.setTitle("Erreur lors de la saisie");
           alert.setHeaderText("Un ou plusieurs champs sont mal remplis.");

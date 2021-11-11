@@ -1,10 +1,13 @@
 package dao.listememoire;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 import dao.AbonnementDAO;
 import dao.metier.AbonnementMetier;
+import dao.metier.ClientMetier;
 
 public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 
@@ -88,6 +91,25 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 	@Override
 	public ArrayList<AbonnementMetier> findAll() {
 		return (ArrayList<AbonnementMetier>) this.donnees;
+	}
+
+	@Override
+	public boolean ifExist(AbonnementMetier objet){
+		{
+				boolean existe = false;
+				Iterator<AbonnementMetier> iterator = this.donnees.iterator();
+				while (iterator.hasNext() && !existe) {
+					if(		Objects.equals(objet.getDateDebut(), iterator.next().getDateDebut()) &&
+							Objects.equals(objet.getDateFin(), iterator.next().getDateFin()) &&
+							Objects.equals(objet.getIdClient(), iterator.next().getIdClient()) &&
+							Objects.equals(objet.getIdRevue(), iterator.next().getIdRevue()) )
+					{
+						existe = true;
+					}
+				}
+				return existe;
+			}
+
 	}
 
 }

@@ -1,10 +1,14 @@
 package dao.listememoire;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 import dao.PeriodiciteDAO;
+import dao.metier.ClientMetier;
 import dao.metier.PeriodiciteMetier;
+import javafx.HelloApplication;
 
 public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 
@@ -87,6 +91,20 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 	@Override
 	public ArrayList<PeriodiciteMetier> findAll() {
 		return (ArrayList<PeriodiciteMetier>) this.donnees;
+	}
+
+	@Override
+	public boolean ifExist(PeriodiciteMetier objet){
+
+			boolean existe = false;
+			Iterator<PeriodiciteMetier> iterator = this.donnees.iterator();
+			while (iterator.hasNext() && !existe) {
+				if(Objects.equals(objet.getLibelle(), iterator.next().getLibelle()))
+				{
+					existe = true;
+				}
+			}
+		return existe;
 	}
 
 }

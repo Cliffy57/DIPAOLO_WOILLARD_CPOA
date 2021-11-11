@@ -146,4 +146,28 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 
 		return list;
 	}
+
+	@Override
+	public boolean ifExist(AbonnementMetier objet) {
+		ResultSet rs;
+		int nbLignes =0;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM ABONNEMENT WHERE Abonnement.date_debut = ? AND Abonnement.date_fin = ? AND Abonnement.id_client = ? AND Abonnement.id_revue = ?;");
+			requete.setDate(1, java.sql.Date.valueOf(objet.getDateDebut()));
+			requete.setDate(2, java.sql.Date.valueOf(objet.getDateFin()));
+			requete.setInt(3,objet.getIdClient());
+			requete.setInt(4,objet.getIdRevue());
+			rs = requete.executeQuery();
+			if (rs.next()) {
+				do {
+					nbLignes+=1;
+				} while (rs.next());
+			}
+		} catch (SQLException sqle) {
+			System.out.println("Pb dans ifExist " + sqle.getMessage());
+		}
+		return nbLignes >= 1;
+	}
+
 }

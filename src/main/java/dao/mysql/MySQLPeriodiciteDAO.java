@@ -131,4 +131,25 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO {
 		return list;
 	}
 
+	@Override
+	public boolean ifExist(PeriodiciteMetier objet) {
+
+		ResultSet rs;
+		int nbLignes =0;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM Periodicite WHERE Periodicite.libelle = ?;");
+			requete.setString(1, objet.getLibelle());
+			rs = requete.executeQuery();
+			if (rs.next()) {
+				do {
+					nbLignes+=1;
+				} while (rs.next());
+			}
+		} catch (SQLException sqle) {
+			System.out.println("Pb dans ifExist " + sqle.getMessage());
+		}
+		return nbLignes >= 1;
+	}
+
 }

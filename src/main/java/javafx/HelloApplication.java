@@ -13,7 +13,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class HelloApplication extends Application {
+public class
+HelloApplication extends Application {
 
     public static ScreenController screenController;
     public static DAOFactory factory;

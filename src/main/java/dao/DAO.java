@@ -13,4 +13,6 @@ public interface DAO<T> {
 	public abstract boolean delete(T objet);
 
 	public abstract ArrayList<T> findAll();
+
+	public abstract boolean ifExist(T objet);
 }

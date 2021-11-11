@@ -4,19 +4,88 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="suppr à terminer">
+    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="test insertion fini">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_01.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_26.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_26.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_261.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireClientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoirePeriodiciteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoirePeriodiciteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireRevueDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireRevueDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLAbonnementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLAbonnementDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLClientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLPeriodiciteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLPeriodiciteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLRevueDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mysql/MySQLRevueDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/javafx/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/javafx/AjoutRevue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/javafx/AjoutRevue.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/connexion/Connexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/connexion/Connexion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/AbonnementDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/AbonnementDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/ClientDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ClientDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/PeriodiciteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/PeriodiciteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/Persistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Persistance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/Prop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Prop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/RevueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/RevueDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/DAOFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/factory/DAOFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/factory/DAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/ListeMemoireDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/factory/ListeMemoireDAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/MySQLDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/factory/MySQLDAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchAbonnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/launch/LaunchAbonnement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/launch/LaunchClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/launch/LaunchMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchPeriodicite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/launch/LaunchPeriodicite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchRevue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/launch/LaunchRevue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireAbonnementDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireAbonnementDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireClientDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireClientDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoirePeriodiciteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoirePeriodiciteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireRevueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireRevueDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/AbonnementMetier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/metier/AbonnementMetier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/ClientMetier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/metier/ClientMetier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/PeriodiciteMetier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/metier/PeriodiciteMetier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/RevueMetier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/metier/RevueMetier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLAbonnementDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLAbonnementDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLClientDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLClientDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLPeriodiciteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLPeriodiciteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLRevueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLRevueDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AjoutRevue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AjoutRevue.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/FxMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/FxMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ImageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/Menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ScreenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/VisualiserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/VisualiserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/VueErreur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationCodePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/normalisation/normalisationCodePost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationPays.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/normalisation/normalisationPays.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationVille.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/normalisation/normalisationVille.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationVoie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/normalisation/normalisationVoie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestAbonnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TestAbonnement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TestClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestPeriodicite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TestPeriodicite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestRevue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TestRevue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireAbonnementTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireAbonnementTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireClientTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireClientTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoirePeriodiciteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoirePeriodiciteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireRevueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireRevueTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLAbonnementTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLAbonnementTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLClientTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLClientTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLPeriodiciteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLPeriodiciteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLRevueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLRevueTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,18 +130,34 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="H:/Documents/CPOA/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="15" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="javafx.HelloApplication" />
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="javafx.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LaunchMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.launch.LaunchMain" />
+      <module name="DIPAOLO_WOILLARD_CPOA-eric" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.launch.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,21 +197,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySQLPeriodiciteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WOILLARD_DIPAOLO_CPOA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.testMySQL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.testMySQL" />
-      <option name="MAIN_CLASS_NAME" value="test.testMySQL.MySQLPeriodiciteTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MySQLRevueTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
@@ -156,13 +226,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Application.LaunchMain" />
+      <item itemvalue="JUnit.MySQLAbonnementTest.testUpdate" />
+      <item itemvalue="JUnit.MySQLClientTest.testUpdate" />
+      <item itemvalue="JUnit.MySQLRevueTest.testUpdate" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.LaunchMain" />
         <item itemvalue="JUnit.MySQLRevueTest.testUpdate" />
         <item itemvalue="JUnit.MySQLClientTest.testUpdate" />
         <item itemvalue="JUnit.MySQLAbonnementTest.testUpdate" />
-        <item itemvalue="JUnit.MySQLPeriodiciteTest" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +316,8 @@
     <MESSAGE value="TestMYSQL Fini" />
     <MESSAGE value="tableview finit" />
     <MESSAGE value="réglage de delete, probleme AbonnementController" />
-    <option name="LAST_COMMIT_MESSAGE" value="réglage de delete, probleme AbonnementController" />
+    <MESSAGE value="test insertion fini" />
+    <option name="LAST_COMMIT_MESSAGE" value="test insertion fini" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

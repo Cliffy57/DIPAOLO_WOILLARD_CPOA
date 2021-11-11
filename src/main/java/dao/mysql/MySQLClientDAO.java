@@ -154,4 +154,30 @@ public class MySQLClientDAO implements ClientDAO {
 		return list;
 	}
 
+	@Override
+	public boolean ifExist(ClientMetier objet){
+		ResultSet rs;
+		int nbLignes =0;
+		try {
+			Connection laConnexion = Connexion.creeConnexion();
+			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM CLIENT WHERE Client.nom = ? AND Client.prenom = ? AND Client.no_rue = ?  AND Client.voie = ? AND Client.code_postal = ? AND Client.ville = ? AND Client.pays = ? ;");
+			requete.setString(1, objet.getNom());
+			requete.setString(2, objet.getPrenom());
+			requete.setInt(3,objet.getNoRue());
+			requete.setString(4,objet.getVoie());
+			requete.setInt(5,objet.getCodePost());
+			requete.setString(6,objet.getVille());
+			requete.setString(7,objet.getPays());
+			rs = requete.executeQuery();
+			if (rs.next()) {
+				do {
+					nbLignes+=1;
+				} while (rs.next());
+			}
+		} catch (SQLException sqle) {
+			System.out.println("Pb dans ifExist " + sqle.getMessage());
+		}
+		return nbLignes >= 1;
+	}
+
 }

@@ -1,10 +1,14 @@
 package dao.listememoire;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 import dao.ClientDAO;
 import dao.metier.ClientMetier;
+import dao.metier.PeriodiciteMetier;
+import javafx.HelloApplication;
 
 public class ListeMemoireClientDAO implements ClientDAO {
 
@@ -88,6 +92,30 @@ public class ListeMemoireClientDAO implements ClientDAO {
 	@Override
 	public ArrayList<ClientMetier> findAll() {
 		return (ArrayList<ClientMetier>) this.donnees;
+	}
+
+	@Override
+	public boolean ifExist(ClientMetier objet){
+
+		{
+
+			boolean existe = false;
+			Iterator<ClientMetier> iterator = this.donnees.iterator();
+			while (iterator.hasNext() && !existe) {
+				if(		Objects.equals(objet.getNom(), iterator.next().getNom()) &&
+						Objects.equals(objet.getPrenom(), iterator.next().getPrenom()) &&
+						Objects.equals(objet.getCodePost(), iterator.next().getCodePost()) &&
+						Objects.equals(objet.getPays(), iterator.next().getPays()) &&
+						Objects.equals(objet.getVille(), iterator.next().getVille()) &&
+						Objects.equals(objet.getNoRue(), iterator.next().getNoRue()) &&
+						Objects.equals(objet.getVoie(), iterator.next().getVoie()) )
+				{
+					existe = true;
+				}
+			}
+			return existe;
+		}
+
 	}
 
 }
