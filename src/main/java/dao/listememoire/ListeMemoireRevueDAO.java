@@ -1,114 +1,108 @@
 package dao.listememoire;
 
+import dao.RevueDAO;
+import dao.metier.RevueMetier;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-import dao.RevueDAO;
-import dao.metier.ClientMetier;
-import dao.metier.RevueMetier;
-
 public class ListeMemoireRevueDAO implements RevueDAO {
 
-	private static ListeMemoireRevueDAO instance;
+    private static ListeMemoireRevueDAO instance;
 
-	private List<RevueMetier> donnees;
+    private final List<RevueMetier> donnees;
 
-	public static ListeMemoireRevueDAO getInstance() {
+    private ListeMemoireRevueDAO() {
 
-		if (instance == null) {
-			instance = new ListeMemoireRevueDAO();
-		}
+        this.donnees = new ArrayList<RevueMetier>();
 
-		return instance;
-	}
+    }
 
-	private ListeMemoireRevueDAO() {
+    public static ListeMemoireRevueDAO getInstance() {
 
-		this.donnees = new ArrayList<RevueMetier>();
+        if (instance == null) {
+            instance = new ListeMemoireRevueDAO();
+        }
 
-		//this.donnees.add(new RevueMetier(2,"testo","sterone",2,"rick",2));
-		//this.donnees.add(new RevueMetier(6, "Quotidien","de malchanceux", 4,"salsifie", 3));
-	}
+        return instance;
+    }
 
-	@Override
-	public boolean create(RevueMetier objet) {
+    @Override
+    public boolean create(RevueMetier objet) {
 
-		objet.setId(1);
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		while (this.donnees.contains(objet)) {
+        objet.setId(1);
 
-			objet.setId(objet.getId() + 1);
-		}
-		boolean ok = this.donnees.add(objet);
+        while (this.donnees.contains(objet)) {
 
-		return ok;
-	}
+            objet.setId(objet.getId() + 1);
+        }
+        boolean ok = this.donnees.add(objet);
 
-	@Override
-	public boolean update(RevueMetier objet) {
+        return ok;
+    }
 
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(objet);
-		if (idx == -1) {
-			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
-		} else {
+    @Override
+    public boolean update(RevueMetier objet) {
 
-			this.donnees.set(idx, objet);
-		}
+        int idx = this.donnees.indexOf(objet);
+        if (idx == -1) {
+            throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
+        } else {
 
-		return true;
-	}
+            this.donnees.set(idx, objet);
+        }
 
-	@Override
-	public boolean delete(RevueMetier objet) {
+        return true;
+    }
 
-		RevueMetier supprime;
+    @Override
+    public boolean delete(RevueMetier objet) {
 
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(objet);
-		if (idx == -1) {
-			throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
-		} else {
-			supprime = this.donnees.remove(idx);
-		}
+        RevueMetier supprime;
 
-		return objet.equals(supprime);
-	}
+        int idx = this.donnees.indexOf(objet);
+        if (idx == -1) {
+            throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
+        } else {
+            supprime = this.donnees.remove(idx);
+        }
 
-	@Override
-	public RevueMetier getById(int id) {
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(new RevueMetier(id, "test", null, 0, null, 0));
-		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne poss�de cet identifiant");
-		} else {
-			return this.donnees.get(idx);
-		}
-	}
+        return objet.equals(supprime);
+    }
 
-	@Override
-	public ArrayList<RevueMetier> findAll() {
-		return (ArrayList<RevueMetier>) this.donnees;
-	}
+    @Override
+    public RevueMetier getById(int id) {
 
-	@Override
-	public boolean ifExist(RevueMetier objet) {
+        int idx = this.donnees.indexOf(new RevueMetier(id, "test", null, 0, null, 0));
+        if (idx == -1) {
+            throw new IllegalArgumentException("Aucun objet ne poss�de cet identifiant");
+        } else {
+            return this.donnees.get(idx);
+        }
+    }
 
-			boolean existe = false;
-			Iterator<RevueMetier> iterator = this.donnees.iterator();
-			while (iterator.hasNext() && !existe) {
-				if(		Objects.equals(objet.getVisuel(), iterator.next().getVisuel()) &&
-						Objects.equals(objet.getDescription(), iterator.next().getDescription()) &&
-						Objects.equals(objet.getIdPeriodicite(), iterator.next().getIdPeriodicite()) &&
-						Objects.equals(objet.getTitre(), iterator.next().getTitre()) &&
-						Objects.equals(objet.getTarifNumero(), iterator.next().getTarifNumero()) )
-				{
-					existe = true;
-				}
-			}
-			return existe;
-		}
+    @Override
+    public ArrayList<RevueMetier> findAll() {
+        return (ArrayList<RevueMetier>) this.donnees;
+    }
+
+    @Override
+    public boolean ifExist(RevueMetier objet) {
+
+        boolean existe = false;
+        Iterator<RevueMetier> iterator = this.donnees.iterator();
+        while (iterator.hasNext() && !existe) {
+            if (Objects.equals(objet.getVisuel(), iterator.next().getVisuel()) &&
+                    Objects.equals(objet.getDescription(), iterator.next().getDescription()) &&
+                    Objects.equals(objet.getIdPeriodicite(), iterator.next().getIdPeriodicite()) &&
+                    Objects.equals(objet.getTitre(), iterator.next().getTitre()) &&
+                    Objects.equals(objet.getTarifNumero(), iterator.next().getTarifNumero())) {
+                existe = true;
+            }
+        }
+        return existe;
+    }
 
 }

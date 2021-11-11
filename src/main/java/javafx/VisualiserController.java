@@ -12,19 +12,20 @@ import java.util.Iterator;
 
 public class VisualiserController {
 
-    @FXML TableView table;
-    @FXML Label lbl_table;
+    @FXML
+    TableView table;
+    @FXML
+    Label lbl_table;
 
     @FXML
     public void initialize() {
         lbl_table.setText(MenuController.table);
-        if (MenuController.table == "abonnement")
-        {
-            TableColumn<AbonnementMetier,Integer> column1 = new TableColumn<>("id");
-            TableColumn<AbonnementMetier,String> column2 = new TableColumn<>("datedebut");
-            TableColumn<AbonnementMetier,String> column3 = new TableColumn<>("datefin");
-            TableColumn<AbonnementMetier,Integer> column4 = new TableColumn<>("idclient");
-            TableColumn<AbonnementMetier,Integer> column5 = new TableColumn<>("idrevue");
+        if (MenuController.table == "abonnement") {
+            TableColumn<AbonnementMetier, Integer> column1 = new TableColumn<>("id");
+            TableColumn<AbonnementMetier, String> column2 = new TableColumn<>("datedebut");
+            TableColumn<AbonnementMetier, String> column3 = new TableColumn<>("datefin");
+            TableColumn<AbonnementMetier, Integer> column4 = new TableColumn<>("idclient");
+            TableColumn<AbonnementMetier, Integer> column5 = new TableColumn<>("idrevue");
             table.getColumns().add(column1);
             table.getColumns().add(column2);
             table.getColumns().add(column3);
@@ -37,12 +38,9 @@ public class VisualiserController {
                 table.getItems().add(iterator.next());
             }
 
-        }
-        else if (MenuController.table == "client")
-        {
+        } else if (MenuController.table == "client") {
 
-        }
-        else if (MenuController.table == "periodicite") {
+        } else if (MenuController.table == "periodicite") {
             TableColumn<PeriodiciteMetier, Integer> column1 = new TableColumn<>("id");
             TableColumn<PeriodiciteMetier, String> column2 = new TableColumn<>("Libelle");
             column1.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -50,9 +48,7 @@ public class VisualiserController {
             table.getColumns().add(column1);
             table.getColumns().add(column2);
             this.table.getItems().addAll(HelloApplication.factory.getPeriodiciteDAO().findAll());
-        }
-        else if (MenuController.table == "revue")
-        {
+        } else if (MenuController.table == "revue") {
 
         }
     }

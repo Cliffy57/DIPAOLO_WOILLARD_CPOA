@@ -4,93 +4,90 @@ import java.time.LocalDate;
 
 public class AbonnementMetier {
 
-	private int id;
-	private LocalDate dateDebut;
-	private LocalDate dateFin;
-	private int idClient;
-	private int idRevue;
+    private int id;
+    private LocalDate dateDebut;
+    private LocalDate dateFin;
+    private int idClient;
+    private int idRevue;
 
-	public AbonnementMetier(int id, LocalDate dateDebut, LocalDate dateFin, int IDClient, int IDRevue) {
-		this.id = id;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
-		this.idClient = IDClient;
-		this.idRevue = IDRevue;
-	}
+    public AbonnementMetier(int id, LocalDate dateDebut, LocalDate dateFin, int IDClient, int IDRevue) {
+        this.id = id;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.idClient = IDClient;
+        this.idRevue = IDRevue;
+    }
 
-	public AbonnementMetier(LocalDate dateDebut, LocalDate dateFin, int IDClient, int IDRevue) {
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
-		this.idClient = IDClient;
-		this.idRevue = IDRevue;
-	}
+    public AbonnementMetier(LocalDate dateDebut, LocalDate dateFin, int IDClient, int IDRevue) {
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.idClient = IDClient;
+        this.idRevue = IDRevue;
+    }
 
-	public AbonnementMetier() {
+    public AbonnementMetier() {
 
-	}
-	
-	@Override
-	public boolean equals(Object o) {
-		
-		AbonnementMetier m = (AbonnementMetier) o;
-		if(o == null) {
-			return false;
-		}
-		if(this.getClass()==m.getClass()) {
-			if(m.getId() == this.getId()) {
-				return true;
-			}
-		}
-		
-		return false;
-	}
+    }
 
-	public int getId() {
-		return id;
-	}
+    @Override
+    public boolean equals(Object o) {
 
-	public void setId(int id) {
-		this.id = id;
-	}
+        AbonnementMetier m = (AbonnementMetier) o;
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() == m.getClass()) {
+			return m.getId() == this.getId();
+        }
 
-	public LocalDate getDateDebut() {
-		return dateDebut;
-	}
+        return false;
+    }
 
-	public void setDateDebut(LocalDate dateDebut) {
-		this.dateDebut = dateDebut;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public LocalDate getDateFin() {
-		return dateFin;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setDateFin(LocalDate dateFin) {
-		this.dateFin = dateFin;
-	}
+    public LocalDate getDateDebut() {
+        return dateDebut;
+    }
 
-	public int getIdClient() {
-		return idClient;
-	}
+    public void setDateDebut(LocalDate dateDebut) {
+        this.dateDebut = dateDebut;
+    }
 
-	public void setIdClient(int iDClient) {
-		idClient = iDClient;
-	}
+    public LocalDate getDateFin() {
+        return dateFin;
+    }
 
-	public int getIdRevue() {
-		return idRevue;
-	}
+    public void setDateFin(LocalDate dateFin) {
+        this.dateFin = dateFin;
+    }
 
-	public void setIdRevue(int iDRevue) {
-		idRevue = iDRevue;
-	}
+    public int getIdClient() {
+        return idClient;
+    }
 
-	@Override
-	public String toString() {
-		return "Abonnement [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", IDClient="
-				+ idClient + ", IDRevue=" + idRevue + "]";
-	}
+    public void setIdClient(int iDClient) {
+        idClient = iDClient;
+    }
 
-	
+    public int getIdRevue() {
+        return idRevue;
+    }
+
+    public void setIdRevue(int iDRevue) {
+        idRevue = iDRevue;
+    }
+
+    @Override
+    public String toString() {
+        return "Abonnement [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", IDClient="
+                + idClient + ", IDRevue=" + idRevue + "]";
+    }
+
 
 }

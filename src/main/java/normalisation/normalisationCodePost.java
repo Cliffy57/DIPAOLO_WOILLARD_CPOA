@@ -3,15 +3,12 @@ package normalisation;
 public class normalisationCodePost {
     public static String normalisation(String str) {
 
-        if(str != null)
-        {
+        if (str != null) {
             str = str.trim();
 
-            if(str.contains("L-"))
-            {
+            if (str.contains("L-")) {
                 str = str.replace("L-", "");
-            }
-            else if(str.length()==4) {
+            } else if (str.length() == 4) {
 
                 char zero = '0';
                 str = zero + str;
@@ -19,8 +16,6 @@ public class normalisationCodePost {
             }
 
         }
-
-
 
 
         return str;

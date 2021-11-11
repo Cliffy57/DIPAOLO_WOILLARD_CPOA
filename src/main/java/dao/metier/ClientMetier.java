@@ -2,126 +2,124 @@ package dao.metier;
 
 
 public class ClientMetier {
-	private int id;
-	private String nom;
-	private String prenom;
-	private int noRue;
-	private String voie;
-	private int codePost;
-	private String ville;
-	private String pays;
+    private int id;
+    private String nom;
+    private String prenom;
+    private int noRue;
+    private String voie;
+    private int codePost;
+    private String ville;
+    private String pays;
 
-	public int getId() {
-		return id;
-	}
+    public ClientMetier(int id, String nom, String prenom, int noRue, String voie, int codePost, String ville,
+                        String pays) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.noRue = noRue;
+        this.voie = voie;
+        this.codePost = codePost;
+        this.ville = ville;
+        this.pays = pays;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public ClientMetier(String nom, String prenom, int noRue, String voie, int codePost, String ville,
+                        String pays) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.noRue = noRue;
+        this.voie = voie;
+        this.codePost = codePost;
+        this.ville = ville;
+        this.pays = pays;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public ClientMetier() {
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getPrenom() {
-		return prenom;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public int getNoRue() {
-		return noRue;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public void setNoRue(int noRue) {
-		this.noRue = noRue;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public String getVoie() {
-		return voie;
-	}
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-	public void setVoie(String voie) {
-		this.voie = voie;
-	}
+    public int getNoRue() {
+        return noRue;
+    }
 
-	public int getCodePost() {
-		return codePost;
-	}
+    public void setNoRue(int noRue) {
+        this.noRue = noRue;
+    }
 
-	public void setCodePost(int codePost) {
-		this.codePost = codePost;
-	}
+    public String getVoie() {
+        return voie;
+    }
 
-	public String getVille() {
-		return ville;
-	}
+    public void setVoie(String voie) {
+        this.voie = voie;
+    }
 
-	public void setVille(String ville) {
-		this.ville = ville;
-	}
+    public int getCodePost() {
+        return codePost;
+    }
 
-	public String getPays() {
-		return pays;
-	}
+    public void setCodePost(int codePost) {
+        this.codePost = codePost;
+    }
 
-	public void setPays(String pays) {
-		this.pays = pays;
-	}
+    public String getVille() {
+        return ville;
+    }
 
-	public ClientMetier(int id, String nom, String prenom, int noRue, String voie, int codePost, String ville,
-			String pays) {
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.noRue = noRue;
-		this.voie = voie;
-		this.codePost = codePost;
-		this.ville = ville;
-		this.pays = pays;
-	}
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
 
-	public ClientMetier( String nom, String prenom, int noRue, String voie, int codePost, String ville,
-						String pays) {
-		this.nom = nom;
-		this.prenom = prenom;
-		this.noRue = noRue;
-		this.voie = voie;
-		this.codePost = codePost;
-		this.ville = ville;
-		this.pays = pays;
-	}
+    public String getPays() {
+        return pays;
+    }
 
-	public ClientMetier() {
-	}
+    public void setPays(String pays) {
+        this.pays = pays;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		
-		ClientMetier m = (ClientMetier) o;
-		if(o == null) {
-			return false;
-		}
-		if(this.getClass()==m.getClass()) {
-			if(m.getId() == this.getId()) {
-				return true;
-			}
-		}
-		
-		return false;
-	}
-	
-	@Override
-	public String toString() {
-		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", no_rue=" + noRue + ", voie=" + voie
-				+ ", codepost=" + codePost + ", ville=" + ville + ", pays=" + pays + "]";
-	}
+    @Override
+    public boolean equals(Object o) {
+
+        ClientMetier m = (ClientMetier) o;
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() == m.getClass()) {
+			return m.getId() == this.getId();
+        }
+
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", no_rue=" + noRue + ", voie=" + voie
+                + ", codepost=" + codePost + ", ville=" + ville + ", pays=" + pays + "]";
+    }
 
 
 }

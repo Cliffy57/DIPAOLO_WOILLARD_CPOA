@@ -2,9 +2,7 @@ package javafx;
 
 import dao.metier.AbonnementMetier;
 import dao.metier.ClientMetier;
-import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,18 +12,22 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 
 public class AbonnementController {
 
-    @FXML ComboBox<ClientMetier> cboxClient;
-    @FXML ComboBox<RevueMetier> cboxRevue;
-    @FXML DatePicker dateDebut;
-    @FXML DatePicker dateFin;
-    @FXML Button btnValider;
-    @FXML Button btnAnnuler;
+    @FXML
+    ComboBox<ClientMetier> cboxClient;
+    @FXML
+    ComboBox<RevueMetier> cboxRevue;
+    @FXML
+    DatePicker dateDebut;
+    @FXML
+    DatePicker dateFin;
+    @FXML
+    Button btnValider;
+    @FXML
+    Button btnAnnuler;
     private AbonnementMetier abonnementNew;
 
     @FXML
@@ -57,30 +59,29 @@ public class AbonnementController {
 
     public void btnValiderClick(ActionEvent actionEvent) throws IOException {
         String erreur = "";
-        if (this.cboxClient.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null){
-            erreur+="Le client n'est pas saisie\n";
+        if (this.cboxClient.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null) {
+            erreur += "Le client n'est pas saisie\n";
         }
-        if (this.cboxRevue.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null){
-            erreur+="Le client n'est pas saisie\n";
+        if (this.cboxRevue.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null) {
+            erreur += "Le client n'est pas saisie\n";
         }
-        if(this.dateDebut.getValue() == null){
-            erreur +="La date de debut n'est pas saisie\n";
+        if (this.dateDebut.getValue() == null) {
+            erreur += "La date de debut n'est pas saisie\n";
         }
-        if(this.dateFin.getValue() == null){
-            erreur +="La date de fin n'est pas saisie\n";
+        if (this.dateFin.getValue() == null) {
+            erreur += "La date de fin n'est pas saisie\n";
         }
         try {
             int val = this.dateDebut.getValue().compareTo(this.dateFin.getValue());
-            if(val>0) {
-                erreur +="La date de fin doit etre superieur a la date de debut\n";
-            };
-        } catch (NullPointerException nullPointerException){
+            if (val > 0) {
+                erreur += "La date de fin doit etre superieur a la date de debut\n";
+            }
+        } catch (NullPointerException nullPointerException) {
 
         }
 
 
-
-        if(erreur =="") {
+        if (erreur == "") {
             if (MenuController.choix == "ajout") {
                 HelloApplication.factory.getAbonnementDAO().create(new AbonnementMetier(dateDebut.getValue(), dateFin.getValue(), cboxClient.getSelectionModel().getSelectedItem().getId(), cboxRevue.getSelectionModel().getSelectedItem().getId()));
             } else if (MenuController.choix == "modif") {
@@ -99,8 +100,7 @@ public class AbonnementController {
             HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
             HelloApplication.screenController.activate("menu");
             HelloApplication.screenController.removeScreen("abonnement");
-        }
-        else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur lors de la saisie");
             alert.setHeaderText("Un ou plusieurs champs sont mal remplis.");

@@ -4,65 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="ajout de la possibilite dimport">
+    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="csv doublon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connexion/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connexion/Connexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Prop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Prop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/factory/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/factory/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/factory/ListeMemoireDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/factory/ListeMemoireDAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/factory/MySQLDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/factory/MySQLDAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchAbonnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchAbonnement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchPeriodicite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchPeriodicite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchRevue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/launch/LaunchRevue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireAbonnementDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireClientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoirePeriodiciteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoirePeriodiciteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireRevueDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireRevueDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/metier/AbonnementMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/metier/AbonnementMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/metier/ClientMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/metier/ClientMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/metier/PeriodiciteMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/metier/PeriodiciteMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/metier/RevueMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/metier/RevueMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/JavaFXCSVTableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/JavaFXCSVTableView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/connexion/Connexion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/AbonnementDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ClientDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/PeriodiciteDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Persistance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Prop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/RevueDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/DAOFactory$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/DAOFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/ListeMemoireDAOFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/factory/MySQLDAOFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchAbonnement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchPeriodicite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/launch/LaunchRevue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireAbonnementDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireClientDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoirePeriodiciteDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireRevueDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/AbonnementMetier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/ClientMetier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/PeriodiciteMetier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/metier/RevueMetier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLAbonnementDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLClientDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLPeriodiciteDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySQLRevueDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/FxMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/HelloApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ImageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/MenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ScreenController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/VisualiserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationCodePost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationPays.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationVille.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/normalisation/normalisationVoie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/TestAbonnement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/TestClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/TestPeriodicite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/TestRevue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireAbonnementTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireClientTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoirePeriodiciteTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testListeMemoire/ListeMemoireRevueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLAbonnementTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLClientTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLPeriodiciteTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/testMySQL/MySQLRevueTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/ScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/ScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/VisualiserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/VisualiserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/normalisation/normalisationCodePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationCodePost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/normalisation/normalisationPays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationPays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVille.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVille.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVoie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/normalisation/normalisationVoie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestAbonnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestAbonnement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestRevue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestRevue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireRevueTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636361680227</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="csv doublon">
+      <created>1636641615720</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636641615720</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,19 +283,20 @@
     <MESSAGE value="tableview finit" />
     <MESSAGE value="réglage de delete, probleme AbonnementController" />
     <MESSAGE value="test insertion fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="test insertion fini" />
+    <MESSAGE value="csv doublon" />
+    <option name="LAST_COMMIT_MESSAGE" value="csv doublon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoirePeriodiciteTest.java</url>
-          <line>12</line>
+          <line>14</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/test/testListeMemoire/ListeMemoireAbonnementTest.java</url>
-          <line>22</line>
+          <line>25</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

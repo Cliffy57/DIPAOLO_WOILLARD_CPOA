@@ -1,115 +1,109 @@
 package dao.listememoire;
 
+import dao.AbonnementDAO;
+import dao.metier.AbonnementMetier;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-import dao.AbonnementDAO;
-import dao.metier.AbonnementMetier;
-import dao.metier.ClientMetier;
-
 public class ListeMemoireAbonnementDAO implements AbonnementDAO {
 
-	private static ListeMemoireAbonnementDAO instance;
+    private static ListeMemoireAbonnementDAO instance;
 
-	private List<AbonnementMetier> donnees;
+    private final List<AbonnementMetier> donnees;
 
-	public static ListeMemoireAbonnementDAO getInstance() {
+    private ListeMemoireAbonnementDAO() {
 
-		if (instance == null) {
-			instance = new ListeMemoireAbonnementDAO();
-		}
+        this.donnees = new ArrayList<AbonnementMetier>();
 
-		return instance;
-	}
+    }
 
-	private ListeMemoireAbonnementDAO() {
+    public static ListeMemoireAbonnementDAO getInstance() {
 
-		this.donnees = new ArrayList<AbonnementMetier>();
+        if (instance == null) {
+            instance = new ListeMemoireAbonnementDAO();
+        }
 
-		//this.donnees.add(new AbonnementMetier(1, null, null, 0, 0));
-		//this.donnees.add(new AbonnementMetier(2, null, null, 0, 0));
-	}
+        return instance;
+    }
 
-	@Override
-	public boolean create(AbonnementMetier objet) {
+    @Override
+    public boolean create(AbonnementMetier objet) {
 
-		objet.setId(1);
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		while (this.donnees.contains(objet)) {
+        objet.setId(1);
 
-			objet.setId(objet.getId() + 1);
-		}
-		boolean ok = this.donnees.add(objet);
+        while (this.donnees.contains(objet)) {
 
-		return ok;
-	}
+            objet.setId(objet.getId() + 1);
+        }
+        boolean ok = this.donnees.add(objet);
 
-	@Override
-	public boolean update(AbonnementMetier objet) {
+        return ok;
+    }
 
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(objet);
-		if (idx == -1) {
-			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
-		} else {
+    @Override
+    public boolean update(AbonnementMetier objet) {
 
-			this.donnees.set(idx, objet);
-		}
+        int idx = this.donnees.indexOf(objet);
+        if (idx == -1) {
+            throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
+        } else {
 
-		return true;
-	}
+            this.donnees.set(idx, objet);
+        }
 
-	@Override
-	public boolean delete(AbonnementMetier objet) {
+        return true;
+    }
 
-		AbonnementMetier supprime;
+    @Override
+    public boolean delete(AbonnementMetier objet) {
 
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(objet);
-		if (idx == -1) {
-			throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
-		} else {
-			supprime = this.donnees.remove(idx);
-		}
+        AbonnementMetier supprime;
 
-		return objet.equals(supprime);
-	}
+        int idx = this.donnees.indexOf(objet);
+        if (idx == -1) {
+            throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
+        } else {
+            supprime = this.donnees.remove(idx);
+        }
 
-	@Override
-	public AbonnementMetier getById(int id) {
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(new AbonnementMetier(id, null, null, 0, 0));
-		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne poss�de cet identifiant");
-		} else {
-			return this.donnees.get(idx);
-		}
-	}
+        return objet.equals(supprime);
+    }
 
-	@Override
-	public ArrayList<AbonnementMetier> findAll() {
-		return (ArrayList<AbonnementMetier>) this.donnees;
-	}
+    @Override
+    public AbonnementMetier getById(int id) {
 
-	@Override
-	public boolean ifExist(AbonnementMetier objet){
-		{
-				boolean existe = false;
-				Iterator<AbonnementMetier> iterator = this.donnees.iterator();
-				while (iterator.hasNext() && !existe) {
-					if(		Objects.equals(objet.getDateDebut(), iterator.next().getDateDebut()) &&
-							Objects.equals(objet.getDateFin(), iterator.next().getDateFin()) &&
-							Objects.equals(objet.getIdClient(), iterator.next().getIdClient()) &&
-							Objects.equals(objet.getIdRevue(), iterator.next().getIdRevue()) )
-					{
-						existe = true;
-					}
-				}
-				return existe;
-			}
+        int idx = this.donnees.indexOf(new AbonnementMetier(id, null, null, 0, 0));
+        if (idx == -1) {
+            throw new IllegalArgumentException("Aucun objet ne poss�de cet identifiant");
+        } else {
+            return this.donnees.get(idx);
+        }
+    }
 
-	}
+    @Override
+    public ArrayList<AbonnementMetier> findAll() {
+        return (ArrayList<AbonnementMetier>) this.donnees;
+    }
+
+    @Override
+    public boolean ifExist(AbonnementMetier objet) {
+        {
+            boolean existe = false;
+            Iterator<AbonnementMetier> iterator = this.donnees.iterator();
+            while (iterator.hasNext() && !existe) {
+                if (Objects.equals(objet.getDateDebut(), iterator.next().getDateDebut()) &&
+                        Objects.equals(objet.getDateFin(), iterator.next().getDateFin()) &&
+                        Objects.equals(objet.getIdClient(), iterator.next().getIdClient()) &&
+                        Objects.equals(objet.getIdRevue(), iterator.next().getIdRevue())) {
+                    existe = true;
+                }
+            }
+            return existe;
+        }
+
+    }
 
 }

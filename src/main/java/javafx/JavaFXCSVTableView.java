@@ -18,56 +18,9 @@ import static javafx.MenuController.Url;
 
 public class JavaFXCSVTableView extends Application {
 
-    @Override
-    public void start(Stage stage) throws Exception {
-
-    }
-
-    public static class Record {
-        //Assume each record have 6 elements, all String
-
-        private SimpleStringProperty f1, f2, f3, f4, f5, f6;
-
-        public String getF1() {
-            return f1.get();
-        }
-
-        public String getF2() {
-            return f2.get();
-        }
-
-        public String getF3() {
-            return f3.get();
-        }
-
-        public String getF4() {
-            return f4.get();
-        }
-
-        public String getF5() {
-            return f5.get();
-        }
-
-        public String getF6() {
-            return f6.get();
-        }
-
-        Record(String f1, String f2, String f3, String f4,
-               String f5, String f6) {
-            this.f1 = new SimpleStringProperty(f1);
-            this.f2 = new SimpleStringProperty(f2);
-            this.f3 = new SimpleStringProperty(f3);
-            this.f4 = new SimpleStringProperty(f4);
-            this.f5 = new SimpleStringProperty(f5);
-            this.f6 = new SimpleStringProperty(f6);
-        }
-
-    }
-
-    private final TableView<Record> tableView = new TableView<>();
-
     private static final ObservableList<Record> dataList
             = FXCollections.observableArrayList();
+    private final TableView<Record> tableView = new TableView<>();
 
     public static void readCSV() {
 
@@ -99,7 +52,55 @@ public class JavaFXCSVTableView extends Application {
 
     }
 
+    @Override
+    public void start(Stage stage) throws Exception {
 
+    }
+
+    public static class Record {
+
+        private final SimpleStringProperty f1;
+        private final SimpleStringProperty f2;
+        private final SimpleStringProperty f3;
+        private final SimpleStringProperty f4;
+        private final SimpleStringProperty f5;
+        private final SimpleStringProperty f6;
+
+        Record(String f1, String f2, String f3, String f4,
+               String f5, String f6) {
+            this.f1 = new SimpleStringProperty(f1);
+            this.f2 = new SimpleStringProperty(f2);
+            this.f3 = new SimpleStringProperty(f3);
+            this.f4 = new SimpleStringProperty(f4);
+            this.f5 = new SimpleStringProperty(f5);
+            this.f6 = new SimpleStringProperty(f6);
+        }
+
+        public String getF1() {
+            return f1.get();
+        }
+
+        public String getF2() {
+            return f2.get();
+        }
+
+        public String getF3() {
+            return f3.get();
+        }
+
+        public String getF4() {
+            return f4.get();
+        }
+
+        public String getF5() {
+            return f5.get();
+        }
+
+        public String getF6() {
+            return f6.get();
+        }
+
+    }
 
 
 }

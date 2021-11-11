@@ -1,14 +1,17 @@
 package test.testListeMemoire;
 
-import dao.*;
+import dao.ClientDAO;
+import dao.Persistance;
 import dao.factory.DAOFactory;
-import dao.metier.AbonnementMetier;
 import dao.metier.ClientMetier;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.sql.SQLException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
 public class ListeMemoireClientTest {
     private DAOFactory daofactory;
     private ClientDAO ClientDAO;
@@ -20,29 +23,27 @@ public class ListeMemoireClientTest {
     }
 
     @Test
-    public void testCreate() throws SQLException
-    {
-        ClientMetier ClientUnVerified = new ClientMetier(5,"Cobin","Jacque",14,"rue du square",54720,"Lexy","France");
+    public void testCreate() throws SQLException {
+        ClientMetier ClientUnVerified = new ClientMetier(5, "Cobin", "Jacque", 14, "rue du square", 54720, "Lexy", "France");
 
         ClientDAO.create(ClientUnVerified);
 
         ClientMetier ClientTemp = ClientDAO.getById(ClientUnVerified.getId());
 
-        assertEquals(ClientUnVerified,ClientTemp);
+        assertEquals(ClientUnVerified, ClientTemp);
 
 //        assertTrue(ClientDAO.create(ClientUnVerified));
     }
 
     @Test
-    public void testUpdate() throws SQLException
-    {
-        ClientMetier ClientUnVerified = new ClientMetier(5,"Cobin","Jacque",14,"rue du square",54720,"Lexy","France");
+    public void testUpdate() throws SQLException {
+        ClientMetier ClientUnVerified = new ClientMetier(5, "Cobin", "Jacque", 14, "rue du square", 54720, "Lexy", "France");
 
         ClientDAO.create(ClientUnVerified);
 
         ClientMetier ClientTemp = ClientDAO.getById(ClientUnVerified.getId());
 
-        ClientMetier ClientUpdate = new ClientMetier(5,"Cobin","Jack",14,"rue du square",54720,"Lexy","France");
+        ClientMetier ClientUpdate = new ClientMetier(5, "Cobin", "Jack", 14, "rue du square", 54720, "Lexy", "France");
 
         ClientDAO.update(ClientUpdate);
 
@@ -53,9 +54,8 @@ public class ListeMemoireClientTest {
     }
 
     @Test
-    public void testDelete() throws SQLException
-    {
-        ClientMetier ClientUnVerified = new ClientMetier(5,"Cobin","Jacque",14,"rue du square",54720,"Lexy","France");
+    public void testDelete() throws SQLException {
+        ClientMetier ClientUnVerified = new ClientMetier(5, "Cobin", "Jacque", 14, "rue du square", 54720, "Lexy", "France");
 
         ClientDAO.create(ClientUnVerified);
 
