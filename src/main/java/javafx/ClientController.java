@@ -1,7 +1,6 @@
 package javafx;
 
 import dao.metier.ClientMetier;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,21 +9,41 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ClientController {
 
-    @FXML Button btnValider;
-    @FXML Button btnAnnuler;
-    @FXML TextField textNom;
-    @FXML TextField textPrenom;
-    @FXML TextField textNumVoie;
-    @FXML TextField textCodePostal;
-    @FXML TextField textPays;
-    @FXML TextField textRue;
-    @FXML TextField textVille;
+    @FXML
+    Button btnValider;
+    @FXML
+    Button btnAnnuler;
+    @FXML
+    TextField textNom;
+    @FXML
+    TextField textPrenom;
+    @FXML
+    TextField textNumVoie;
+    @FXML
+    TextField textCodePostal;
+    @FXML
+    TextField textPays;
+    @FXML
+    TextField textRue;
+    @FXML
+    TextField textVille;
     private ClientMetier clientNew;
+
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
 
     @FXML
     public void initialize() {
@@ -128,17 +147,5 @@ public class ClientController {
         HelloApplication.screenController.removeScreen("client");
 
 
-    }
-
-    public static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
-        try {
-            double d = Double.parseDouble(strNum);
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
     }
 }

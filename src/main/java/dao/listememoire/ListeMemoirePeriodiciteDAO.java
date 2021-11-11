@@ -1,100 +1,97 @@
 package dao.listememoire;
 
+import dao.PeriodiciteDAO;
+import dao.metier.PeriodiciteMetier;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-import dao.PeriodiciteDAO;
-import dao.metier.ClientMetier;
-import dao.metier.PeriodiciteMetier;
-import javafx.HelloApplication;
-
 public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 
-	private static ListeMemoirePeriodiciteDAO instance;
+    private static ListeMemoirePeriodiciteDAO instance;
 
-	private List<PeriodiciteMetier> donnees;
+    private final List<PeriodiciteMetier> donnees;
 
-	public static ListeMemoirePeriodiciteDAO getInstance() {
+    private ListeMemoirePeriodiciteDAO() {
 
-		if (instance == null) {
-			instance = new ListeMemoirePeriodiciteDAO();
-		}
+        this.donnees = new ArrayList<PeriodiciteMetier>();
 
-		return instance;
-	}
+        this.donnees.add(new PeriodiciteMetier(1, "Mensuel"));
+        this.donnees.add(new PeriodiciteMetier(2, "Quotidien"));
+    }
 
-	private ListeMemoirePeriodiciteDAO() {
+    public static ListeMemoirePeriodiciteDAO getInstance() {
 
-		this.donnees = new ArrayList<PeriodiciteMetier>();
+        if (instance == null) {
+            instance = new ListeMemoirePeriodiciteDAO();
+        }
 
-		this.donnees.add(new PeriodiciteMetier(1, "Mensuel"));
-		this.donnees.add(new PeriodiciteMetier(2, "Quotidien"));
-	}
+        return instance;
+    }
 
-	@Override
-	public boolean create(PeriodiciteMetier objet) {
+    @Override
+    public boolean create(PeriodiciteMetier objet) {
 
-		objet.setId(1);
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		while (this.donnees.contains(objet)) {
-			objet.setId(objet.getId() + 1);
-		}
-		boolean ok = this.donnees.add(objet);
+        objet.setId(1);
 
-		return ok;
-	}
+        while (this.donnees.contains(objet)) {
+            objet.setId(objet.getId() + 1);
+        }
+        boolean ok = this.donnees.add(objet);
 
-	@Override
-	public boolean update(PeriodiciteMetier objet) {
+        return ok;
+    }
 
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(objet);
-		if (idx == -1) {
-			throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
-		} else {
+    @Override
+    public boolean update(PeriodiciteMetier objet) {
 
-			this.donnees.set(idx, objet);
-		}
 
-		return true;
-	}
+        int idx = this.donnees.indexOf(objet);
+        if (idx == -1) {
+            throw new IllegalArgumentException("Tentative de modification d'un objet inexistant");
+        } else {
 
-	@Override
-	public boolean delete(PeriodiciteMetier objet) {
+            this.donnees.set(idx, objet);
+        }
 
-		PeriodiciteMetier supprime;
+        return true;
+    }
 
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(objet);
-		if (idx == -1) {
-			throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
-		} else {
-			supprime = this.donnees.remove(idx);
-		}
+    @Override
+    public boolean delete(PeriodiciteMetier objet) {
 
-		return objet.equals(supprime);
-	}
+        PeriodiciteMetier supprime;
 
-	@Override
-	public PeriodiciteMetier getById(int id) {
-		// Ne fonctionne que si l'objet m�tier est bien fait...
-		int idx = this.donnees.indexOf(new PeriodiciteMetier(id, "Mensuel"));
-		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne poss�de cet identifiant");
-		} else {
-			return this.donnees.get(idx);
-		}
-	}
+        int idx = this.donnees.indexOf(objet);
+        if (idx == -1) {
+            throw new IllegalArgumentException("Tentative de suppression d'un objet inexistant");
+        } else {
+            supprime = this.donnees.remove(idx);
+        }
 
-	@Override
-	public ArrayList<PeriodiciteMetier> findAll() {
-		return (ArrayList<PeriodiciteMetier>) this.donnees;
-	}
+        return objet.equals(supprime);
+    }
 
-	@Override
-	public boolean ifExist(PeriodiciteMetier objet){
+    @Override
+    public PeriodiciteMetier getById(int id) {
+
+        int idx = this.donnees.indexOf(new PeriodiciteMetier(id, "Mensuel"));
+        if (idx == -1) {
+            throw new IllegalArgumentException("Aucun objet ne poss�de cet identifiant");
+        } else {
+            return this.donnees.get(idx);
+        }
+    }
+
+    @Override
+    public ArrayList<PeriodiciteMetier> findAll() {
+        return (ArrayList<PeriodiciteMetier>) this.donnees;
+    }
+
+    @Override
+    public boolean ifExist(PeriodiciteMetier objet) {
 
 			boolean existe = false;
 			Iterator<PeriodiciteMetier> iterator = this.donnees.iterator();

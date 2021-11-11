@@ -4,62 +4,60 @@ package dao.metier;
 import javafx.beans.property.SimpleIntegerProperty;
 
 public class PeriodiciteMetier {
-	private int id;
-	private String libelle;
+    private int id;
+    private String libelle;
 
-	public int getId() {
-		return id;
-	}
+    public PeriodiciteMetier(int id, String libelle) {
+        this.setId(id);
+        this.setLibelle(libelle);
+    }
 
-	public SimpleIntegerProperty getIdTable(){ return new SimpleIntegerProperty(this.id);}
+    public PeriodiciteMetier(String libelle) {
+        this.setLibelle(libelle);
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public PeriodiciteMetier() {
 
-	public String getLibelle() {
-		return libelle;
-	}
+    }
 
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public PeriodiciteMetier(int id, String libelle) {
-		this.setId(id);
-		this.setLibelle(libelle);
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public PeriodiciteMetier( String libelle) {
-		this.setLibelle(libelle);
-	}
+    public SimpleIntegerProperty getIdTable() {
+        return new SimpleIntegerProperty(this.id);
+    }
 
-	public PeriodiciteMetier() {
+    public String getLibelle() {
+        return libelle;
+    }
 
-	}
-	
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		
-		PeriodiciteMetier m = (PeriodiciteMetier) o;
-		if(o == null) {
-			return false;
-		}
-		if(this.getClass()==m.getClass()) {
-			if(m.getId() == this.getId()) {
-				return true;
-			}
-		}
-		
-		return false;
-	}
-	
-	@Override
-	public String toString() {
-		return "Periodicite [id=" + id + ", libelle=" + libelle + "]";
-	}
+    @Override
+    public boolean equals(Object o) {
 
+        PeriodiciteMetier m = (PeriodiciteMetier) o;
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() == m.getClass()) {
+            return m.getId() == this.getId();
+        }
+
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Periodicite [id=" + id + ", libelle=" + libelle + "]";
+    }
 
 
 }

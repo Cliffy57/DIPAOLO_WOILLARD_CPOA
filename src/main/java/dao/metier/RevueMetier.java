@@ -3,103 +3,101 @@ package dao.metier;
 
 public class RevueMetier {
 
-	private int id;
-	private String titre;
-	private String description;
-	private float tarifNumero;
-	private String visuel;
-	private int idPeriodicite;
+    private int id;
+    private String titre;
+    private String description;
+    private float tarifNumero;
+    private String visuel;
+    private int idPeriodicite;
 
-	public int getId() {
-		return id;
-	}
+    public RevueMetier(int id, String description, String titre, float tarifNumero, String visuel, int idPeriodicite) {
+        this.id = id;
+        this.description = description;
+        this.titre = titre;
+        this.visuel = visuel;
+        this.tarifNumero = tarifNumero;
+        this.idPeriodicite = idPeriodicite;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public RevueMetier(String description, String titre, float tarifNumero, String visuel, int idPeriodicite) {
+        this.description = description;
+        this.titre = titre;
+        this.visuel = visuel;
+        this.tarifNumero = tarifNumero;
+        this.idPeriodicite = idPeriodicite;
+    }
 
-	public String getTitre() {
-		return titre;
-	}
+    public RevueMetier() {
 
-	public void setTitre(String titre) {
-		this.titre = titre;
-	}
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public float getTarifNumero() {
-		return tarifNumero;
-	}
+    public String getTitre() {
+        return titre;
+    }
 
-	public void setTarifNumero(float tarifNumero) {
-		this.tarifNumero = tarifNumero;
-	}
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
 
-	public String getVisuel() {
-		return visuel;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setVisuel(String visuel) {
-		this.visuel = visuel;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public int getIdPeriodicite() {
-		return idPeriodicite;
-	}
+    public float getTarifNumero() {
+        return tarifNumero;
+    }
 
-	public void setIdPeriodicite(int idPeriodicite) {
-		this.idPeriodicite = idPeriodicite;
-	}
+    public void setTarifNumero(float tarifNumero) {
+        this.tarifNumero = tarifNumero;
+    }
 
-	public RevueMetier(int id, String description, String titre, float tarifNumero, String visuel, int idPeriodicite) {
-		this.id = id;
-		this.description = description;
-		this.titre = titre;
-		this.visuel = visuel;
-		this.tarifNumero = tarifNumero;
-		this.idPeriodicite = idPeriodicite;
-	}
+    public String getVisuel() {
+        return visuel;
+    }
 
-	public RevueMetier(String description, String titre, float tarifNumero, String visuel, int idPeriodicite) {
-		this.description = description;
-		this.titre = titre;
-		this.visuel = visuel;
-		this.tarifNumero = tarifNumero;
-		this.idPeriodicite = idPeriodicite;
-	}
+    public void setVisuel(String visuel) {
+        this.visuel = visuel;
+    }
 
-	public RevueMetier() {
+    public int getIdPeriodicite() {
+        return idPeriodicite;
+    }
 
-	}
+    public void setIdPeriodicite(int idPeriodicite) {
+        this.idPeriodicite = idPeriodicite;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		
-		RevueMetier m = (RevueMetier) o;
-		if(o == null) {
-			return false;
-		}
-		if(this.getClass()==m.getClass()) {
-			if(m.getId() == this.getId()) {
-				return true;
-			}
-		}
-		
-		return false;
-	}
-	
-	@Override
-	public String toString() {
-		return "Revue [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero="
-				+ tarifNumero + ", visuel=" + visuel + ", id_periodicite=" + idPeriodicite + "]";
-	}
+    @Override
+    public boolean equals(Object o) {
 
-	
+        RevueMetier m = (RevueMetier) o;
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() == m.getClass()) {
+			return m.getId() == this.getId();
+        }
+
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Revue [id=" + id + ", titre=" + titre + ", description=" + description + ", tarif_numero="
+                + tarifNumero + ", visuel=" + visuel + ", id_periodicite=" + idPeriodicite + "]";
+    }
+
+
 }

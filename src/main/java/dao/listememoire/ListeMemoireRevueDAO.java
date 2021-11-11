@@ -1,13 +1,12 @@
 package dao.listememoire;
 
+import dao.RevueDAO;
+import dao.metier.RevueMetier;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-
-import dao.RevueDAO;
-import dao.metier.ClientMetier;
-import dao.metier.RevueMetier;
 
 public class ListeMemoireRevueDAO implements RevueDAO {
 

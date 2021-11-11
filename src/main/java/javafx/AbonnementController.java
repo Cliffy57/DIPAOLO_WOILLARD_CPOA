@@ -2,9 +2,7 @@ package javafx;
 
 import dao.metier.AbonnementMetier;
 import dao.metier.ClientMetier;
-import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,18 +12,22 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 
 public class AbonnementController {
 
-    @FXML ComboBox<ClientMetier> cboxClient;
-    @FXML ComboBox<RevueMetier> cboxRevue;
-    @FXML DatePicker dateDebut;
-    @FXML DatePicker dateFin;
-    @FXML Button btnValider;
-    @FXML Button btnAnnuler;
+    @FXML
+    ComboBox<ClientMetier> cboxClient;
+    @FXML
+    ComboBox<RevueMetier> cboxRevue;
+    @FXML
+    DatePicker dateDebut;
+    @FXML
+    DatePicker dateFin;
+    @FXML
+    Button btnValider;
+    @FXML
+    Button btnAnnuler;
     private AbonnementMetier abonnementNew;
 
     @FXML
