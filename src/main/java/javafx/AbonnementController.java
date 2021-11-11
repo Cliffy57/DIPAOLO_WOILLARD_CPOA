@@ -32,12 +32,12 @@ public class AbonnementController {
 
     @FXML
     public void initialize() {
-        Iterator<ClientMetier> iteratorC = HelloApplication.factory.getClientDAO().findAll().iterator();
+        Iterator<ClientMetier> iteratorC = Application.factory.getClientDAO().findAll().iterator();
         while (iteratorC.hasNext()) {
             cboxClient.getItems().add(iteratorC.next());
         }
 
-        Iterator<RevueMetier> iteratorR = HelloApplication.factory.getRevueDAO().findAll().iterator();
+        Iterator<RevueMetier> iteratorR = Application.factory.getRevueDAO().findAll().iterator();
         while (iteratorC.hasNext()) {
             cboxClient.getItems().add(iteratorC.next());
         }
@@ -49,8 +49,8 @@ public class AbonnementController {
             cboxRevue.getItems().add(iteratorR.next());
         }
         if (MenuController.choix == "modif") {
-            cboxClient.getSelectionModel().select(HelloApplication.factory.getClientDAO().getById(MenuController.abonnement.getIdClient()));
-            cboxRevue.getSelectionModel().select(HelloApplication.factory.getRevueDAO().getById(MenuController.abonnement.getIdRevue()));
+            cboxClient.getSelectionModel().select(Application.factory.getClientDAO().getById(MenuController.abonnement.getIdClient()));
+            cboxRevue.getSelectionModel().select(Application.factory.getRevueDAO().getById(MenuController.abonnement.getIdRevue()));
             dateDebut.setValue(MenuController.abonnement.getDateDebut());
             dateFin.setValue(MenuController.abonnement.getDateFin());
         }
@@ -86,8 +86,8 @@ public class AbonnementController {
         if(ok) {
             if (MenuController.choix == "ajout") {
                 abonnementNew = new AbonnementMetier(dateDebut.getValue(), dateFin.getValue(), cboxClient.getSelectionModel().getSelectedItem().getId(), cboxRevue.getSelectionModel().getSelectedItem().getId());
-                if(!HelloApplication.factory.getAbonnementDAO().ifExist(abonnementNew)){
-                    HelloApplication.factory.getAbonnementDAO().create(abonnementNew);
+                if(!Application.factory.getAbonnementDAO().ifExist(abonnementNew)){
+                    Application.factory.getAbonnementDAO().create(abonnementNew);
                 }
                 else {
                     ok = false;
@@ -100,8 +100,8 @@ public class AbonnementController {
                 abonnementNew.setDateFin(dateFin.getValue());
                 abonnementNew.setIdClient(cboxClient.getSelectionModel().getSelectedItem().getId());
                 abonnementNew.setIdRevue(cboxRevue.getSelectionModel().getSelectedItem().getId());
-                if(!HelloApplication.factory.getAbonnementDAO().ifExist(abonnementNew)){
-                    HelloApplication.factory.getAbonnementDAO().update(abonnementNew);
+                if(!Application.factory.getAbonnementDAO().ifExist(abonnementNew)){
+                    Application.factory.getAbonnementDAO().update(abonnementNew);
                 }
                 else {
                     ok = false;
@@ -110,13 +110,13 @@ public class AbonnementController {
 
             }
             if (ok){
-            Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+            Iterator<AbonnementMetier> iterator = Application.factory.getAbonnementDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
-            HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-            HelloApplication.screenController.activate("menu");
-            HelloApplication.screenController.removeScreen("abonnement");
+            Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+            Application.screenController.activate("menu");
+            Application.screenController.removeScreen("abonnement");
         }
     }
         if(!ok) {
@@ -129,12 +129,12 @@ public class AbonnementController {
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) throws IOException {
-        Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+        Iterator<AbonnementMetier> iterator = Application.factory.getAbonnementDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
-        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.activate("menu");
-        HelloApplication.screenController.removeScreen("abonnement");
+        Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        Application.screenController.activate("menu");
+        Application.screenController.removeScreen("abonnement");
     }
 }

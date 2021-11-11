@@ -13,16 +13,20 @@ https://trello.com/invite/b/7reDDmgr/266ce52b2dc380b89fd3b69dce13916c/cpoa
 ⚠ AFIN D'EXECUTER L'APPPLI,NE PAS OUBLIER D'IMPORTER LES LIBS / PATHS DANS LA CONFIG DU RUN ⚠
 
 -----------------------------------------------------------------------------------------------------------------
-FONCTIONNE :
-
+FONCTIONNE : ajout,modification,suppression d'un abonnement,client,periodicite et revue en SQL et listeMemoire.
+             importation CSV
+             visuel pour les revues (à insérer dans le code,pas dans l'application)
+             switch entre sql et listeMemoire
+             interface graphique
+             
 -----------------------------------------------------------------------------------------------------------------
-NE FONCTIONNE PAS :
+NE FONCTIONNE PAS : Supression d'un élément utilisé d'en un autre
 
 -----------------------------------------------------------------------------------------------------------------
 LA REPARTITION DES TACHES SERA VISIBLE SUR TRELLO :
 
 https://trello.com/invite/b/7reDDmgr/266ce52b2dc380b89fd3b69dce13916c/cpoa
 
-                          POURCENTAGE : WOILLARD ERIC :  %||DI PAOLO Hugo :  %
+                          POURCENTAGE : WOILLARD ERIC : 50 %||DI PAOLO Hugo : 50 %
                                       
 -----------------------------------------------------------------------------------------------------------------

@@ -94,8 +94,8 @@ public class ClientController {
             if(ok) {
                 if (MenuController.choix == "ajout") {
                     clientNew = new ClientMetier(textNom.getText(), textPrenom.getText(), Integer.parseInt(textNumVoie.getText()), textRue.getText(), Integer.parseInt(textCodePostal.getText()), textVille.getText(), textPays.getText());
-                    if(!HelloApplication.factory.getClientDAO().ifExist(clientNew))
-                    { HelloApplication.factory.getClientDAO().create(clientNew);}
+                    if(!Application.factory.getClientDAO().ifExist(clientNew))
+                    { Application.factory.getClientDAO().create(clientNew);}
                     else {
                         ok = false;
                         erreur = "Un doublon existe dans la base !";
@@ -109,22 +109,22 @@ public class ClientController {
                     clientNew.setPays(textPays.getText());
                     clientNew.setVoie(textRue.getText());
                     clientNew.setVille(textVille.getText());
-                    if(!HelloApplication.factory.getClientDAO().ifExist(clientNew)){
-                        HelloApplication.factory.getClientDAO().update(clientNew);}
+                    if(!Application.factory.getClientDAO().ifExist(clientNew)){
+                        Application.factory.getClientDAO().update(clientNew);}
                     else {
                         ok = false;
                         erreur = "Un doublon existe dans la base !";
                     }
                 }
                 if (ok) {
-                    Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
+                    Iterator<ClientMetier> iterator = Application.factory.getClientDAO().findAll().iterator();
                     while (iterator.hasNext()) {
-                        HelloApplication.listObservable.add(iterator.next());
+                        Application.listObservable.add(iterator.next());
                     }
 
-                    HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-                    HelloApplication.screenController.activate("menu");
-                    HelloApplication.screenController.removeScreen("client");
+                    Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+                    Application.screenController.activate("menu");
+                    Application.screenController.removeScreen("client");
                 }
 
             }
@@ -138,13 +138,13 @@ public class ClientController {
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) throws IOException {
-        Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
+        Iterator<ClientMetier> iterator = Application.factory.getClientDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
-        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.activate("menu");
-        HelloApplication.screenController.removeScreen("client");
+        Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        Application.screenController.activate("menu");
+        Application.screenController.removeScreen("client");
 
 
     }

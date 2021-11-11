@@ -2,7 +2,6 @@ package javafx;
 
 import connexion.Connexion;
 import dao.factory.DAOFactory;
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class
-HelloApplication extends Application {
+Application extends javafx.application.Application {
 
     public static ScreenController screenController;
     public static DAOFactory factory;
@@ -27,15 +26,15 @@ HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Connexion.creeConnexion();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("Menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 620, 440);
         screenController = new ScreenController(scene);
         imageController = new ImageController();
         imageController.addImage("rick", "src/main/resources/images/rick.jpg");
         imageController.addImage("salsifie", "src/main/resources/images/salsifieMoney.png");
         imageController.createObservableList(imageList);
-        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.activate("menu");
+        Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        Application.screenController.activate("menu");
 
         stage.setTitle("Hello!");
         stage.setScene(scene);

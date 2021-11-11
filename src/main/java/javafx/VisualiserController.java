@@ -33,7 +33,7 @@ public class VisualiserController {
             table.getColumns().add(column5);
 
 
-            Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+            Iterator<AbonnementMetier> iterator = Application.factory.getAbonnementDAO().findAll().iterator();
             while (iterator.hasNext()) {
                 table.getItems().add(iterator.next());
             }
@@ -47,7 +47,7 @@ public class VisualiserController {
             column2.setCellValueFactory(new PropertyValueFactory<>("libelle"));
             table.getColumns().add(column1);
             table.getColumns().add(column2);
-            this.table.getItems().addAll(HelloApplication.factory.getPeriodiciteDAO().findAll());
+            this.table.getItems().addAll(Application.factory.getPeriodiciteDAO().findAll());
         } else if (MenuController.table == "revue") {
 
         }

@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_dlsc_formsfx_formsfx_core_11_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_dlsc_formsfx_formsfx_core_11_3_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_01.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_261.xml" beforeDir="false" />
+    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="correction workspace.xml qui empechait le lancement du projet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/JavaFXCSVTableView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoirePeriodiciteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoirePeriodiciteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireRevueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireRevueDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +52,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DUT-INFO/2A/CPOA/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.HelloApplication">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="javafx.HelloApplication" />
+      <option name="MAIN_CLASS_NAME" value="javafx.Application" />
       <module name="WOILLARD_DIPAOLO_CPOA" />
       <extension name="coverage">
         <pattern>
@@ -234,14 +222,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636641615720</updated>
     </task>
-    <task id="LOCAL-00008" summary="m-120">
-      <created>1636641694570</created>
+    <task id="LOCAL-00008" summary="correction workspace.xml qui empechait le lancement du projet">
+      <created>1636647909673</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1636641694570</updated>
+      <updated>1636647909673</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00009" summary="correction workspace.xml qui empechait le lancement du projet">
+      <created>1636647926313</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636647926313</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +262,8 @@
     <MESSAGE value="h-2" />
     <MESSAGE value="m-120" />
     <MESSAGE value="csv doublon" />
-    <option name="LAST_COMMIT_MESSAGE" value="csv doublon" />
+    <MESSAGE value="correction workspace.xml qui empechait le lancement du projet" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction workspace.xml qui empechait le lancement du projet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -91,7 +91,7 @@ public class MenuController {
                 tableVue.getColumns().addAll(RevueColonne.values());
             }
         }
-        tableVue.getItems().addAll(HelloApplication.listObservable);
+        tableVue.getItems().addAll(Application.listObservable);
 
     }
 
@@ -138,7 +138,7 @@ public class MenuController {
         btnListeM.setDisable(true);
         btnSql.setDisable(false);
         instance = "LM";
-        HelloApplication.factory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
+        Application.factory = DAOFactory.getDAOFactory(Persistance.LISTE_MEMOIRE);
     }
 
     public void btnSqlClick() {
@@ -150,7 +150,7 @@ public class MenuController {
         btnSql.setDisable(true);
         btnListeM.setDisable(false);
         instance = "SQL";
-        HelloApplication.factory = DAOFactory.getDAOFactory(Persistance.MYSQL);
+        Application.factory = DAOFactory.getDAOFactory(Persistance.MYSQL);
 
     }
 
@@ -171,12 +171,12 @@ public class MenuController {
         AbonnementColonne.put("4", column4);
         AbonnementColonne.put("5", column5);
         tableVue.getColumns().addAll(AbonnementColonne.values());
-        Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+        Iterator<AbonnementMetier> iterator = Application.factory.getAbonnementDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
 
-        this.tableVue.getItems().addAll(HelloApplication.listObservable);
+        this.tableVue.getItems().addAll(Application.listObservable);
         table = "abonnement";
 
     }
@@ -202,12 +202,12 @@ public class MenuController {
         RevueColonne.put("5", column5);
         RevueColonne.put("6", column6);
         tableVue.getColumns().addAll(RevueColonne.values());
-        Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
+        Iterator<RevueMetier> iterator = Application.factory.getRevueDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
 
-        this.tableVue.getItems().addAll(HelloApplication.listObservable);
+        this.tableVue.getItems().addAll(Application.listObservable);
         table = "revue";
     }
 
@@ -220,12 +220,12 @@ public class MenuController {
         PeriodiciteColonne.put("2", column2);
         tableVue.getColumns().addAll(PeriodiciteColonne.values());
 
-        Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+        Iterator<PeriodiciteMetier> iterator = Application.factory.getPeriodiciteDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
 
-        this.tableVue.getItems().addAll(HelloApplication.listObservable);
+        this.tableVue.getItems().addAll(Application.listObservable);
         table = "periodicite";
 
     }
@@ -257,19 +257,19 @@ public class MenuController {
         ClientColonne.put("7", column7);
         ClientColonne.put("8", column8);
         tableVue.getColumns().addAll(ClientColonne.values());
-        Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
+        Iterator<ClientMetier> iterator = Application.factory.getClientDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
 
-        this.tableVue.getItems().addAll(HelloApplication.listObservable);
+        this.tableVue.getItems().addAll(Application.listObservable);
         table = "client";
     }
 
     public void btnRetourClick(ActionEvent actionEvent) {
         moveToChoixTable();
 
-        HelloApplication.listObservable.clear();
+        Application.listObservable.clear();
         tableVue.getItems().clear();
         if (table == "periodicite") {
             tableVue.getColumns().removeAll(PeriodiciteColonne.values());
@@ -290,19 +290,19 @@ public class MenuController {
         btnModifier.setDisable(true);
         btnSupprimer.setDisable(true);
         btnVisualiser.setDisable(true);
-        HelloApplication.listObservable.clear();
+        Application.listObservable.clear();
         if (table == "periodicite") {
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
-            HelloApplication.screenController.activate(table);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
+            Application.screenController.activate(table);
         } else if (table == "abonnement") {
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
-            HelloApplication.screenController.activate(table);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
+            Application.screenController.activate(table);
         } else if (table == "client") {
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
-            HelloApplication.screenController.activate(table);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
+            Application.screenController.activate(table);
         } else if (table == "revue") {
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
-            HelloApplication.screenController.activate(table);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
+            Application.screenController.activate(table);
         }
 
     }
@@ -321,30 +321,30 @@ public class MenuController {
         File file = fileChooser.showOpenDialog(btnImporter.getScene().getWindow());
         insertCSV(file.getPath());
         tableVue.getItems().clear();
-        HelloApplication.listObservable.clear();
+        Application.listObservable.clear();
 
         if (table == "periodicite") {
-            Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+            Iterator<PeriodiciteMetier> iterator = Application.factory.getPeriodiciteDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
         } else if (table == "abonnement") {
-            Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+            Iterator<AbonnementMetier> iterator = Application.factory.getAbonnementDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
         } else if (table == "client") {
-            Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
+            Iterator<ClientMetier> iterator = Application.factory.getClientDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
         } else if (table == "revue") {
-            Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
+            Iterator<RevueMetier> iterator = Application.factory.getRevueDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
         }
-        this.tableVue.getItems().addAll(HelloApplication.listObservable);
+        this.tableVue.getItems().addAll(Application.listObservable);
     }
 
     public void insertCSV(String path) {
@@ -362,8 +362,8 @@ public class MenuController {
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
                     PeriodiciteMetier periodiciteNew = new PeriodiciteMetier(fields[0]); //1
-                    if (!HelloApplication.factory.getPeriodiciteDAO().ifExist(periodiciteNew)) {
-                        HelloApplication.factory.getPeriodiciteDAO().create(periodiciteNew);
+                    if (!Application.factory.getPeriodiciteDAO().ifExist(periodiciteNew)) {
+                        Application.factory.getPeriodiciteDAO().create(periodiciteNew);
                     }
 
                 }
@@ -382,8 +382,8 @@ public class MenuController {
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
                     AbonnementMetier abonnementNew = new AbonnementMetier(LocalDate.parse(fields[0], formatage), LocalDate.parse(fields[1], formatage), Integer.parseInt(fields[2]), Integer.parseInt(fields[3]));
-                    if (!HelloApplication.factory.getAbonnementDAO().ifExist(abonnementNew)) {
-                        HelloApplication.factory.getAbonnementDAO().create(abonnementNew);
+                    if (!Application.factory.getAbonnementDAO().ifExist(abonnementNew)) {
+                        Application.factory.getAbonnementDAO().create(abonnementNew);
                     }
                 }
 
@@ -401,8 +401,8 @@ public class MenuController {
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
                     ClientMetier clientNew = new ClientMetier(fields[0], fields[1], Integer.parseInt(fields[2]), normalisationVoie.normalisation(fields[3]), Integer.parseInt(normalisationCodePost.normalisation(fields[4])), normalisationVille.normalisation(fields[5]), normalisationVille.normalisation(fields[6]));
-                    if (!HelloApplication.factory.getClientDAO().ifExist(clientNew)) {
-                        HelloApplication.factory.getClientDAO().create(clientNew);
+                    if (!Application.factory.getClientDAO().ifExist(clientNew)) {
+                        Application.factory.getClientDAO().create(clientNew);
                     }
                 }
 
@@ -420,8 +420,8 @@ public class MenuController {
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(FieldDelimiter, -1);
                     RevueMetier revueNew = new RevueMetier(fields[0], fields[1], Float.parseFloat(fields[2]), fields[3], Integer.parseInt(fields[4]));
-                    if (!HelloApplication.factory.getRevueDAO().ifExist(revueNew)) {
-                        HelloApplication.factory.getRevueDAO().create(revueNew);
+                    if (!Application.factory.getRevueDAO().ifExist(revueNew)) {
+                        Application.factory.getRevueDAO().create(revueNew);
                     }
                 }
 
@@ -439,42 +439,42 @@ public class MenuController {
         TablePosition pos = (TablePosition) tableVue.getSelectionModel().getSelectedCells().get(0);
         int row = pos.getRow();
         int id = (Integer) columnId.getCellObservableValue(tableVue.getItems().get(row)).getValue();
-        HelloApplication.listObservable.clear();
+        Application.listObservable.clear();
         if (table == "periodicite") {
-            HelloApplication.factory.getPeriodiciteDAO().delete(HelloApplication.factory.getPeriodiciteDAO().getById(id));
+            Application.factory.getPeriodiciteDAO().delete(Application.factory.getPeriodiciteDAO().getById(id));
             tableVue.getItems().clear();
-            Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+            Iterator<PeriodiciteMetier> iterator = Application.factory.getPeriodiciteDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
 
         }
         if (table == "abonnement") {
-            HelloApplication.factory.getAbonnementDAO().delete(HelloApplication.factory.getAbonnementDAO().getById(id));
+            Application.factory.getAbonnementDAO().delete(Application.factory.getAbonnementDAO().getById(id));
             tableVue.getItems().clear();
-            Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
+            Iterator<AbonnementMetier> iterator = Application.factory.getAbonnementDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
 
         }
         if (table == "client") {
-            HelloApplication.factory.getClientDAO().delete(HelloApplication.factory.getClientDAO().getById(id));
+            Application.factory.getClientDAO().delete(Application.factory.getClientDAO().getById(id));
             tableVue.getItems().clear();
-            Iterator<ClientMetier> iterator = HelloApplication.factory.getClientDAO().findAll().iterator();
+            Iterator<ClientMetier> iterator = Application.factory.getClientDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
         }
         if (table == "revue") {
-            HelloApplication.factory.getRevueDAO().delete(HelloApplication.factory.getRevueDAO().getById(id));
+            Application.factory.getRevueDAO().delete(Application.factory.getRevueDAO().getById(id));
             tableVue.getItems().clear();
-            Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
+            Iterator<RevueMetier> iterator = Application.factory.getRevueDAO().findAll().iterator();
             while (iterator.hasNext()) {
-                HelloApplication.listObservable.add(iterator.next());
+                Application.listObservable.add(iterator.next());
             }
         }
-        tableVue.getItems().addAll(HelloApplication.listObservable);
+        tableVue.getItems().addAll(Application.listObservable);
     }
 
     public void btnModifierClick(ActionEvent actionEvent) throws IOException {
@@ -482,45 +482,45 @@ public class MenuController {
         TablePosition pos = (TablePosition) tableVue.getSelectionModel().getSelectedCells().get(0);
         int row = pos.getRow();
         int id = (Integer) columnId.getCellObservableValue(tableVue.getItems().get(row)).getValue();
-        HelloApplication.listObservable.clear();
+        Application.listObservable.clear();
 
         if (table == "periodicite") {
-            periodicite = HelloApplication.factory.getPeriodiciteDAO().getById(id);
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
+            periodicite = Application.factory.getPeriodiciteDAO().getById(id);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutPeriodicite.fxml")));
             tableVue.getItems().clear();
             btnModifier.setDisable(true);
             btnSupprimer.setDisable(true);
             btnVisualiser.setDisable(true);
-            HelloApplication.screenController.activate(table);
+            Application.screenController.activate(table);
         } else if (table == "abonnement") {
-            abonnement = HelloApplication.factory.getAbonnementDAO().getById(id);
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
+            abonnement = Application.factory.getAbonnementDAO().getById(id);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutAbonnement.fxml")));
             tableVue.getItems().clear();
             btnModifier.setDisable(true);
             btnSupprimer.setDisable(true);
             btnVisualiser.setDisable(true);
-            HelloApplication.screenController.activate(table);
+            Application.screenController.activate(table);
         } else if (table == "client") {
-            client = HelloApplication.factory.getClientDAO().getById(id);
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
+            client = Application.factory.getClientDAO().getById(id);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutClient.fxml")));
             tableVue.getItems().clear();
             btnModifier.setDisable(true);
             btnSupprimer.setDisable(true);
             btnVisualiser.setDisable(true);
-            HelloApplication.screenController.activate(table);
+            Application.screenController.activate(table);
         } else if (table == "revue") {
-            revue = HelloApplication.factory.getRevueDAO().getById(id);
-            HelloApplication.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
+            revue = Application.factory.getRevueDAO().getById(id);
+            Application.screenController.addScreen(table, FXMLLoader.load(getClass().getResource("AjoutRevue.fxml")));
             tableVue.getItems().clear();
             btnModifier.setDisable(true);
             btnSupprimer.setDisable(true);
             btnVisualiser.setDisable(true);
-            HelloApplication.screenController.activate(table);
+            Application.screenController.activate(table);
         }
     }
 
     public void btnVisualiserClick(ActionEvent actionEvent) throws IOException {
-        HelloApplication.screenController.addScreen("visualiser", FXMLLoader.load(getClass().getResource("Visualiser.fxml")));
-        HelloApplication.screenController.activate("visualiser");
+        Application.screenController.addScreen("visualiser", FXMLLoader.load(getClass().getResource("Visualiser.fxml")));
+        Application.screenController.activate("visualiser");
     }
 }

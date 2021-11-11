@@ -35,8 +35,8 @@ public class PeriodiciteController {
         if (libelle.getText() != null && libelle.getText() != "") {
             if (MenuController.choix == "ajout") {
                 periodiciteNew = new PeriodiciteMetier(libelle.getText());
-                if (!HelloApplication.factory.getPeriodiciteDAO().ifExist(periodiciteNew)) {
-                    HelloApplication.factory.getPeriodiciteDAO().create(periodiciteNew);
+                if (!Application.factory.getPeriodiciteDAO().ifExist(periodiciteNew)) {
+                    Application.factory.getPeriodiciteDAO().create(periodiciteNew);
                 } else {
                     ok = false;
                     erreur = "Un doublon existe dans la base !";
@@ -45,8 +45,9 @@ public class PeriodiciteController {
           } else if (MenuController.choix == "modif") {
               periodiciteNew = new PeriodiciteMetier(MenuController.periodicite.getId(),MenuController.periodicite.getLibelle());
               periodiciteNew.setLibelle(libelle.getText());
-              if(!HelloApplication.factory.getPeriodiciteDAO().ifExist(periodiciteNew))
-              {HelloApplication.factory.getPeriodiciteDAO().update(periodiciteNew);}
+              if(!Application.factory.getPeriodiciteDAO().ifExist(periodiciteNew))
+              {
+                  Application.factory.getPeriodiciteDAO().update(periodiciteNew);}
               else {
                   ok = false;
                   erreur ="Un doublon existe dans la base !";
@@ -54,13 +55,13 @@ public class PeriodiciteController {
 
             }
             if (ok) {
-                Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+                Iterator<PeriodiciteMetier> iterator = Application.factory.getPeriodiciteDAO().findAll().iterator();
                 while (iterator.hasNext()) {
-                    HelloApplication.listObservable.add(iterator.next());
+                    Application.listObservable.add(iterator.next());
                 }
-                HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-                HelloApplication.screenController.activate("menu");
-                HelloApplication.screenController.removeScreen("periodicite");
+                Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+                Application.screenController.activate("menu");
+                Application.screenController.removeScreen("periodicite");
             }
 
         } else {
@@ -79,12 +80,12 @@ public class PeriodiciteController {
     }
 
     public void btnAnnulerClick(ActionEvent actionEvent) throws IOException {
-        Iterator<PeriodiciteMetier> iterator = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+        Iterator<PeriodiciteMetier> iterator = Application.factory.getPeriodiciteDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
-        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.activate("menu");
-        HelloApplication.screenController.removeScreen("periodicite");
+        Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        Application.screenController.activate("menu");
+        Application.screenController.removeScreen("periodicite");
     }
 }

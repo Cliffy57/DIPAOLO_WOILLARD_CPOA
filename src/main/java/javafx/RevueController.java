@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -48,18 +47,18 @@ public class RevueController {
 
     @FXML
     public void initialize() {
-        Iterator<PeriodiciteMetier> iteratorC = HelloApplication.factory.getPeriodiciteDAO().findAll().iterator();
+        Iterator<PeriodiciteMetier> iteratorC = Application.factory.getPeriodiciteDAO().findAll().iterator();
         while (iteratorC.hasNext()) {
             CbBoxPeriodicite.getItems().add(iteratorC.next());
         }
-        CbBoxImages.setItems(HelloApplication.imageList);
+        CbBoxImages.setItems(Application.imageList);
         if (MenuController.choix == "modif") {
             TextTitre.setText(MenuController.revue.getTitre());
             TextDescri.setText(MenuController.revue.getDescription());
             TextTarif.setText(String.valueOf(MenuController.revue.getTarifNumero()));
-            image.setImage(HelloApplication.imageController.findUrl(MenuController.revue.getVisuel()));
+            image.setImage(Application.imageController.findUrl(MenuController.revue.getVisuel()));
             CbBoxImages.getSelectionModel().select(MenuController.revue.getVisuel());
-            CbBoxPeriodicite.getSelectionModel().select(HelloApplication.factory.getPeriodiciteDAO().getById(MenuController.revue.getIdPeriodicite()));
+            CbBoxPeriodicite.getSelectionModel().select(Application.factory.getPeriodiciteDAO().getById(MenuController.revue.getIdPeriodicite()));
         }
 
     }
@@ -98,8 +97,8 @@ public class RevueController {
         if (ok) {
             if (MenuController.choix == "ajout") {
                 revueNew = new RevueMetier(TextDescri.getText(),TextTitre.getText(),Float.parseFloat(TextTarif.getText()),CbBoxImages.getSelectionModel().getSelectedItem(),CbBoxPeriodicite.getSelectionModel().getSelectedItem().getId());
-               if(!HelloApplication.factory.getRevueDAO().ifExist(revueNew))
-               { HelloApplication.factory.getRevueDAO().create(revueNew);}
+               if(!Application.factory.getRevueDAO().ifExist(revueNew))
+               { Application.factory.getRevueDAO().create(revueNew);}
                else {
                    ok = false;
                    erreur = "Un doublon existe dans la base !";
@@ -111,21 +110,21 @@ public class RevueController {
                 revueNew.setDescription(TextDescri.getText());
                 revueNew.setTarifNumero(Float.parseFloat(TextTarif.getText()));
                 revueNew.setVisuel(CbBoxImages.getSelectionModel().getSelectedItem());
-                if (!HelloApplication.factory.getRevueDAO().ifExist(revueNew)) {
-                    HelloApplication.factory.getRevueDAO().update(revueNew);
+                if (!Application.factory.getRevueDAO().ifExist(revueNew)) {
+                    Application.factory.getRevueDAO().update(revueNew);
                 } else {
                     ok = false;
                     erreur = "Un doublon existe dans la base !";
                 }
             }
             if(ok){
-                Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
+                Iterator<RevueMetier> iterator = Application.factory.getRevueDAO().findAll().iterator();
                 while (iterator.hasNext()) {
-                    HelloApplication.listObservable.add(iterator.next());
+                    Application.listObservable.add(iterator.next());
                 }
-                HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-                HelloApplication.screenController.activate("menu");
-                HelloApplication.screenController.removeScreen("revue");
+                Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+                Application.screenController.activate("menu");
+                Application.screenController.removeScreen("revue");
 
             }
 
@@ -141,19 +140,19 @@ public class RevueController {
 
     public void btnAnnulerClick(ActionEvent actionEvent) throws IOException {
 
-        Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
+        Iterator<RevueMetier> iterator = Application.factory.getRevueDAO().findAll().iterator();
         while (iterator.hasNext()) {
-            HelloApplication.listObservable.add(iterator.next());
+            Application.listObservable.add(iterator.next());
         }
-        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
-        HelloApplication.screenController.activate("menu");
-        HelloApplication.screenController.removeScreen("revue");
+        Application.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        Application.screenController.activate("menu");
+        Application.screenController.removeScreen("revue");
 
     }
 
     public void ActionCbBoxImages(ActionEvent actionEvent) {
         if (CbBoxImages.getSelectionModel().getSelectedIndex() != -1) {
-            image.setImage(HelloApplication.imageController.findUrl(CbBoxImages.getSelectionModel().getSelectedItem()));
+            image.setImage(Application.imageController.findUrl(CbBoxImages.getSelectionModel().getSelectedItem()));
         }
     }
 
