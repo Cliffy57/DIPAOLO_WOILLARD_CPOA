@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="h-2">
+    <list default="true" id="3e9b1ece-413a-460f-960d-dcb1ec9648d0" name="Changes" comment="m-120">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireRevueDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoireRevueDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoirePeriodiciteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/listememoire/ListeMemoirePeriodiciteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/AbonnementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/PeriodiciteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javafx/RevueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireRevueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoireRevueDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoirePeriodiciteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/listememoire/ListeMemoirePeriodiciteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/AbonnementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/ClientController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/PeriodiciteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/javafx/RevueController.class" afterDir="false" />
     </list>
@@ -35,6 +39,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -227,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636639818017</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="m-120">
+      <created>1636641694570</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636641694570</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +263,8 @@
     <MESSAGE value="réglage de delete, probleme AbonnementController" />
     <MESSAGE value="test insertion fini" />
     <MESSAGE value="h-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="h-2" />
+    <MESSAGE value="m-120" />
+    <option name="LAST_COMMIT_MESSAGE" value="m-120" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

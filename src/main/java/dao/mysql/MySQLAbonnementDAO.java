@@ -153,7 +153,7 @@ public class MySQLAbonnementDAO implements AbonnementDAO {
 		int nbLignes =0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM ABONNEMENT WHERE Abonnement.date_debut = ? AND Abonnement.date_fin = ? AND Abonnement.id_client = ? AND Abonnement.id_revue = ?;");
+			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM Abonnement WHERE Abonnement.date_debut = ? AND Abonnement.date_fin = ? AND Abonnement.id_client = ? AND Abonnement.id_revue = ?;");
 			requete.setDate(1, java.sql.Date.valueOf(objet.getDateDebut()));
 			requete.setDate(2, java.sql.Date.valueOf(objet.getDateFin()));
 			requete.setInt(3,objet.getIdClient());

@@ -45,7 +45,7 @@ public class RevueController {
 
     }
 
-    public void btnValiderClick(ActionEvent actionEvent) {
+    public void btnValiderClick(ActionEvent actionEvent) throws IOException {
         String erreur = "";
         boolean ok = true;
         if(this.TextTitre.getText() =="" || this.TextTitre.getText() == null)
@@ -81,13 +81,12 @@ public class RevueController {
                if(!HelloApplication.factory.getRevueDAO().ifExist(revueNew))
                { HelloApplication.factory.getRevueDAO().create(revueNew);}
                else {
-                   System.out.println("4");
                    ok = false;
                    erreur = "Un doublon existe dans la base !";
                }
             }
             else if(MenuController.choix == "modif") {
-                revueNew = MenuController.revue;
+                revueNew = new RevueMetier(MenuController.revue.getId(),MenuController.revue.getDescription(),MenuController.revue.getTitre(),MenuController.revue.getTarifNumero(),MenuController.revue.getVisuel(),MenuController.revue.getIdPeriodicite());
                 revueNew.setTitre(TextTitre.getText());
                 revueNew.setDescription(TextDescri.getText());
                 revueNew.setTarifNumero(Float.parseFloat(TextTarif.getText()));
@@ -104,6 +103,7 @@ public class RevueController {
                 while (iterator.hasNext()) {
                     HelloApplication.listObservable.add(iterator.next());
                 }
+                HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
                 HelloApplication.screenController.activate("menu");
                 HelloApplication.screenController.removeScreen("revue");
 

@@ -99,7 +99,8 @@ public class ListeMemoirePeriodiciteDAO implements PeriodiciteDAO {
 			boolean existe = false;
 			Iterator<PeriodiciteMetier> iterator = this.donnees.iterator();
 			while (iterator.hasNext() && !existe) {
-				if(Objects.equals(objet.getLibelle(), iterator.next().getLibelle()))
+				PeriodiciteMetier p = iterator.next();
+				if(Objects.equals(objet.getLibelle(), p.getLibelle()))
 				{
 					existe = true;
 				}

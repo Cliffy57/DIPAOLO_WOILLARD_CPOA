@@ -57,41 +57,57 @@ public class AbonnementController {
 
     public void btnValiderClick(ActionEvent actionEvent) throws IOException {
         String erreur = "";
+        boolean ok = true;
         if (this.cboxClient.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null){
-            erreur+="Le client n'est pas saisie\n";
+            erreur+="Le client n'est pas saisie\n"; ok = false;
         }
         if (this.cboxRevue.getSelectionModel().getSelectedIndex() == -1 || this.cboxClient.getValue() == null){
-            erreur+="Le client n'est pas saisie\n";
+            erreur+="Le client n'est pas saisie\n"; ok = false;
         }
         if(this.dateDebut.getValue() == null){
-            erreur +="La date de debut n'est pas saisie\n";
+            erreur +="La date de debut n'est pas saisie\n"; ok = false;
         }
         if(this.dateFin.getValue() == null){
-            erreur +="La date de fin n'est pas saisie\n";
+            erreur +="La date de fin n'est pas saisie\n"; ok = false;
         }
         try {
             int val = this.dateDebut.getValue().compareTo(this.dateFin.getValue());
             if(val>0) {
                 erreur +="La date de fin doit etre superieur a la date de debut\n";
+                ok = false;
             };
+
         } catch (NullPointerException nullPointerException){
 
         }
 
-
-
-        if(erreur =="") {
+        if(ok) {
             if (MenuController.choix == "ajout") {
-                HelloApplication.factory.getAbonnementDAO().create(new AbonnementMetier(dateDebut.getValue(), dateFin.getValue(), cboxClient.getSelectionModel().getSelectedItem().getId(), cboxRevue.getSelectionModel().getSelectedItem().getId()));
+                abonnementNew = new AbonnementMetier(dateDebut.getValue(), dateFin.getValue(), cboxClient.getSelectionModel().getSelectedItem().getId(), cboxRevue.getSelectionModel().getSelectedItem().getId());
+                if(!HelloApplication.factory.getAbonnementDAO().ifExist(abonnementNew)){
+                    HelloApplication.factory.getAbonnementDAO().create(abonnementNew);
+                }
+                else {
+                    ok = false;
+                    erreur = "Un doublon existe dans la base !";
+                }
+
             } else if (MenuController.choix == "modif") {
-                abonnementNew = MenuController.abonnement;
+                abonnementNew = new AbonnementMetier(MenuController.abonnement.getId(),MenuController.abonnement.getDateDebut(),MenuController.abonnement.getDateFin(),MenuController.abonnement.getIdClient(),MenuController.abonnement.getIdRevue());
                 abonnementNew.setDateDebut(dateDebut.getValue());
                 abonnementNew.setDateFin(dateFin.getValue());
                 abonnementNew.setIdClient(cboxClient.getSelectionModel().getSelectedItem().getId());
                 abonnementNew.setIdRevue(cboxRevue.getSelectionModel().getSelectedItem().getId());
-                HelloApplication.factory.getAbonnementDAO().update(abonnementNew);
-            }
+                if(!HelloApplication.factory.getAbonnementDAO().ifExist(abonnementNew)){
+                    HelloApplication.factory.getAbonnementDAO().update(abonnementNew);
+                }
+                else {
+                    ok = false;
+                    erreur = "Un doublon existe dans la base !";
+                }
 
+            }
+            if (ok){
             Iterator<AbonnementMetier> iterator = HelloApplication.factory.getAbonnementDAO().findAll().iterator();
             while (iterator.hasNext()) {
                 HelloApplication.listObservable.add(iterator.next());
@@ -100,7 +116,8 @@ public class AbonnementController {
             HelloApplication.screenController.activate("menu");
             HelloApplication.screenController.removeScreen("abonnement");
         }
-        else {
+    }
+        if(!ok) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur lors de la saisie");
             alert.setHeaderText("Un ou plusieurs champs sont mal remplis.");

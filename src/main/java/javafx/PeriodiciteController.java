@@ -41,7 +41,7 @@ public class PeriodiciteController {
               }
 
           } else if (MenuController.choix == "modif") {
-              periodiciteNew = MenuController.periodicite;
+              periodiciteNew = new PeriodiciteMetier(MenuController.periodicite.getId(),MenuController.periodicite.getLibelle());
               periodiciteNew.setLibelle(libelle.getText());
               if(!HelloApplication.factory.getPeriodiciteDAO().ifExist(periodiciteNew))
               {HelloApplication.factory.getPeriodiciteDAO().update(periodiciteNew);}
@@ -56,6 +56,7 @@ public class PeriodiciteController {
                 while (iterator.hasNext()) {
                     HelloApplication.listObservable.add(iterator.next());
                 }
+                HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
                 HelloApplication.screenController.activate("menu");
                 HelloApplication.screenController.removeScreen("periodicite");
             }

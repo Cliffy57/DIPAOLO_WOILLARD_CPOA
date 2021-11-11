@@ -160,7 +160,7 @@ public class MySQLClientDAO implements ClientDAO {
 		int nbLignes =0;
 		try {
 			Connection laConnexion = Connexion.creeConnexion();
-			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM CLIENT WHERE Client.nom = ? AND Client.prenom = ? AND Client.no_rue = ?  AND Client.voie = ? AND Client.code_postal = ? AND Client.ville = ? AND Client.pays = ? ;");
+			PreparedStatement requete = laConnexion.prepareStatement("SELECT * FROM Client WHERE Client.nom = ? AND Client.prenom = ? AND Client.no_rue = ?  AND Client.voie = ? AND Client.code_postal = ? AND Client.ville = ? AND Client.pays = ? ;");
 			requete.setString(1, objet.getNom());
 			requete.setString(2, objet.getPrenom());
 			requete.setInt(3,objet.getNoRue());
