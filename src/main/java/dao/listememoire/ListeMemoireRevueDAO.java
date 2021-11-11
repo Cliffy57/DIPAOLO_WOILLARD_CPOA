@@ -98,12 +98,14 @@ public class ListeMemoireRevueDAO implements RevueDAO {
 
 			boolean existe = false;
 			Iterator<RevueMetier> iterator = this.donnees.iterator();
+
 			while (iterator.hasNext() && !existe) {
-				if(		Objects.equals(objet.getVisuel(), iterator.next().getVisuel()) &&
-						Objects.equals(objet.getDescription(), iterator.next().getDescription()) &&
-						Objects.equals(objet.getIdPeriodicite(), iterator.next().getIdPeriodicite()) &&
-						Objects.equals(objet.getTitre(), iterator.next().getTitre()) &&
-						Objects.equals(objet.getTarifNumero(), iterator.next().getTarifNumero()) )
+				RevueMetier r = iterator.next();
+				if(		Objects.equals(objet.getVisuel(), r.getVisuel()) &&
+						Objects.equals(objet.getDescription(), r.getDescription()) &&
+						Objects.equals(objet.getIdPeriodicite(), r.getIdPeriodicite()) &&
+						Objects.equals(objet.getTitre(), r.getTitre()) &&
+						Objects.equals(objet.getTarifNumero(), r.getTarifNumero()) )
 				{
 					existe = true;
 				}

@@ -5,12 +5,14 @@ import dao.metier.PeriodiciteMetier;
 import dao.metier.RevueMetier;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 
 public class RevueController {
@@ -98,12 +100,13 @@ public class RevueController {
                 }
             }
             if(ok){
-                HelloApplication.screenController.activate("menu");
-                HelloApplication.screenController.removeScreen("revue");
                 Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
                 while (iterator.hasNext()) {
                     HelloApplication.listObservable.add(iterator.next());
                 }
+                HelloApplication.screenController.activate("menu");
+                HelloApplication.screenController.removeScreen("revue");
+
             }
 
         }
@@ -116,14 +119,16 @@ public class RevueController {
         }
     }
 
-    public void btnAnnulerClick(ActionEvent actionEvent) {
+    public void btnAnnulerClick(ActionEvent actionEvent) throws IOException {
 
-        HelloApplication.screenController.activate("menu");
-        HelloApplication.screenController.removeScreen("revue");
         Iterator<RevueMetier> iterator = HelloApplication.factory.getRevueDAO().findAll().iterator();
         while (iterator.hasNext()) {
             HelloApplication.listObservable.add(iterator.next());
         }
+        HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
+        HelloApplication.screenController.activate("menu");
+        HelloApplication.screenController.removeScreen("revue");
+
     }
 
     public void ActionCbBoxImages(ActionEvent actionEvent) {

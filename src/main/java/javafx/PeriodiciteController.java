@@ -56,7 +56,6 @@ public class PeriodiciteController {
                 while (iterator.hasNext()) {
                     HelloApplication.listObservable.add(iterator.next());
                 }
-                HelloApplication.screenController.addScreen("menu", FXMLLoader.load(getClass().getResource("Menu.fxml")));
                 HelloApplication.screenController.activate("menu");
                 HelloApplication.screenController.removeScreen("periodicite");
             }
