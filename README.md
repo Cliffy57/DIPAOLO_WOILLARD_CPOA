@@ -1,5 +1,14 @@
 # DIPAOLO_WOILLARD_CPOA
 
+Projet : Projet CPOA
+Semestre concerné	: 3
+Durée en semaines	: 8
+Nombre de personnes dans le groupe : 2
+Objectif du projet : Développer un logiciel en suivant les préceptes de l'agilité 
+et mettant en œuvre un ensemble de bonnes pratiques
+Compétences visées :programmation événementielle, JDBC, Design Pattern DAO, architecture MVC, tests unitaires
+Langages et technologies utilisés :java, JavaFX, JUnit, mySQL, git
+
 Projet de CPOA , G3 WOILLARD Eric & DI PAOLO Hugo
 
 https://trello.com/invite/b/7reDDmgr/266ce52b2dc380b89fd3b69dce13916c/cpoa
