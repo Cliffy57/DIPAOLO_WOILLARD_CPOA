@@ -16,8 +16,19 @@ public class Application implements Runnable{
             System.out.println("Adresse socket" + sock_com.getInetAddress());
             System.out.println("Connexion venant de"+ sock_com.getInetAddress().getHostName());
 
+
+            PrintWriter out = new PrintWriter( new BufferedWriter(
+                    new OutputStreamWriter(sock_com.getOutputStream())
+            ),true);
             BufferedReader in = new BufferedReader(new InputStreamReader(sock_com.getInputStream()));
-            PrintWriter put = new PrintWriter(new BufferedWriter((new OutputStreamWriter(sock_com.getOutputStream()))));
+            String str = in.readLine();
+
+            System.out.println("Message recu :" + str);
+            out.println(str);
+            in.close();
+            out.close();
+            sock_com.close();
+
         }catch (IOException e){
             System.out.println("Erreur E/S");
         }

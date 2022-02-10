@@ -34,6 +34,7 @@ public class Serveur {
             out.close();
             soc_com.close();
 
+
         }
 
 
