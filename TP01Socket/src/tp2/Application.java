@@ -1,8 +1,11 @@
 package tp2;
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.SocketException;
 
 class Application extends Thread {
     Socket client;
@@ -40,6 +43,7 @@ class Application extends Thread {
         if (requete instanceof Date) return new java.util.Date();
         else if (requete instanceof Carre) return ((Carre) requete).execute();
         else if (requete instanceof Somme) return ((Somme) requete).execute();
+        else if (requete instanceof Factoriel) return ((Factoriel) requete).execute();
         else return null;
 
     }
